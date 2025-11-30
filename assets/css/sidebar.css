@@ -1,0 +1,309 @@
+/* ----------------------------------------
+   ROOT VARIABLES
+---------------------------------------- */
+:root {
+  --sidebar-full: 300px;
+  --sidebar-small: 80px;
+
+  --sidebar-bg: #0b4b0b;
+  --submenu-bg: rgba(255, 255, 255, 0.1);
+  --active-bg: rgba(255, 255, 255, 0.2);
+  --text-color: #fff;
+}
+
+/* LOGO CONTROL */
+.logo-long img,
+.logo-short img {
+  max-width: 180px;
+  transition: 0.3s ease;
+}
+
+.logo-short {
+  display: none;
+}
+
+/* Small mode → short logo visible */
+.sidebar.small .logo-long {
+  display: none;
+}
+.sidebar.small .logo-short {
+  display: block;
+}
+
+.sidebar.small .logo-short img {
+  max-width: 45px;
+}
+
+/* Toggle icon logic */
+.sidebar-toggle img {
+  width: 22px;
+  transition: 0.3s ease;
+}
+
+/* Default = bar visible */
+.icon-close {
+  display: none;
+}
+
+/* When small mode → show CLOSE icon */
+.sidebar.small .icon-bar {
+  display: none;
+}
+.sidebar.small .icon-close {
+  display: block;
+}
+
+/* Hover expand effect remains same */
+.sidebar.hover-expand .sidebar-nav span {
+  opacity: 1 !important;
+  visibility: visible !important;
+  width: auto !important;
+}
+
+/* Short logo should also expand on hover */
+.sidebar.hover-expand .logo-short {
+  display: none !important;
+}
+.sidebar.hover-expand .logo-long {
+  display: block !important;
+}
+/* ----------------------------------------
+   SIDEBAR BASE
+---------------------------------------- */
+.sidebar {
+  width: var(--sidebar-full);
+  height: 100vh;
+  background: var(--sidebar-bg);
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: width 0.35s ease;
+  position: relative;
+}
+
+/* SIDEBAR SMALL MODE */
+.sidebar.small {
+  width: var(--sidebar-small);
+}
+
+/* ----------------------------------------
+   MAIN SECTION
+---------------------------------------- */
+.main-section {
+  width: calc(100% - var(--sidebar-full));
+  background: rgb(47, 47, 73);
+  transition: width 0.35s ease;
+}
+
+.main-section.expanded {
+  width: calc(100% - var(--sidebar-small));
+}
+
+/* Hover expand behavior */
+.sidebar.hover-expand {
+  width: var(--sidebar-full) !important;
+}
+.main-section.hover-expand {
+  width: calc(100% - var(--sidebar-full)) !important;
+}
+
+/* ----------------------------------------
+   LOGO & TOGGLE BUTTON
+---------------------------------------- */
+.logo {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  max-width: 180px;
+  transition: 0.3s ease;
+}
+
+/* Small mode logo smaller but NOT hidden */
+.sidebar.small .logo img {
+  max-width: 35px;
+  opacity: 1;
+  width: auto;
+  height: 30px;
+}
+.sidebar.hover-expand .logo img {
+  max-width: 180px;
+}
+/* Bar button styling */
+.sidebar-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+/* ----------------------------------------
+   NAVIGATION
+---------------------------------------- */
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sidebar-nav {
+  padding: 0 20px;
+}
+.small .sidebar-nav {
+  padding: 0 6px;
+}
+
+.sidebar-nav ul li {
+  margin-bottom: 6px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* MENU LINK */
+.sidebar-nav a.menu-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  color: var(--text-color);
+  text-decoration: none;
+  cursor: pointer;
+  border-bottom: 1px solid var(--brand-10);
+  transition: background 0.2s ease;
+}
+
+/* Active parent item */
+.sidebar-nav ul li.active > a.menu-link {
+  background: var(--active-bg);
+}
+.menu-link span {
+  font-size: var(--font-base);
+}
+/* HIDE TEXT IN SMALL MODE */
+.sidebar.small .sidebar-nav span {
+  opacity: 0;
+  visibility: hidden;
+  width: 0;
+  transition: opacity 0.2s ease, width 0.2s ease;
+}
+/* HIDE submenu when sidebar small */
+.sidebar.small:not(.hover-expand) .sidebar-submenu {
+  display: none !important;
+}
+/* Hover expand → show text */
+.sidebar.hover-expand .sidebar-nav span {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ----------------------------------------
+   ARROW ICON
+---------------------------------------- */
+.dropdown-item-icon img {
+  transition: transform 0.35s ease;
+  width: 12px;
+}
+
+li:not(.has-dropdown) .dropdown-item-icon {
+  display: none;
+}
+
+/* Rotate arrow when active */
+li.active .dropdown-item-icon img {
+  transform: rotate(180deg);
+}
+
+/* ----------------------------------------
+   SUBMENU
+---------------------------------------- */
+.sidebar-submenu {
+  max-height: 0;
+  overflow: hidden;
+  background: var(--submenu-bg);
+  transition: max-height 0.35s ease;
+}
+
+.sidebar-submenu ul {
+  padding: 10px 16px;
+}
+
+.sidebar-submenu ul li a {
+  display: block;
+  color: var(--text-color);
+  padding: 8px 0;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar-submenu ul li a:hover {
+  opacity: 1;
+}
+
+/* ----------------------------------------
+   SMALL MODE ICONS STYLE
+---------------------------------------- */
+.sidebar.small .nav-item-icon {
+  margin: 0 auto;
+}
+
+.nav-item-icon img {
+  width: 20px;
+  height: 20px;
+}
+
+/* ----------------------------------------
+   SMOOTH SCROLLBAR STYLE (OPTIONAL)
+---------------------------------------- */
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+.mobile-close-bar,
+.mobile-bar {
+  display: none;
+}
+@media all and (max-width: 1150px) {
+  .sidebar-toggle {
+    display: none;
+  }
+  .sidebar {
+    position: absolute;
+    left: -380px;
+    transition: 0.6s;
+    z-index: 9 !important;
+  }
+  .main-section {
+    width: 100%;
+  }
+  .sidebar-open {
+    left: 0%;
+  }
+  .mobile-close-bar,
+  .mobile-bar {
+    display: block;
+  }
+}
+
+/* header area */
+.profile img {
+  max-width: 45px;
+  width: 100%;
+  border-radius: 50%;
+}
+.dropdown-menu:after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: -28px;
+  height: 25px;
+  width: 25px;
+  border-left: 15px solid transparent;
+  border-top: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid white;
+}
