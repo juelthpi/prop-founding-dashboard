@@ -1,6 +1,8 @@
 :root {
   --font-main: "Roboto", sans-serif;
   --font-secondary: "Poppins", sans-serif;
+  --sidebar-full: 300px;
+  --sidebar-small: 80px;
   --brand: #22c55e;
   --brand-secondary: #86ffb2;
   --white: #ffffff;
@@ -23,6 +25,21 @@ body {
   font-size: var(--font-base);
   font-weight: 400;
   line-height: normal;
+}
+body:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  margin: auto;
+  transform: translateY(-50%);
+  background-color: var(--brand-20);
+  filter: blur(140px);
+  height: 50%;
+  width: 50%;
+  border-radius: 100%;
+  z-index: -2;
 }
 h1,
 h2,
