@@ -1,0 +1,45 @@
+/* ============== LIGHT MODE ============== */
+.light-mode {
+  --brand: 16, 140, 70;
+  --brand-secondary: 80, 200, 120;
+  --white: 20, 25, 40;
+  --black: 255, 255, 255;
+  --warning: 220, 53, 69;
+  --yellow: 255, 193, 7;
+}
+.light-mode body,
+.light-mode #dashboard {
+  background-color: rgb(var(--black)) !important;
+}
+.light-mode .bg-white-5,
+.light-mode .bg-white-10,
+.light-mode .bg-filter-20,
+.light-mode .sidebar,
+.light-mode .dashboard-header,
+.light-mode .form-control,
+.light-mode textarea {
+  background-color: rgba(var(--black), 0.05) !important;
+  border-color: rgba(var(--white), 0.1) !important;
+}
+.light-mode .text-white,
+.light-mode h1,
+.light-mode h2,
+.light-mode h3,
+.light-mode h4,
+.light-mode p,
+.light-mode .form-label {
+  color: rgb(var(--white)) !important;
+}
+.light-mode .sidebar,
+.light-mode .dashboard-header {
+  background-color: rgba(var(--white), 0.04) !important;
+}
+.light-mode .nav-item-svg path {
+  stroke: rgba(var(--white)) !important;
+}
+.light-mode .logo-dark {
+  display: block !important;
+}
+.light-mode .logo-light {
+  display: none !important;
+}
