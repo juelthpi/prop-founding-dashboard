@@ -6,6 +6,7 @@
   --black: 255, 255, 255;
   --warning: 220, 53, 69;
   --yellow: 255, 193, 7;
+  --dark: #f2f5f3;
 }
 .light-mode body,
 .light-mode #dashboard {
@@ -29,6 +30,9 @@
 .light-mode p,
 .light-mode .form-label {
   color: rgb(var(--white)) !important;
+}
+.light-mode .bd-dark {
+  background-color: #f2f5f3;
 }
 .light-mode .sidebar,
 .light-mode .dashboard-header {

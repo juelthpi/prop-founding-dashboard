@@ -1,0 +1,48 @@
+.ts-wrapper {
+  border: none !important;
+  border: 1px solid rgba(var(--white), 0.05) !important;
+  border-radius: 99px !important;
+  backdrop-filter: blur(100px);
+}
+.ts-control {
+  border: none !important;
+  background-color: transparent !important;
+}
+.ts-dropdown,
+.ts-dropdown .option {
+  background: rgba(var(--white), 0.05) !important;
+  color: rgba(var(--white), 1) !important;
+}
+.item {
+  background: rgba(var(--brand), 0.5) !important;
+  color: rgba(var(--white), 1) !important;
+  border-radius: 4px !important;
+  padding: 2px 6px;
+}
+.ts-wrapper.single .ts-control {
+  background-image: none !important;
+}
+.ts-dropdown .active,
+.ts-dropdown .option:hover {
+  background: rgba(var(--brand), 0.5) !important;
+}
+.ts-wrapper .ts-control input {
+  color: rgba(var(--white), 0.8) !important;
+  font-size: 16px;
+}
+.ts-dropdown.single,
+.ts-wrapper.single .ts-control {
+  border: none;
+  box-shadow: 0 0 0 transparent !important;
+
+  padding: 13px 15px;
+  border: 1px solid rgba(var(--white), 0.05);
+}
+.ts-dropdown,
+.ts-dropdown .option {
+  background-color: #121d27 !important;
+}
+.light-mode .ts-dropdown,
+.light-mode .ts-dropdown .option {
+  background-color: #ebeeed !important;
+}
