@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Available Balance Card</title>
+    <style>
+      :root {
+        --base-bg: #020617;
+        --brand: 255, 255, 255;
+      }
+      body {
+        background: var(--base-bg);
+      }
+      .surface {
+        background: color-mix(
+          in srgb,
+          rgb(var(--color)) var(--alpha),
+          var(--base-bg)
+        );
+      }
+      .brand-4 {
+        --color: var(--brand);
+        --alpha: 4%;
+      }
+      .brand-2 {
+        --color: var(--brand);
+        --alpha: 6%;
+      }
+
+      .box {
+        height: 300px;
+        width: 300px;
+      }
+      .box-2 {
+        height: 200px;
+        width: 200px;
+        /* background: rgba(var(--white), 0.02); */
+        background: color-mix(in srgb, rgb(var(--brand)) 6%, var(--base-bg));
+        color: color-mix(in srgb, rgb(var(--brand)) 40%, var(--base-bg));
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box surface brand-4">
+      <div class="box-2"></div>
+    </div>
+  </body>
+</html>

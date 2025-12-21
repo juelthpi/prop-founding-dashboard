@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Layout</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.rtl.min.css"
+      integrity="sha384-CfCrinSRH2IR6a4e6fy2q6ioOX7O6Mtm1L9vRvFZ1trBncWmMePhzvafv7oIcWiW"
+      crossorigin="anonymous"
+    /> -->
+
+    <!-- google fonts css -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- TomSelect CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.default.min.css"
+      rel="stylesheet"
+    />
+    <!-- Flatpickr css -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/flatpickr.css" />
+    <!-- DataTables CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css"
+    />
+    <!-- DataTables custom css  -->
+    <link rel="stylesheet" href="assets/css/data-table.css" />
+    <link rel="stylesheet" href="assets/css/tom-select.css" />
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <link rel="stylesheet" href="assets/css/switch.css" />
+    <!-- risk controls -->
+    <link rel="stylesheet" href="assets/css/risk.css" />
+    <!-- setting css -->
+    <link rel="stylesheet" href="assets/css/setting.css" />
+    <!-- table css -->
+    <link rel="stylesheet" href="assets/css/table.css" />
+    <!-- referral css -->
+    <link rel="stylesheet" href="assets/css/referral.css" />
+    <!-- theme dark / light css -->
+    <link rel="stylesheet" href="assets/css/theme.css" />
+    <link rel="stylesheet" href="assets/css/sidebar.css" />
+  </head>
+  <body>
+    <div class="d-flex" id="dashboard">
+      <div class="sticky-top h-100">
+        <aside class="sidebar">
+          <div
+            class="sticky-top bg-filter-20 logo d-flex justify-content-between align-items-center pt-3 py-2 rounded-2 px-2"
+          >
+            <!-- light Logo -->
+            <div class="logo-light">
+              <a href="#" class="logo-long">
+                <img src="assets/images/logo.png" alt="logo" />
+              </a>
+              <a href="#" class="logo-short">
+                <img src="assets/images/short-logo.png" alt="logo" />
+              </a>
+            </div>
+            <!-- dark Logo -->
+            <div class="logo-dark">
+              <a href="#" class="logo-long">
+                <img src="assets/images/logo-black.png" alt="logo" />
+              </a>
+              <a href="#" class="logo-short">
+                <img src="assets/images/short-logo-black.png" alt="logo" />
+              </a>
+            </div>
+
+            <!-- Toggle Button -->
+            <button class="sidebar-toggle">
+              <!-- Hamburger (bar) icon -->
+              <svg
+                class="text-white icon icon-bar"
+                viewBox="0 0 24 24"
+                width="22"
+                height="22"
+                aria-hidden="true"
+                focusable="false"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2.2"
+                >
+                  <path d="M3 6h18" />
+                  <path d="M3 12h18" />
+                  <path d="M3 18h18" />
+                </g>
+              </svg>
+
+              <!-- Close (X) icon -->
+              <svg
+                class="text-white icon icon-close"
+                viewBox="0 0 24 24"
+                width="22"
+                height="22"
+                aria-hidden="true"
+                focusable="false"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2.4"
+                >
+                  <path d="M6 6l12 12" />
+                  <path d="M18 6L6 18" />
+                </g>
+              </svg>
+            </button>
+            <!-- Close (X) icon -->
+            <svg
+              class="text-white mobile-close-bar"
+              viewBox="0 0 24 24"
+              width="22"
+              height="22"
+              aria-hidden="true"
+              focusable="false"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2.4"
+              >
+                <path d="M6 6l12 12" />
+                <path d="M18 6L6 18" />
+              </g>
+            </svg>
+          </div>
+
+          <div class="sidebar-nav sidebar-scroll">
+            <ul>
+              <!-- item without dropdown -->
+              <li class="active">
+                <a href="#" class="menu-link">
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="nav-item-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="nav-item-svg"
+                        width="20"
+                        height="21"
+                        viewBox="0 0 20 21"
+                        fill="none"
+                      >
+                        <path
+                          d="M7 19.733V12.333c0-.56 0-.84.109-1.054a1.1 1.1 0 0 1 .437-.437c.214-.109.494-.109 1.054-.109h2.8c.56 0 .84 0 1.054.109.188.096.341.249.437.437.109.214.109.494.109 1.054v7.4M9.018 1.497 2.235 6.772c-.453.353-.68.529-.843.75a2 2 0 0 0-.318.65C1 8.437 1 8.724 1 9.298v7.235c0 1.12 0 1.68.218 2.108.192.376.498.682.874.874.428.218.988.218 2.108.218h11.6c1.12 0 1.68 0 2.108-.218.376-.192.682-.498.874-.874.218-.428.218-.988.218-2.108V9.298c0-.574 0-.861-.074-1.126a2 2 0 0 0-.318-.65c-.163-.22-.39-.397-.843-.75L10.982 1.497a1.7 1.7 0 0 0-.721-.462 1.1 1.1 0 0 0-.523 0 1.7 1.7 0 0 0-.72.462Z"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <span>Dashboard</span>
+                  </div>
+                </a>
+              </li>
+
+              <!-- item without dropdown -->
+              <li>
+                <a href="#" class="menu-link">
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="nav-item-icon">
+                      <svg
+                        width="24"
+                        height="24"
+                        class="nav-item-svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16 14h1v3.5H17m0-3.5h1.5m.75 3.5H17m3.25 0A1.75 1.75 0 0 0 21 15.75 1.75 1.75 0 0 0 19.25 14H18.5m.75 3.5A1.75 1.75 0 0 1 21 19.25 1.75 1.75 0 0 1 19.25 21H18.5M17 17.5V21m1.5-7v-1m0 9H17m1.5 0v1M17 21h-1"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M11.5 5H16a2 2 0 0 1 2 2v2.623a.377.377 0 0 1-.6.305L15.99 8.91"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M11.496 20H7a2 2 0 0 1-2-2v-2.637a.363.363 0 0 1 .603-.271l1.394 1.233"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M7.583 4S6.833 3 5.5 3C3.833 3 3 4 3 5s.417 2 2.5 2S8 8 8 9s-.833 2-2.5 2m0-8V2m0 10c-1.333 0-2.083-1-2.083-1M5.5 11v1"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <span>Live Trade</span>
+                  </div>
+                </a>
+              </li>
+              <!-- Example active dropdown -->
+              <li class="has-dropdown">
+                <a href="#" class="menu-link">
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="nav-item-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="nav-item-svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M8 7h8M8 11h4"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M13 21.5V21c0-2.828 0-4.243.879-5.121C14.757 15 16.172 15 19 15h.5m.5-1.657V10c0-3.771 0-5.657-1.172-6.828C17.657 2 15.771 2 12 2S6.343 2 5.172 3.172C4 4.343 4 6.229 4 10v4.544c0 3.245 0 4.868.886 5.967.179.222.381.424.603.603C6.588 22 8.211 22 11.456 22c.705 0 1.058 0 1.381-.114a2 2 0 0 0 .197-.082c.31-.148.56-.398 1.059-.897l4.736-4.736c.578-.578.867-.867 1.019-1.234.153-.367.153-.776.153-1.594Z"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <span>Statements</span>
+                  </div>
+                  <div class="dropdown-item-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      class="svg-icon-white"
+                    >
+                      <path
+                        d="M6 9l6 6 6-6"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li><a href="#">Withdraw</a></li>
+                    <li><a href="#">Deposit</a></li>
+                    <li><a href="#">Trade</a></li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <a href="#" class="menu-link">
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="nav-item-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="nav-item-svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M14 3H5a2 2 0 0 0 0 4h13c0-.93 0-1.395-.102-1.776A3 3 0 0 0 14 3Z"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M3 5v10c0 2.829 0 4.243.879 5.121C4.757 21 6.172 21 9 21h6c2.829 0 4.243 0 5.121-.879C21 19.243 21 17.829 21 15v-2c0-2.828 0-4.243-.879-5.121C19.243 7 17.829 7 15 7H7"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M21 12h-2c-.465 0-.698 0-.888.051a1.5 1.5 0 0 0-1.06 1.06C17 13.302 17 13.535 17 14s0 .698.052.888a1.5 1.5 0 0 0 1.06 1.06C18.302 16 18.535 16 19 16h2"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <span>Wallet</span>
+                  </div>
+                </a>
+              </li>
+              <!-- item without dropdown -->
+              <li>
+                <a href="#" class="menu-link">
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="nav-item-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="nav-item-svg"
+                        width="18"
+                        height="22"
+                        viewBox="0 0 18 22"
+                        fill="none"
+                      >
+                        <path
+                          d="m10 6.432-3 3 4 2-3 3M17 10.932c0 4.908-5.354 8.478-7.302 9.615-.222.129-.332.194-.488.227a1 1 0 0 1-.42 0c-.156-.033-.266-.098-.488-.227C6.354 19.41 1 15.84 1 10.932V6.15c0-.8 0-1.2.131-1.543a2 2 0 0 1 .547-.789c.276-.243.65-.383 1.399-.664l5.362-2.01a2 2 0 0 1 .706-.132 2 2 0 0 1 .706.132l5.362 2.01c.749.281 1.123.421 1.399.664.244.215.432.486.548.789C17 4.95 17 5.35 17 6.15v4.782Z"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <span>Risk</span>
+                  </div>
+                </a>
+              </li>
+
+              <!-- item without dropdown -->
+              <li>
+                <a href="#" class="menu-link">
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="nav-item-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        class="nav-item-svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M7.5 14.474h9M7.5 9.484H13"
+                          stroke-width="1.5"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="m2.014 21.449 4.576-1.468c1.502.83 3.204 1.013 5.089 1.013C18.179 21.449 22.002 17.244 22.002 12.26c.107-4.956-2.083-10.18-10.42-9.79C4.309 2.6 2.008 7.038 2.008 12.022c0 1.704.347 3.79 1.601 5.43l-1.595 3.997Z"
+                          stroke-width="1.5"
+                        />
+                      </svg>
+                    </div>
+                    <span>Messages</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="position-absolute bottom-0 w-100 bg-white-5 bg-filter-20 rounded-3 pt-2"
+          >
+            <div class="sidebar-nav">
+              <ul>
+                <li>
+                  <a href="#" class="menu-link">
+                    <div class="d-flex align-items-center gap-2">
+                      <div class="nav-item-icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="nav-item-svg"
+                          width="22"
+                          height="22"
+                          viewBox="0 0 22 22"
+                          fill="none"
+                        >
+                          <path
+                            d="M8.09 8c.235-.668.699-1.232 1.31-1.591C10.011 6.05 10.729 5.919 11.427 6.039c.699.12 1.333.484 1.789 1.027.456.542.706 1.228.706 1.936 0 2-3 3-3 3M11 16h.01M21 11c0 5.523-4.478 10-10 10S1 16.523 1 11 5.477 1 11 1s10 4.477 10 10Z"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+                      <span>Support</span>
+                    </div>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="menu-link">
+                    <div class="d-flex align-items-center gap-2">
+                      <div class="nav-item-icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="nav-item-svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M15.5 12c0 1.933-1.567 3.5-3.5 3.5S8.5 13.933 8.5 12 10.067 8.5 12 8.5 15.5 10.067 15.5 12Z"
+                            stroke-width="1.5"
+                          />
+                          <path
+                            d="M21.011 14.097c.523-.14.784-.21.897-.345C22 13.617 22 13.4 22 12.967V11.034c0-.433 0-.65-.092-.784-.103-.134-.364-.204-.886-.345-1.951-.526-3.172-2.565-2.668-4.503.138-.533.207-.8.141-.956-.066-.156-.256-.263-.635-.478l-1.725-.979c-.373-.212-.559-.318-.726-.296s-.188.188-.565.565C13.208 4.735 10.794 4.735 9.334 3.279c-.377-.376-.565-.564-.732-.587s-.386.106-.758.318L6.152 3.966c-.379.216-.569.323-.635.479-.066.155.003.422.141.955.504 1.937-.717 3.976-2.668 4.503-.522.14-.783.21-.886.345 0 .433 0 .65.001.967v1.934c0 .433 0 .65.092.784.103.135.364.205.886.345 1.95.526 3.172 2.565 2.668 4.503-.138.533-.207.8-.141.955.066.156.256.263.635.478l1.725.979c.373.212.559.318.726.296s.188-.188.565-.565C10.793 19.265 13.208 19.265 14.669 20.722c.377.376.566.564.733.586s.386-.106.758-.318l1.725-.979c.379-.216.569-.323.635-.478.066-.156-.003-.423-.141-.956-.504-1.937.717-3.976 2.668-4.503Z"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                          />
+                        </svg>
+                      </div>
+                      <span>Settings</span>
+                    </div>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="menu-link">
+                    <div class="d-flex align-items-center gap-2">
+                      <div class="nav-item-icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="nav-item-svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M18 8 22 12 18 16M22 12H9M15 4.204C13.725 3.438 12.245 3 10.667 3 5.88 3 2 7.029 2 12 2 16.971 5.88 21 10.667 21 12.245 21 13.725 20.562 15 19.796"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+                      <span>Logout</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <p class="text-center bg-brand-20 py-2">V-3.0</p>
+          </div>
+        </aside>
+      </div>
+      <section class="main-section">
+        <div
+          class="dashboard-header bg-white-10 py-2 bg-filter-20 px-3 sticky-top mb-2 d-flex align-items-center justify-content-between"
+        >
+          <div class="d-flex align-items-center gap-2">
+            <svg
+              class="text-white mobile-bar"
+              viewBox="0 0 24 24"
+              width="22"
+              height="22"
+              aria-hidden="true"
+              focusable="false"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2.2"
+              >
+                <path d="M3 6h18" />
+                <path d="M3 12h18" />
+                <path d="M3 18h18" />
+              </g>
+            </svg>
+            <h4 class="d-none d-md-block">Hello, Juel Rana. 👋</h4>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center">
+            <div
+              class="bg-white-10 py-1 px-2 rounded-5 border-1 d-none d-md-block header-search-box"
+            >
+              <form action="" class="d-flex align-items-center gap-1">
+                <input
+                  type="search"
+                  class="py-1 bg-transparent w-100 text-white"
+                  placeholder="Search"
+                />
+                <button type="submit" class="bg-transparent">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <circle
+                      cx="11"
+                      cy="11"
+                      r="7"
+                      stroke="gray"
+                      stroke-width="2"
+                    />
+                    <line
+                      x1="16.65"
+                      y1="16.65"
+                      x2="21"
+                      y2="21"
+                      stroke="gray"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </button>
+              </form>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <!-- <span id="fullscreenBtn" class="full-screen-icon cursor-pointer"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  class="svg-icon-white"
+                >
+                  <path
+                    d="M4 4h5M4 4v5M20 20h-5M20 20v-5M4 20l5-5M20 4l-5 5"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span> -->
+
+              <div
+                class="theme-toggle cursor-pointer"
+                id="themeToggle"
+                aria-label="Toggle Theme"
+              >
+                <svg
+                  class="sun-icon svg-icon-white"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 3V5M12 19V21M5 12H3M21 12H19M18.364 5.636L16.95 7.05M18.364 18.364L16.95 16.95M7.05 16.95L5.636 18.364M7.05 7.05L5.636 5.636M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <svg
+                  class="moon-icon svg-icon-white"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+
+              <div class="position-relative">
+                <button
+                  class="bell-icon position-relative dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    class="svg-icon-white"
+                  >
+                    <path
+                      d="M12.721 5.003 11.255 5C7.911 4.992 5.008 7.709 4.985 11v3.79c0 .79-.1 1.561-.531 2.218l-.287.438c-.437.664.033 1.554.818 1.554h14.03c.785 0 1.254-.89.818-1.554l-.287-.438c-.43-.657-.531-1.429-.531-2.219V11c-.04-3.292-2.95-5.99-6.294-5.997Z"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M15 19a3 3 0 1 1-6 0"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M12 2c.53 0 1.039.211 1.414.586C13.789 2.961 14 3.47 14 4v1h-4V4c0-.53.211-1.039.586-1.414C11.039 2.211 11.53 2 12 2Z"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <span class="bg-brand circle-focus"></span>
+                </button>
+
+                <div
+                  class="notification-dropdown bd-dark dropdown-menu mt-4 p-3 dropdown-menu-end"
+                >
+                  <h6>Recent Notification</h6>
+                  <div class="d-flex flex-column mt-2">
+                    <!-- item -->
+                    <a href="#">
+                      <div
+                        class="d-flex gap-2 unread-notification p-2 rounded-2 mt-2 hover-shadow"
+                      >
+                        <div class="notification-item-icon">
+                          <img src="assets/images/icon/risk.png" alt="icon" />
+                        </div>
+                        <div class="d-flex justify-content-between w-100">
+                          <div>
+                            <p class="text-white">Risk Alert</p>
+                            <p class="sm-p">Daily loss limit at 80%</p>
+                          </div>
+                          <p class="sm-p">25 min</p>
+                        </div>
+                      </div>
+                    </a>
+                    <!-- item -->
+                    <a href="#">
+                      <div
+                        class="d-flex gap-2 read-notification p-2 rounded-2 mt-2 hover-shadow"
+                      >
+                        <div class="notification-item-icon">
+                          <img src="assets/images/icon/market.png" alt="icon" />
+                        </div>
+                        <div class="d-flex justify-content-between w-100">
+                          <div>
+                            <p class="text-white">Market Update</p>
+                            <p class="sm-p">Daily loss limit at 80%</p>
+                          </div>
+                          <p class="sm-p">25 min</p>
+                        </div>
+                      </div>
+                    </a>
+                    <!-- item -->
+                    <a href="#">
+                      <div
+                        class="d-flex gap-2 read-notification p-2 rounded-2 mt-2 hover-shadow"
+                      >
+                        <div class="notification-item-icon">
+                          <img src="assets/images/icon/system.png" alt="icon" />
+                        </div>
+                        <div class="d-flex justify-content-between w-100">
+                          <div>
+                            <p class="text-white">System Notice</p>
+                            <p class="sm-p">Daily loss limit at 80%</p>
+                          </div>
+                          <p class="sm-p">25 min</p>
+                        </div>
+                      </div>
+                    </a>
+                    <!-- item -->
+                    <a href="#">
+                      <div
+                        class="d-flex gap-2 read-notification p-2 rounded-2 mt-2 hover-shadow"
+                      >
+                        <div class="notification-item-icon">
+                          <img src="assets/images/icon/system.png" alt="icon" />
+                        </div>
+                        <div class="d-flex justify-content-between w-100">
+                          <div>
+                            <p class="text-white">System Notice</p>
+                            <p class="sm-p">Daily loss limit at 80%</p>
+                          </div>
+                          <p class="sm-p">25 min</p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <a href="#" class="primary-btn mt-4">See All Notification</a>
+                </div>
+              </div>
+              <div class="profile position-relative">
+                <img
+                  src="assets/images/user/user-1.png"
+                  alt="user"
+                  class="dropdown-toggle cursor-pointer"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dashboard-effect">
+          <div class="dashboard-body py-1">
+            <div class="container">
+              <div class="row card-box-area">
+                <div class="card-box-item col-md-6 col-xxl-3">
+                  <div
+                    class="common-card d-flex flex-column gap-2 gradient-border"
+                  >
+                    <p>Active Investor</p>
+                    <h4 class="mt-4">07</h4>
+                    <div class="common-card-shape"></div>
+                    <div class="common-card-icon">
+                      <img src="assets/images/icon/user.png" alt="investor" />
+                    </div>
+                  </div>
+                </div>
+                <div class="card-box-item col-md-6 col-xxl-3">
+                  <div
+                    class="common-card d-flex flex-column gap-2 gradient-border"
+                  >
+                    <p>Total Referral</p>
+                    <h4 class="mt-4">150</h4>
+                    <div class="common-card-shape"></div>
+                    <div class="common-card-icon">
+                      <img
+                        src="assets/images/icon/referral.png"
+                        alt="referral"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="card-box-item col-md-6 col-xxl-3">
+                  <div
+                    class="common-card d-flex flex-column gap-2 gradient-border"
+                  >
+                    <p>Total Earning</p>
+                    <h4 class="mt-4">$26,500</h4>
+                    <div class="common-card-shape"></div>
+                    <div class="common-card-icon">
+                      <img
+                        src="assets/images/icon/savings.png"
+                        alt="referral"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="card-box-item col-md-6 col-xxl-3">
+                  <div
+                    class="common-card d-flex flex-column gap-2 gradient-border"
+                  >
+                    <p>This Month Earning</p>
+                    <h4 class="text-brand mt-4">+$340.75</h4>
+                    <div class="common-card-shape"></div>
+                    <div class="common-card-icon">
+                      <img
+                        src="assets/images/icon/bar-chart.png"
+                        alt="referral"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row gy-4 mt-1">
+                <div class="col-md-6">
+                  <div class="bg-white-5 rounded-3 p-3 h-100">
+                    <h6>Refer and Earn</h6>
+                    <div class="line-1 mt-3 mb-3"></div>
+                    <p>Invite user to earn lifetime commission</p>
+                    <div
+                      class="d-flex align-items-center gap-2 mt-3 copy-wrapper position-relative"
+                    >
+                      <input
+                        class="form-control text-white-80 w-100 copy-input border-brand-10"
+                        type="text"
+                        value="https://propfunding.com/soikot354"
+                      />
+
+                      <span
+                        class="copy-icon-box position-absolute top-50 translate-middle-y end-0 me-2"
+                      >
+                        <svg
+                          class="text-white copy-icon"
+                          viewBox="0 0 24 24"
+                          width="22"
+                          height="22"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <g
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2.2"
+                          >
+                            <rect
+                              x="9"
+                              y="9"
+                              width="11"
+                              height="11"
+                              rx="2"
+                            ></rect>
+                            <path d="M5 15V5a2 2 0 0 1 2-2h10"></path>
+                          </g>
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="bg-white-5 rounded-3 p-3 h-100">
+                    <h6>Share on Social Media</h6>
+                    <div class="line-1 mt-3 mb-3"></div>
+
+                    <ul
+                      class="social-share d-flex gap-2 align-items-center flex-wrap"
+                    >
+                      <li>
+                        <a href="#"
+                          ><img
+                            src="assets/images/icon/social/whatsapp.png"
+                            alt="whatsapp"
+                          />Whatsapp
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#"
+                          ><img
+                            src="assets/images/icon/social/facebook.png"
+                            alt="facebook"
+                          />Facebook
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="#"
+                          ><img
+                            src="assets/images/icon/social/tiktok.png"
+                            alt="tiktok"
+                          />Tiktok
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#"
+                          ><img
+                            src="assets/images/icon/social/telegram.png"
+                            alt="telegram"
+                          />Telegram
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="border-2 bg-white-4 rounded-3 p-3">
+                    <div class="" id="example_wrapper">
+                      <table
+                        id="example"
+                        class="data-table table table-striped table-bordered w-100"
+                      >
+                        <thead>
+                          <tr>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Office</th>
+                            <th>Age</th>
+                            <th>Start date</th>
+                            <th>Salary</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Tiger Nixon</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
+                            <td>61</td>
+                            <td>2011/04/25</td>
+                            <td>$320,800</td>
+                          </tr>
+                          <tr>
+                            <td>Garrett Winters</td>
+                            <td>Accountant</td>
+                            <td>Tokyo</td>
+                            <td>63</td>
+                            <td>2011/07/25</td>
+                            <td>$170,750</td>
+                          </tr>
+                          <tr>
+                            <td>Ashton Cox</td>
+                            <td>Junior Technical Author</td>
+                            <td>San Francisco</td>
+                            <td>66</td>
+                            <td>2009/01/12</td>
+                            <td>$86,000</td>
+                          </tr>
+                          <tr>
+                            <td>Garrett Winters</td>
+                            <td>Accountant</td>
+                            <td>Tokyo</td>
+                            <td>63</td>
+                            <td>2011/07/25</td>
+                            <td>$170,750</td>
+                          </tr>
+                          <tr>
+                            <td>Ashton Cox</td>
+                            <td>Junior Technical Author</td>
+                            <td>San Francisco</td>
+                            <td>66</td>
+                            <td>2009/01/12</td>
+                            <td>$86,000</td>
+                          </tr>
+                          <tr>
+                            <td>Garrett Winters</td>
+                            <td>Accountant</td>
+                            <td>Tokyo</td>
+                            <td>63</td>
+                            <td>2011/07/25</td>
+                            <td>$170,750</td>
+                          </tr>
+                          <tr>
+                            <td>Ashton Cox</td>
+                            <td>Junior Technical Author</td>
+                            <td>San Francisco</td>
+                            <td>66</td>
+                            <td>2009/01/12</td>
+                            <td>$86,000</td>
+                          </tr>
+                          <tr>
+                            <td>Garrett Winters</td>
+                            <td>Accountant</td>
+                            <td>Tokyo</td>
+                            <td>63</td>
+                            <td>2011/07/25</td>
+                            <td>$170,750</td>
+                          </tr>
+                          <tr>
+                            <td>Ashton Cox</td>
+                            <td>Junior Technical Author</td>
+                            <td>San Francisco</td>
+                            <td>66</td>
+                            <td>2009/01/12</td>
+                            <td>$86,000</td>
+                          </tr>
+                          <tr>
+                            <td>Garrett Winters</td>
+                            <td>Accountant</td>
+                            <td>Tokyo</td>
+                            <td>63</td>
+                            <td>2011/07/25</td>
+                            <td>$170,750</td>
+                          </tr>
+                          <tr>
+                            <td>Ashton Cox</td>
+                            <td>Junior Technical Author</td>
+                            <td>San Francisco</td>
+                            <td>66</td>
+                            <td>2009/01/12</td>
+                            <td>$86,000</td>
+                          </tr>
+                          <tr>
+                            <td>Garrett Winters</td>
+                            <td>Accountant</td>
+                            <td>Tokyo</td>
+                            <td>63</td>
+                            <td>2011/07/25</td>
+                            <td>$170,750</td>
+                          </tr>
+                          <tr>
+                            <td>Ashton Cox</td>
+                            <td>Junior Technical Author</td>
+                            <td>San Francisco</td>
+                            <td>66</td>
+                            <td>2009/01/12</td>
+                            <td>$86,000</td>
+                          </tr>
+                          <tr>
+                            <td>Garrett Winters</td>
+                            <td>Accountant</td>
+                            <td>Tokyo</td>
+                            <td>63</td>
+                            <td>2011/07/25</td>
+                            <td>$170,750</td>
+                          </tr>
+                          <tr>
+                            <td>Ashton Cox</td>
+                            <td>Junior Technical Author</td>
+                            <td>San Francisco</td>
+                            <td>66</td>
+                            <td>2009/01/12</td>
+                            <td>$86,000</td>
+                          </tr>
+                          <!-- Add more rows here -->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/js/sidebar.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <!-- copy url -->
+    <script>
+      document.querySelectorAll(".copy-wrapper").forEach((wrapper) => {
+        const input = wrapper.querySelector(".copy-input");
+        const iconBox = wrapper.querySelector(".copy-icon-box");
+
+        iconBox.addEventListener("click", async () => {
+          try {
+            await navigator.clipboard.writeText(input.value);
+
+            wrapper.classList.add("copied");
+
+            setTimeout(() => {
+              wrapper.classList.remove("copied");
+            }, 1000);
+          } catch {
+            alert("Copy failed");
+          }
+        });
+      });
+    </script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#example").DataTable({ responsive: true });
+      });
+    </script>
+  </body>
+</html>

@@ -113,11 +113,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /* ------------------------- FULLSCREEN BUTTON -------------------------- */
-document.getElementById("fullscreenBtn").addEventListener("click", function () {
-  let dashboard = document.getElementById("dashboard");
-  if (!document.fullscreenElement) {
-    dashboard.requestFullscreen();
-  } else {
-    document.exitFullscreen();
-  }
-});
+// document.getElementById("fullscreenBtn").addEventListener("click", function () {
+//   let dashboard = document.getElementById("dashboard");
+//   if (!document.fullscreenElement) {
+//     dashboard.requestFullscreen();
+//   } else {
+//     document.exitFullscreen();
+//   }
+// });

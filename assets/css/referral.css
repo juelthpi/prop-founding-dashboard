@@ -1,0 +1,65 @@
+.copy-icon-box {
+  height: 32px;
+  width: 32px;
+  background-color: rgba(var(--brand), 0.8);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  min-width: 32px;
+  transition: 0.5s;
+}
+.copy-icon-box:hover {
+  background-color: rgba(var(--brand), 0.6);
+}
+.copy-input {
+  transition: all 0.25s ease;
+}
+
+/* copy success state */
+.copy-wrapper.copied .copy-input {
+  color: rgba(var(--brand), 0.9) !important;
+}
+
+/* subtle shake */
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-2px);
+  }
+  50% {
+    transform: translateX(2px);
+  }
+  75% {
+    transform: translateX(-2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.copy-wrapper.copied {
+  animation: shake 0.35s ease;
+}
+.social-share li a {
+  display: flex;
+  border-radius: 8px;
+  align-items: center;
+  color: rgba(var(--white), 1);
+  font-size: calc(var(--font-base) + 2px);
+  padding: 14px 24px;
+  gap: 6px;
+  background: rgba(var(--white), 0.1);
+  width: 100%;
+  justify-content: center;
+  transition: 0.5s;
+}
+.social-share li {
+  flex: 1 1 0;
+}
+.social-share li a:hover {
+  background: rgba(var(--brand), 0.4);
+}

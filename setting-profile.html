@@ -41,6 +41,8 @@
     <link rel="stylesheet" href="assets/css/switch.css" />
     <!-- risk controls -->
     <link rel="stylesheet" href="assets/css/risk.css" />
+    <!-- setting css -->
+    <link rel="stylesheet" href="assets/css/setting.css" />
     <!-- theme dark / light css -->
     <link rel="stylesheet" href="assets/css/theme.css" />
     <link rel="stylesheet" href="assets/css/sidebar.css" />
@@ -700,54 +702,127 @@
         <div class="dashboard-effect">
           <div class="dashboard-body py-1">
             <div class="container">
-              <div class="bg-white-5 border-1 rounded-2 p-3">
-                <ul
-                  class="tab-btn gap-3 d-flex align-items-center"
-                  role="tablist"
-                >
-                  <li
-                    class="active"
-                    data-bs-toggle="pill"
-                    data-bs-target="#profile"
-                  >
-                    Profile
-                  </li>
-                  <li data-bs-toggle="pill" data-bs-target="#security">
-                    Security
-                  </li>
-                  <li data-bs-toggle="pill" data-bs-target="#kyc">KYC</li>
-                </ul>
-
-                <div class="tab-content mt-3">
-                  <div class="tab-pane fade show active" id="profile">
-                    <div class="row">
-                      <div class="col-md-6 col-lg-4">
-                        <div
-                          class="border-1 mt-3 bg-white-4 rounded-3 p-3 bg-filter-100"
+              <h6>Settings</h6>
+              <div class="bg-white-5 border-1 rounded-2 p-md-3 mt-2">
+                <div class="d-flex gap-3 flex-wrap flex-md-nowrap">
+                  <div class="bg-white-2 rounded-3 py-3 px-3 setting-group-btn">
+                    <ul
+                      class="tab-btn gap-md-3 gap-1 d-flex flex-md-column justify-content-center justify-content-md-start flex-wrap"
+                    >
+                      <li class="active text-center py-md-2 py-1 px-1">
+                        <a href="setting-profile.html" class="text-white"
+                          >My Profile</a
                         >
-                          <h6>Profile Details</h6>
-                          <div class="line-1 mt-2 mb-3"></div>
-                          <form action="" class="d-flex flex-column gap-3">
-                            <div class="text-center">
-                              <div class="user-profile-logo mx-auto">
-                                <img
-                                  src="assets/images/user/user-1.png"
-                                  alt="profile"
+                      </li>
+                      <li class="text-center py-md-2 py-1 px-1">
+                        <a href="setting-kyc.html" class="text-white">KYC</a>
+                      </li>
+                      <li class="text-center py-md-2 py-1 px-1">
+                        <a href="setting-password.html" class="text-white"
+                          >Password</a
+                        >
+                      </li>
+                      <li class="text-center py-md-2 py-1 px-1">
+                        <a href="setting-2fa.html" class="text-white">2FA</a>
+                      </li>
+                      <li class="text-center py-md-2 py-1 px-1">
+                        <a href="setting-device.html" class="text-white"
+                          >Device</a
+                        >
+                      </li>
+                      <li class="text-center py-md-2 py-1 px-1">
+                        <a href="setting-login-history.html" class="text-white"
+                          >Login History</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="w-100">
+                    <div
+                      class="border-1 bg-white-4 rounded-3 p-2 p-md-3 bg-filter-100"
+                    >
+                      <h6 class="mb-3">My Profile</h6>
+
+                      <form action="" class="d-flex flex-column gap-3">
+                        <div
+                          class="d-flex flex-column flex-md-row align-items-center gap-3 text-center text-md-start bg-white-2 rounded-3 py-3 px-2 bg-filter-100"
+                        >
+                          <div class="user-profile-logo position-relative">
+                            <img
+                              src="assets/images/user/user-1.png"
+                              alt="profile"
+                            />
+                            <button
+                              class="bg-brand rounded-circle transition hover-bg-brand-40 icon-box-sm position-absolute bottom-0 end-0"
+                              onclick="document.getElementById('fileInput').click()"
+                            >
+                              <svg
+                                width="17"
+                                height="17"
+                                viewBox="0 0 17 17"
+                                fill="none"
+                                class="svg-icon-white"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M11.9439 3.17847L13.1389 1.9828C13.388 1.7337 13.7258 1.59375 14.0781 1.59375C14.4304 1.59375 14.7683 1.7337 15.0174 1.9828C15.2665 2.2319 15.4064 2.56976 15.4064 2.92205C15.4064 3.27434 15.2665 3.6122 15.0174 3.8613L7.49558 11.3831C7.1211 11.7573 6.6593 12.0324 6.15188 12.1835L4.25 12.7502L4.81667 10.8483C4.96774 10.3409 5.24282 9.87907 5.61708 9.50459L11.9439 3.17847ZM11.9439 3.17847L13.8125 5.04705M12.75 9.91684V13.2814C12.75 13.7041 12.5821 14.1095 12.2832 14.4084C11.9843 14.7073 11.5789 14.8752 11.1562 14.8752H3.71875C3.29606 14.8752 2.89068 14.7073 2.5918 14.4084C2.29291 14.1095 2.125 13.7041 2.125 13.2814V5.84392C2.125 5.42124 2.29291 5.01586 2.5918 4.71697C2.89068 4.41809 3.29606 4.25018 3.71875 4.25018H7.08333"
+                                  stroke-width="1.3"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                              </svg>
+                            </button>
+                          </div>
+                          <input type="file" id="fileInput" class="d-none" />
+                          <div>
+                            <h6>Md Soikot Khan</h6>
+                            <p>Los Angeles, California, USA</p>
+                          </div>
+                        </div>
+                        <div
+                          class="d-flex flex-column gap-3 bg-white-2 rounded-3 py-3 px-3"
+                        >
+                          <div
+                            class="d-flex align-items-center justify-content-between"
+                          >
+                            <p class="lg-p">Personal Information</p>
+                            <button
+                              class="bg-white-2 border-2 py-1 py-md-2 px-3 rounded-5 text-white hover-bg-brand-40 transition"
+                            >
+                              <svg
+                                width="18"
+                                height="18"
+                                viewBox="0 0 24 24"
+                                class="svg-icon-white"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M2.87604 18.1159C2.92198 17.7024 2.94496 17.4957 3.00751 17.3025C3.06301 17.131 3.14143 16.9679 3.24064 16.8174C3.35246 16.6478 3.49955 16.5008 3.79373 16.2066L17 3.0003C18.1046 1.89573 19.8955 1.89573 21 3.0003C22.1046 4.10487 22.1046 5.89573 21 7.0003L7.79373 20.2066C7.49955 20.5008 7.35245 20.6479 7.18289 20.7597C7.03245 20.8589 6.86929 20.9373 6.69785 20.9928C6.5046 21.0553 6.29786 21.0783 5.88437 21.1243L2.5 21.5003L2.87604 18.1159Z"
+                                  stroke-width="2"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                              </svg>
+
+                              Edit
+                            </button>
+                          </div>
+                          <div class="row gy-3">
+                            <div class="col-md-6">
+                              <div>
+                                <label for="firstName" class="form-label"
+                                  >First Name</label
+                                >
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="firstName"
+                                  placeholder="Type Your First Name"
                                 />
                               </div>
-                              <input
-                                type="file"
-                                id="fileInput"
-                                class="d-none"
-                              />
-                              <button
-                                class="bg-brand-10 text-white rounded-5 px-3 py-2 transition hover-bg-brand-40 mt-2"
-                                onclick="document.getElementById('fileInput').click()"
-                              >
-                                Change Image
-                              </button>
                             </div>
-                            <div class="d-flex flex-column gap-3">
+                            <div class="col-md-6">
                               <div>
                                 <label for="fullname" class="form-label"
                                   >Full Name</label
@@ -759,6 +834,8 @@
                                   placeholder="Type Your Name"
                                 />
                               </div>
+                            </div>
+                            <div class="col-md-6">
                               <div>
                                 <label for="email" class="form-label"
                                   >Email</label
@@ -770,7 +847,21 @@
                                   id="email"
                                 />
                               </div>
-
+                            </div>
+                            <div class="col-md-6">
+                              <div>
+                                <label for="phone" class="form-label"
+                                  >Phone</label
+                                >
+                                <input
+                                  type="text"
+                                  placeholder="+88 0165566665"
+                                  class="form-control"
+                                  id="phone"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-md-6">
                               <div>
                                 <label for="country" class="form-label"
                                   >Country</label
@@ -786,592 +877,43 @@
                                 </select>
                               </div>
                             </div>
-
-                            <button type="submit" class="primary-btn w-100">
-                              Save Profile
-                            </button>
-                          </form>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="tab-pane fade" id="security">
-                    <div class="row">
-                      <div class="col-md-6 col-lg-4">
-                        <div
-                          class="border-1 mt-3 bg-white-4 rounded-3 p-3 bg-filter-100"
-                        >
-                          <h6>Change Password</h6>
-                          <div class="line-1 mt-2 mb-3"></div>
-                          <form action="" class="d-flex flex-column gap-3">
-                            <div class="d-flex flex-column gap-3">
-                              <!-- item -->
+                            <div class="col-md-6">
                               <div>
-                                <label for="old-password" class="form-label"
-                                  >Enter Old Password</label
-                                >
-                                <div class="position-relative">
-                                  <input
-                                    type="password"
-                                    class="form-control"
-                                    id="old-password"
-                                    placeholder="Enter Current password"
-                                  />
-                                  <span
-                                    class="toggle-password position-absolute top-50 translate-middle-y end-0 me-3"
-                                  >
-                                    <!-- eye -->
-
-                                    <svg
-                                      width="20"
-                                      height="15"
-                                      viewBox="0 0 20 15"
-                                      fill="none"
-                                      class="icon-eye"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M0.5 7.5C0.5 7.5 3.95455 0.5 10 0.5C16.0455 0.5 19.5 7.5 19.5 7.5C19.5 7.5 16.0455 14.5 10 14.5C3.95455 14.5 0.5 7.5 0.5 7.5Z"
-                                        stroke="#949CA9"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                      />
-                                      <path
-                                        d="M10 10.5C11.574 10.5 12.85 9.15685 12.85 7.5C12.85 5.84315 11.574 4.5 10 4.5C8.42599 4.5 7.15 5.84315 7.15 7.5C7.15 9.15685 8.42599 10.5 10 10.5Z"
-                                        stroke="#949CA9"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                      />
-                                    </svg>
-
-                                    <!-- eye-slash -->
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="20"
-                                      height="20"
-                                      fill="none"
-                                      stroke="gray"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      class="icon-eye-slash"
-                                      style="display: none"
-                                    >
-                                      <path
-                                        d="M7.73766 2.79017C8.3698 2.62311 9.0411 2.52778 9.75 2.52778C15.4773 2.52778 18.75 8.75 18.75 8.75C18.75 8.75 18.0039 10.1685 16.6008 11.6509M2.8642 5.8862C1.48368 7.3551 0.75 8.75 0.75 8.75C0.75 8.75 4.02273 14.9722 9.75 14.9722C10.4719 14.9722 11.1547 14.8734 11.797 14.7006M9.3 11.3798C8.32424 11.2181 7.52595 10.5395 7.20364 9.63889M10.2 6.1202C11.3306 6.30755 12.223 7.18889 12.4127 8.30556M1.65 0.75L17.85 16.75"
-                                      ></path>
-                                    </svg>
-                                  </span>
-                                </div>
-                              </div>
-                              <!-- item -->
-                              <div>
-                                <label for="new-password" class="form-label"
-                                  >Enter New Password</label
-                                >
-                                <div class="position-relative">
-                                  <input
-                                    type="password"
-                                    class="form-control"
-                                    id="new-password"
-                                    placeholder="Enter New password"
-                                  />
-                                  <span
-                                    class="toggle-password position-absolute top-50 translate-middle-y end-0 me-3"
-                                  >
-                                    <!-- eye -->
-
-                                    <svg
-                                      width="20"
-                                      height="15"
-                                      viewBox="0 0 20 15"
-                                      fill="none"
-                                      class="icon-eye"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M0.5 7.5C0.5 7.5 3.95455 0.5 10 0.5C16.0455 0.5 19.5 7.5 19.5 7.5C19.5 7.5 16.0455 14.5 10 14.5C3.95455 14.5 0.5 7.5 0.5 7.5Z"
-                                        stroke="#949CA9"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                      />
-                                      <path
-                                        d="M10 10.5C11.574 10.5 12.85 9.15685 12.85 7.5C12.85 5.84315 11.574 4.5 10 4.5C8.42599 4.5 7.15 5.84315 7.15 7.5C7.15 9.15685 8.42599 10.5 10 10.5Z"
-                                        stroke="#949CA9"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                      />
-                                    </svg>
-
-                                    <!-- eye-slash -->
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="20"
-                                      height="20"
-                                      fill="none"
-                                      stroke="gray"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      class="icon-eye-slash"
-                                      style="display: none"
-                                    >
-                                      <path
-                                        d="M7.73766 2.79017C8.3698 2.62311 9.0411 2.52778 9.75 2.52778C15.4773 2.52778 18.75 8.75 18.75 8.75C18.75 8.75 18.0039 10.1685 16.6008 11.6509M2.8642 5.8862C1.48368 7.3551 0.75 8.75 0.75 8.75C0.75 8.75 4.02273 14.9722 9.75 14.9722C10.4719 14.9722 11.1547 14.8734 11.797 14.7006M9.3 11.3798C8.32424 11.2181 7.52595 10.5395 7.20364 9.63889M10.2 6.1202C11.3306 6.30755 12.223 7.18889 12.4127 8.30556M1.65 0.75L17.85 16.75"
-                                      ></path>
-                                    </svg>
-                                  </span>
-                                </div>
-                              </div>
-                              <!-- item -->
-                              <div>
-                                <label for="confirm-password" class="form-label"
-                                  >Confirm Password</label
-                                >
-                                <div class="position-relative">
-                                  <input
-                                    type="password"
-                                    class="form-control"
-                                    id="confirm-password"
-                                    placeholder="Enter New password"
-                                  />
-                                  <span
-                                    class="toggle-password position-absolute top-50 translate-middle-y end-0 me-3"
-                                  >
-                                    <!-- eye -->
-
-                                    <svg
-                                      width="20"
-                                      height="15"
-                                      viewBox="0 0 20 15"
-                                      fill="none"
-                                      class="icon-eye"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M0.5 7.5C0.5 7.5 3.95455 0.5 10 0.5C16.0455 0.5 19.5 7.5 19.5 7.5C19.5 7.5 16.0455 14.5 10 14.5C3.95455 14.5 0.5 7.5 0.5 7.5Z"
-                                        stroke="#949CA9"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                      />
-                                      <path
-                                        d="M10 10.5C11.574 10.5 12.85 9.15685 12.85 7.5C12.85 5.84315 11.574 4.5 10 4.5C8.42599 4.5 7.15 5.84315 7.15 7.5C7.15 9.15685 8.42599 10.5 10 10.5Z"
-                                        stroke="#949CA9"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                      />
-                                    </svg>
-
-                                    <!-- eye-slash -->
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="20"
-                                      height="20"
-                                      fill="none"
-                                      stroke="gray"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      class="icon-eye-slash"
-                                      style="display: none"
-                                    >
-                                      <path
-                                        d="M7.73766 2.79017C8.3698 2.62311 9.0411 2.52778 9.75 2.52778C15.4773 2.52778 18.75 8.75 18.75 8.75C18.75 8.75 18.0039 10.1685 16.6008 11.6509M2.8642 5.8862C1.48368 7.3551 0.75 8.75 0.75 8.75C0.75 8.75 4.02273 14.9722 9.75 14.9722C10.4719 14.9722 11.1547 14.8734 11.797 14.7006M9.3 11.3798C8.32424 11.2181 7.52595 10.5395 7.20364 9.63889M10.2 6.1202C11.3306 6.30755 12.223 7.18889 12.4127 8.30556M1.65 0.75L17.85 16.75"
-                                      ></path>
-                                    </svg>
-                                  </span>
-                                </div>
+                                <label for="bio" class="form-label">Bio</label>
+                                <input
+                                  type="text"
+                                  placeholder="Add bio"
+                                  class="form-control"
+                                  id="bio"
+                                />
                               </div>
                             </div>
-                            <div class="mt-2">
-                              <h6>Two Factor Authentication</h6>
-                              <div class="line-1 mb-2 mt-2"></div>
-                            </div>
-                            <div
-                              class="mb-2 toggle-2fa d-flex align-items-center justify-content-between"
-                            >
-                              <label
-                                for="twofa"
-                                class="text-white cursor-pointer"
-                                >Enable 2FA</label
-                              >
-
-                              <label class="switch">
-                                <input type="checkbox" id="twofa" />
-                                <span class="slider"></span>
-                              </label>
-                            </div>
-                            <button type="submit" class="primary-btn w-100">
-                              Update Password
-                            </button>
-                          </form>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="tab-pane fade" id="kyc">Pill Profile 3</div>
-                </div>
-              </div>
-              <!-- risk page -->
-              <div class="row gy-4">
-                <div class="col-md-6">
-                  <div
-                    class="border-1 rounded-3 px-2 px-md-4 py-3 bg-white-4 h-100"
-                  >
-                    <h6 class="d-flex align-items-center gap-2">
-                      Daily Loss Limit
-
-                      <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 19 19"
-                        fill="none"
-                        class="svg-icon-white tooltip-trigger"
-                        data-bs-html="true"
-                        data-bs-placement="right"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M9.33333 12.6667V9.33333M9.33333 6H9.34167M17.6667 9.33333C17.6667 13.9357 13.9357 17.6667 9.33333 17.6667C4.73096 17.6667 1 13.9357 1 9.33333C1 4.73096 4.73096 1 9.33333 1C13.9357 1 17.6667 4.73096 17.6667 9.33333Z"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-
-                      <div class="tooltip-content">
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Cum facilis quasi nemo autem? Reprehenderit
-                          dolores maxime ratione commodi accusamus ullam. Veniam
-                          in nesciunt dolores hic facilis voluptatum dicta eius
-                          quae!
-                        </p>
-                      </div>
-                    </h6>
-                    <p class="sm-p">Maximum loss allowed per day</p>
-                    <div class="mt-1 mb-1">
-                      <input
-                        type="text"
-                        class="form-control border-yellow-50 lg-input"
-                        placeholder="$1,500"
-                      />
-                    </div>
-                    <p class="sm-p">Minimum is $100</p>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div
-                    class="border-1 rounded-3 px-2 px-md-4 py-3 bg-white-4 h-100"
-                  >
-                    <h6 class="d-flex align-items-center gap-2">
-                      Per Trade Cap
-                      <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 19 19"
-                        fill="none"
-                        class="svg-icon-white tooltip-trigger"
-                        data-bs-html="true"
-                        data-bs-placement="right"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M9.33333 12.6667V9.33333M9.33333 6H9.34167M17.6667 9.33333C17.6667 13.9357 13.9357 17.6667 9.33333 17.6667C4.73096 17.6667 1 13.9357 1 9.33333C1 4.73096 4.73096 1 9.33333 1C13.9357 1 17.6667 4.73096 17.6667 9.33333Z"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                      <div class="tooltip-content">
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Suscipit quisquam voluptatem minus officia magni
-                          perspiciatis maxime maiores. Doloribus obcaecati quam
-                          quibusdam maiores! Cupiditate id ipsa ex aliquam
-                          dolorum quos est!
-                        </p>
-                      </div>
-                    </h6>
-                    <p class="sm-p">Maximum amount per single trade</p>
-                    <div class="mt-1 mb-1">
-                      <input
-                        type="text"
-                        class="form-control border-brand-50 lg-input"
-                        placeholder="$5,500"
-                      />
-                    </div>
-                    <p class="sm-p">Max 50,0000</p>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div
-                    class="border-1 rounded-3 px-2 px-md-4 py-3 bg-white-4 h-100"
-                  >
-                    <h6 class="d-flex align-items-center gap-2">
-                      Participation Control
-                      <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 19 19"
-                        fill="none"
-                        class="svg-icon-white tooltip-trigger"
-                        data-bs-html="true"
-                        data-bs-placement="right"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M9.33333 12.6667V9.33333M9.33333 6H9.34167M17.6667 9.33333C17.6667 13.9357 13.9357 17.6667 9.33333 17.6667C4.73096 17.6667 1 13.9357 1 9.33333C1 4.73096 4.73096 1 9.33333 1C13.9357 1 17.6667 4.73096 17.6667 9.33333Z"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                      <div class="tooltip-content">
-                        <p>
-                          Lorem ipsum dolor sit, amet consectetur adipisicing
-                          elit. Doloremque ut nihil sit quae. Animi voluptatem
-                          magnam fugit voluptatum soluta quasi nulla illo
-                          voluptas. Voluptatum obcaecati commodi amet ea, quae
-                          adipisci.
-                        </p>
-                      </div>
-                    </h6>
-                    <p class="sm-p">Enable or pause copy trading activity</p>
-                    <div class="d-flex flex-column gap-3 mt-4">
-                      <div
-                        class="bg-white-4 py-2 px-3 rounded-3 d-flex align-items-center justify-content-between"
-                      >
-                        <div class="d-flex align-items-center gap-3">
-                          <div
-                            class="icon-box bg-brand-10 rounded-2 d-flex align-items-center justify-content-center border-brand-10 icon-box-md"
-                          >
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="24"
-                              height="24"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              class="svg-icon-brand"
-                            >
-                              <path
-                                d="M5 4.98951C5 4.01835 5 3.53277 5.20249 3.2651C5.37889 3.03191 5.64852 2.88761 5.9404 2.87018C6.27544 2.85017 6.67946 3.11953 7.48752 3.65823L18.0031 10.6686C18.6708 11.1137 19.0046 11.3363 19.1209 11.6168C19.2227 11.8621 19.2227 12.1377 19.1209 12.383C19.0046 12.6635 18.6708 12.886 18.0031 13.3312L7.48752 20.3415C6.67946 20.8802 6.27544 21.1496 5.9404 21.1296C5.64852 21.1122 5.37889 20.9679 5.20249 20.7347C5 20.467 5 19.9814 5 19.0103V4.98951Z"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                              />
-                            </svg>
-                          </div>
-                          <div>
-                            <h6 class="text-brand-80">Active Trading</h6>
-                            <p class="text-brand-80 sm-p">
-                              Copy trades automatically
-                            </p>
-                          </div>
-                        </div>
-                        <div class="toggle-2fa">
-                          <label class="switch">
-                            <input type="checkbox" id="twofa" />
-                            <span class="slider"></span>
-                          </label>
-                        </div>
-                      </div>
-                      <div
-                        class="bg-white-4 py-2 px-3 rounded-3 d-flex align-items-center justify-content-between"
-                      >
-                        <div class="d-flex align-items-center gap-3">
-                          <div
-                            class="icon-box bg-brand-10 rounded-2 d-flex align-items-center justify-content-center border-brand-10 icon-box-md"
-                          >
-                            <img
-                              src="assets/images/icon/risk-2.png"
-                              alt="alert"
-                            />
-                          </div>
-                          <div>
-                            <h6 class="text-warning-80">Auto Stop Loss</h6>
-                            <p class="text-warning-80 sm-p">
-                              Automatic loss protection
-                            </p>
-                          </div>
-                        </div>
-                        <div class="toggle-2fa">
-                          <label class="switch">
-                            <input type="checkbox" id="twofa" />
-                            <span class="slider"></span>
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <div
-                    class="border-1 rounded-3 px-2 px-md-4 py-3 bg-white-4 h-100"
-                  >
-                    <div
-                      class="d-flex align-items-center justify-content-between"
-                    >
-                      <div>
-                        <h6 class="d-flex align-items-center gap-2">
-                          Schedule Trade
-
-                          <svg
-                            width="16"
-                            height="16"
-                            viewBox="0 0 19 19"
-                            fill="none"
-                            class="svg-icon-white tooltip-trigger"
-                            data-bs-html="true"
-                            data-bs-placement="right"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M9.33333 12.6667V9.33333M9.33333 6H9.34167M17.6667 9.33333C17.6667 13.9357 13.9357 17.6667 9.33333 17.6667C4.73096 17.6667 1 13.9357 1 9.33333C1 4.73096 4.73096 1 9.33333 1C13.9357 1 17.6667 4.73096 17.6667 9.33333Z"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            />
-                          </svg>
-                          <div class="tooltip-content">
-                            <p>
-                              Lorem ipsum dolor sit amet consectetur adipisicing
-                              elit. Provident quos unde molestiae magnam libero
-                              quisquam vero quaerat voluptatum debitis ab ipsa,
-                              cupiditate necessitatibus hic. Enim fuga nemo
-                              recusandae at praesentium.
-                            </p>
-                          </div>
-                        </h6>
-                        <p class="sm-p">Customize Trading Days</p>
-                      </div>
-                      <div class="toggle-2fa">
-                        <label class="switch">
-                          <input checked type="checkbox" id="twofa" />
-                          <span class="slider"></span>
-                        </label>
-                      </div>
-                    </div>
-
-                    <div class="bg-white-2 rounded-3 p-lg-3 p-2 mt-3">
-                      <div
-                        class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2 mb-lg-0"
-                      >
-                        <p>
-                          <svg
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8 4V8"
-                              stroke="currentColor"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                            />
-                            <path
-                              d="M16 4V8"
-                              stroke="currentColor"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                            />
-                            <rect
-                              x="4"
-                              y="8"
-                              width="16"
-                              height="12"
-                              rx="2"
-                              stroke="currentColor"
-                              stroke-width="2"
-                            />
-                            <path
-                              d="M4 12H20"
-                              stroke="currentColor"
-                              stroke-width="2"
-                            />
-                          </svg>
-                          Select By Date
-                        </p>
-
-                        <input
-                          type="text"
-                          class="text-white bg-white-5 rounded-2 p-2 py-lg-3 px-lg-3 schedule-select hover-bg-brand-40 cursor-pointer text-center"
-                          id="datePicker"
-                          placeholder="Manage Schedule"
-                        />
-                      </div>
-                      <div
-                        class="d-flex align-items-center justify-content-between gap-2 flex-wrap mt-3"
-                      >
-                        <p>Select the day</p>
-                        <div class="d-flex align-items-center gap-2">
-                          <div class="d-flex align-items-center gap-lg-2 gap-1">
-                            <div class="day-select-box">
-                              <label>
-                                <input type="checkbox" />
-                                <span>S</span>
-                              </label>
-                            </div>
-                            <div class="day-select-box">
-                              <label>
-                                <input type="checkbox" />
-                                <span>M</span>
-                              </label>
-                            </div>
-                            <div class="day-select-box">
-                              <label>
-                                <input type="checkbox" />
-                                <span>T</span>
-                              </label>
-                            </div>
-                            <div class="day-select-box">
-                              <label>
-                                <input type="checkbox" />
-                                <span>W</span>
-                              </label>
-                            </div>
-                            <div class="day-select-box">
-                              <label>
-                                <input type="checkbox" />
-                                <span>T</span>
-                              </label>
-                            </div>
-                            <div class="day-select-box">
-                              <label>
-                                <input type="checkbox" />
-                                <span>F</span>
-                              </label>
-                            </div>
-                            <div class="day-select-box">
-                              <label>
-                                <input type="checkbox" />
-                                <span>S</span>
-                              </label>
+                            <div class="col-md-12">
+                              <div>
+                                <label for="address" class="form-label"
+                                  >Address</label
+                                >
+                                <textarea
+                                  name=""
+                                  id="address"
+                                  class="form-control"
+                                  placeholder="Type Your Address"
+                                ></textarea>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div
-                    class="d-flex align-items-center justify-content-between gap-3 flex-wrap bg-brand-10 rounded-3 p-3"
-                  >
-                    <div>
-                      <p>Setting Update</p>
-                      <p class="md-p text-brand">
-                        Changes will be applied to all futures trades. Current
-                        open positions are not affected
-                      </p>
-                    </div>
 
-                    <button class="primary-btn" type="submit">
-                      Save Changes
-                    </button>
+                        <div class="d-flex align-items-center gap-3 flex-wrap">
+                          <button type="reset" class="secondary-btn">
+                            Cancel
+                          </button>
+                          <button type="submit" class="primary-btn">
+                            Update Profile
+                          </button>
+                        </div>
+                      </form>
+                    </div>
                   </div>
                 </div>
               </div>

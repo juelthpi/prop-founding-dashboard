@@ -17,7 +17,8 @@
   background: rgba(var(--brand), 0.5) !important;
   color: rgba(var(--white), 1) !important;
   border-radius: 4px !important;
-  padding: 2px 6px;
+  padding: 0px 6px;
+  font-size: 12px;
 }
 .ts-wrapper.single .ts-control {
   background-image: none !important;

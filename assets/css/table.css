@@ -1,0 +1,115 @@
+/*!
+ * -------------------------------------------------------
+ * Project Name : Prop Funding
+ * Author       : SoftwareZon
+ * Author URL   : https://softwarezon.com
+ * Version      : 1.0.0
+ * Created      : 2025
+ * Description  : Contains global CSS used by Table Design.
+ * File         : table.css
+ * -------------------------------------------------------
+ * ©2025 SoftwareZon. All Rights Reserved.
+ * -------------------------------------------------------
+ */
+/*----------------------------------------------------
+  01. Tables Styles
+----------------------------------------------------*/
+.table-design-one {
+  --bs-table-bg: transparent;
+  border: 1px solid rgba(var(--brand), 0.2);
+  border-radius: 12px;
+}
+.table-design-one tr {
+  border: none;
+  border-bottom: 1px solid rgba(var(--brand), 0.2);
+}
+.table-design-one tr:last-child {
+  border-bottom: none;
+}
+.table-design-one tr:last-child td {
+  border-bottom: none;
+}
+.table-design-one tr th:first-child {
+  border-left: 1px solid rgba(var(--brand), 0.3) !important;
+}
+.table-design-one tr td {
+  backdrop-filter: blur(10px);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.02)
+  );
+  color: rgba(var(--white), 0.8);
+  font-size: var(--font-base);
+  font-weight: 500;
+  padding: 10px 18px;
+  transition: 0.5s;
+  border: 1px solid rgba(var(--brand), 0.2);
+}
+.table-design-one tr td:hover {
+  background-color: rgba(var(--brand), 0.15);
+}
+.table-design-one tr th {
+  background: rgba(var(--brand), 0.4);
+
+  border: none;
+  color: rgba(var(--white), 0.8);
+  font-size: var(--font-base);
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 12px 18px;
+}
+.table-design-one tr:first-child th:first-child {
+  border-top-left-radius: 10px;
+}
+.table-design-one tr:first-child th:last-child {
+  border-top-right-radius: 10px;
+}
+.table-design-one tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+.table-design-one tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
+}
+/* Table style - 2 */
+.table-design-two {
+  --bs-table-bg: transparent;
+
+  border-radius: 12px;
+}
+.table-design-two table {
+  border-spacing: 0px 8px;
+  border-collapse: separate;
+}
+.table-design-two tr {
+  border: none;
+  transition: 0.5s;
+  background: rgba(var(--white), 0.02);
+}
+.table-design-two tr td,
+.table-design-two tr th {
+  padding: 10px 12px;
+  color: rgba(var(--white), 1);
+  white-space: nowrap;
+  font-size: var(--font-base);
+}
+.table-design-two tr:hover {
+  background: rgba(var(--brand), 0.1);
+}
+
+.table-design-two tr td:first-child,
+.table-design-two tr th:first-child {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.table-design-two tr td:last-child,
+.table-design-two tr th:first-child {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+.current-device {
+  background: rgba(var(--brand), 0.1) !important;
+}
+.current-device td {
+  color: rgba(var(--brand), 1) !important;
+}

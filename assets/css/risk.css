@@ -1,0 +1,94 @@
+.lg-input,
+.lg-input::placeholder {
+  font-size: 24px;
+  color: rgba(var(--white));
+  border-radius: 12px;
+}
+.day-select-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.day-select-box label {
+  position: relative;
+  height: 44px;
+  width: 44px;
+  border-radius: 4px;
+  border: 1px solid rgba(var(--white), 0.1);
+  background: rgba(var(--white), 0.02);
+  color: rgba(var(--white), 0.4);
+  cursor: pointer;
+}
+.day-select-box input {
+  display: none;
+  height: 100%;
+  width: 100%;
+}
+.day-select-box label span {
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  right: 0%;
+  margin: auto;
+  transform: translateY(-50%);
+  text-align: center;
+  font-size: 15px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.day-select-box input:checked + span {
+  height: 100%;
+  width: 100%;
+  background: rgba(var(--brand), 0.8);
+  border-radius: 4px;
+  color: rgba(var(--white), 1);
+}
+.schedule-select {
+  min-width: 210px;
+  font-size: 14px;
+}
+.schedule-select::placeholder {
+  color: rgba(var(--white), 1);
+  font-size: 18px;
+}
+.tooltip-content {
+  display: none;
+}
+.tooltip-inner p {
+  line-height: 20px;
+  font-size: 12px !important;
+}
+.tooltip-inner {
+  background: var(--dark);
+  border: 1px solid rgba(var(--brand), 0.4);
+  box-shadow: 0 0 15px rgba(var(--white), 0.2);
+  max-width: 300px;
+  backdrop-filter: blur(100px);
+}
+.bs-tooltip-auto[data-popper-placement^="right"] .tooltip-arrow::before,
+.bs-tooltip-end .tooltip-arrow::before {
+  border-right-color: rgba(var(--brand), 0.5);
+  right: 0px;
+}
+.tooltip-trigger {
+  cursor: pointer;
+}
+.tooltip-trigger:focus {
+  outline: none;
+}
+@media all and (max-width: 1199px) {
+  .lg-input,
+  .lg-input::placeholder {
+    font-size: 20px;
+  }
+
+  .day-select-box label {
+    height: 36px;
+    width: 36px;
+  }
+}

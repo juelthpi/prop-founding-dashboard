@@ -50,3 +50,18 @@ input:checked + .slider:before {
   font-weight: 400;
   font-size: calc(var(--base) - 1px);
 }
+@media all and (max-width: 991px) {
+  .switch {
+    width: 50px;
+    height: 26px;
+  }
+  .slider:before {
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+  }
+  input:checked + .slider:before {
+    transform: translateX(24px);
+  }
+}

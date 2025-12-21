@@ -1,0 +1,46 @@
+.lock-logo img {
+  max-width: 180px;
+  width: 100%;
+}
+.logo-2fa img {
+  max-width: 60px;
+  width: 100%;
+}
+.qr-code {
+  max-width: 170px;
+  backdrop-filter: blur(10px);
+}
+.otp-box input {
+  height: 45px;
+  width: 45px;
+  border-radius: 8px;
+  border: 1px solid rgba(var(--white), 0.2);
+  background-color: transparent;
+  color: rgba(var(--white), 0.8);
+  text-align: center;
+}
+.otp-box input:focus {
+  background-color: rgba(var(--brand), 0.1);
+}
+.success-2fa-logo img {
+  max-width: 120px;
+}
+.width-auto {
+  width: calc(100% - 228px);
+}
+@media all and (max-width: 767px) {
+  .setting-group-btn .tab-btn li {
+    min-width: 90px;
+    font-size: 12px;
+  }
+  .setting-group-btn {
+    width: 100%;
+  }
+  .lock-logo img,
+  .success-2fa-logo img {
+    max-width: 80px;
+  }
+  .width-auto {
+    width: calc(100% - 0px);
+  }
+}
