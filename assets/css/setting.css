@@ -28,6 +28,9 @@
 .width-auto {
   width: calc(100% - 228px);
 }
+.tab-btn a {
+  display: block;
+}
 @media all and (max-width: 767px) {
   .setting-group-btn .tab-btn li {
     min-width: 90px;

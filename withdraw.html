@@ -10,12 +10,6 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <!-- <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.rtl.min.css"
-      integrity="sha384-CfCrinSRH2IR6a4e6fy2q6ioOX7O6Mtm1L9vRvFZ1trBncWmMePhzvafv7oIcWiW"
-      crossorigin="anonymous"
-    /> -->
 
     <!-- google fonts css -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,32 +18,15 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    <!-- TomSelect CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.default.min.css"
-      rel="stylesheet"
-    />
-    <!-- Flatpickr css -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
-    />
-    <link rel="stylesheet" href="assets/css/flatpickr.css" />
 
-    <link rel="stylesheet" href="assets/css/tom-select.css" />
     <link rel="stylesheet" href="assets/css/common.css" />
     <!-- preloader css -->
     <link rel="stylesheet" href="assets/css/preloader.css" />
-    <link rel="stylesheet" href="assets/css/switch.css" />
-    <!-- risk controls -->
-    <link rel="stylesheet" href="assets/css/risk.css" />
-    <!-- setting css -->
-    <link rel="stylesheet" href="assets/css/setting.css" />
-    <!-- table css -->
-    <link rel="stylesheet" href="assets/css/table.css" />
+    <link rel="stylesheet" href="assets/css/payment.css" />
     <!-- theme dark / light css -->
     <link rel="stylesheet" href="assets/css/theme.css" />
     <link rel="stylesheet" href="assets/css/sidebar.css" />
+    <style></style>
   </head>
   <body>
     <div class="d-flex" id="dashboard">
@@ -279,7 +256,7 @@
                 </a>
               </li>
               <!-- item without dropdown -->
-              <li>
+              <li class="active">
                 <a href="withdraw.html" class="menu-link">
                   <div class="d-flex align-items-center gap-2">
                     <div class="nav-item-icon">
@@ -452,7 +429,7 @@
                   </a>
                 </li>
 
-                <li class="active">
+                <li>
                   <a href="setting-profile.html" class="menu-link">
                     <div class="d-flex align-items-center gap-2">
                       <div class="nav-item-icon">
@@ -761,7 +738,9 @@
                       </div>
                     </a>
                   </div>
-                  <a href="#" class="primary-btn mt-4">See All Notification</a>
+                  <a href="notification.html" class="primary-btn mt-4"
+                    >See All Notification</a
+                  >
                 </div>
               </div>
               <div class="profile">
@@ -775,396 +754,360 @@
         <div class="dashboard-effect">
           <div class="dashboard-body py-1">
             <div class="container">
-              <h6>Settings</h6>
-              <div class="bg-white-5 border-1 rounded-2 p-md-3 mt-2">
-                <div class="d-flex gap-3 flex-wrap flex-md-nowrap">
-                  <div class="bg-white-2 rounded-3 py-3 px-3 setting-group-btn">
-                    <ul
-                      class="tab-btn gap-md-3 gap-1 d-flex flex-md-column justify-content-center justify-content-md-start flex-wrap"
-                    >
-                      <li class="text-center py-md-2 py-1 px-1">
-                        <a href="setting-profile.html" class="text-white"
-                          >My Profile</a
+              <div class="row gy-4">
+                <div class="col-md-12">
+                  <div class="bg-white-4 p-3 rounded-3">
+                    <div class="row gy-3">
+                      <div class="col-md-12">
+                        <div
+                          class="d-flex justify-content-between align-items-center"
                         >
-                      </li>
-                      <li class="text-center py-md-2 py-1 px-1">
-                        <a href="setting-kyc.html" class="text-white">KYC</a>
-                      </li>
-                      <li class="text-center py-md-2 py-1 px-1">
-                        <a href="setting-password.html" class="text-white"
-                          >Password</a
-                        >
-                      </li>
-                      <li class="text-center py-md-2 py-1 px-1">
-                        <a href="setting-2fa.html" class="text-white">2FA</a>
-                      </li>
-                      <li class="text-center py-md-2 py-1 px-1">
-                        <a href="setting-device.html" class="text-white"
-                          >Device</a
-                        >
-                      </li>
-                      <li class="active text-center py-md-2 py-1 px-1">
-                        <a href="setting-login-history.html" class="text-white"
-                          >Login History</a
-                        >
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="width-auto">
-                    <div
-                      class="border-1 bg-white-4 rounded-3 p-2 p-md-3 bg-filter-100"
-                    >
-                      <h6 class="mb-3">Login History</h6>
-
-                      <div class="row gy-4">
-                        <div class="col-md-12">
-                          <div class="table table-design-two table-responsive">
-                            <table class="w-100">
-                              <thead>
-                                <tr>
-                                  <th>SI</th>
-                                  <th>Date and Time</th>
-                                  <th>IP</th>
-                                  <th>Device Info</th>
-                                  <th>Browser</th>
-                                  <th>Location</th>
-                                  <th>Status</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td>01</td>
-                                  <td>25 Nov 2025, 10:25 PM</td>
-                                  <td>10.2545.244</td>
-                                  <td>Macintosh OS X</td>
-                                  <td>Chrome</td>
-                                  <td>Bangladesh</td>
-
-                                  <td>
-                                    <div class="d-inline-block">
-                                      <span class="active-badge badge">
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          width="7"
-                                          height="7"
-                                          viewBox="0 0 5 5"
-                                          fill="none"
-                                        >
-                                          <circle
-                                            cx="2.5"
-                                            cy="2.5"
-                                            r="2.5"
-                                            fill="#22C55E"
-                                          />
-                                        </svg>
-                                        Active
-                                      </span>
-                                    </div>
-                                  </td>
-                                </tr>
-                                <tr class="current-device">
-                                  <td>02</td>
-                                  <td>25 Nov 2025, 10:25 PM</td>
-                                  <td>10.2545.244</td>
-                                  <td>Macintosh OS X</td>
-                                  <td>Chrome</td>
-                                  <td>Bangladesh</td>
-
-                                  <td>
-                                    <div class="d-inline-block">
-                                      <span class="active-badge badge">
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          width="7"
-                                          height="7"
-                                          viewBox="0 0 5 5"
-                                          fill="none"
-                                        >
-                                          <circle
-                                            cx="2.5"
-                                            cy="2.5"
-                                            r="2.5"
-                                            fill="#22C55E"
-                                          />
-                                        </svg>
-                                        Active
-                                      </span>
-                                    </div>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>03</td>
-                                  <td>25 Nov 2025, 10:25 PM</td>
-                                  <td>10.2545.244</td>
-                                  <td>Macintosh OS X</td>
-                                  <td>Chrome</td>
-                                  <td>Bangladesh</td>
-
-                                  <td>
-                                    <div class="d-inline-block">
-                                      <span class="active-badge badge">
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          width="7"
-                                          height="7"
-                                          viewBox="0 0 5 5"
-                                          fill="none"
-                                        >
-                                          <circle
-                                            cx="2.5"
-                                            cy="2.5"
-                                            r="2.5"
-                                            fill="#22C55E"
-                                          />
-                                        </svg>
-                                        Active
-                                      </span>
-                                    </div>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>04</td>
-                                  <td>25 Nov 2025, 10:25 PM</td>
-                                  <td>10.2545.244</td>
-                                  <td>Macintosh OS X</td>
-                                  <td>Chrome</td>
-                                  <td>Bangladesh</td>
-
-                                  <td>
-                                    <div class="d-inline-block">
-                                      <span class="active-badge badge">
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          width="7"
-                                          height="7"
-                                          viewBox="0 0 5 5"
-                                          fill="none"
-                                        >
-                                          <circle
-                                            cx="2.5"
-                                            cy="2.5"
-                                            r="2.5"
-                                            fill="#22C55E"
-                                          />
-                                        </svg>
-                                        Active
-                                      </span>
-                                    </div>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>05</td>
-                                  <td>25 Nov 2025, 10:25 PM</td>
-                                  <td>10.2545.244</td>
-                                  <td>Macintosh OS X</td>
-                                  <td>Chrome</td>
-                                  <td>Bangladesh</td>
-
-                                  <td>
-                                    <div class="d-inline-block">
-                                      <span class="inactive-badge badge">
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          width="7"
-                                          height="7"
-                                          viewBox="0 0 5 5"
-                                          fill="none"
-                                        >
-                                          <circle
-                                            cx="2.5"
-                                            cy="2.5"
-                                            r="2.5"
-                                            fill="#e72b1b"
-                                          />
-                                        </svg>
-                                        Inactive
-                                      </span>
-                                    </div>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>06</td>
-                                  <td>25 Nov 2025, 10:25 PM</td>
-                                  <td>10.2545.244</td>
-                                  <td>Macintosh OS X</td>
-                                  <td>Chrome</td>
-                                  <td>Bangladesh</td>
-
-                                  <td>
-                                    <div class="d-inline-block">
-                                      <span class="inactive-badge badge">
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          width="7"
-                                          height="7"
-                                          viewBox="0 0 5 5"
-                                          fill="none"
-                                        >
-                                          <circle
-                                            cx="2.5"
-                                            cy="2.5"
-                                            r="2.5"
-                                            fill="#e72b1b"
-                                          />
-                                        </svg>
-                                        Inactive
-                                      </span>
-                                    </div>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>06</td>
-                                  <td>25 Nov 2025, 10:25 PM</td>
-                                  <td>10.2545.244</td>
-                                  <td>Macintosh OS X</td>
-                                  <td>Chrome</td>
-                                  <td>Bangladesh</td>
-
-                                  <td>
-                                    <div class="d-inline-block">
-                                      <span class="inactive-badge badge">
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          width="7"
-                                          height="7"
-                                          viewBox="0 0 5 5"
-                                          fill="none"
-                                        >
-                                          <circle
-                                            cx="2.5"
-                                            cy="2.5"
-                                            r="2.5"
-                                            fill="#e72b1b"
-                                          />
-                                        </svg>
-                                        Inactive
-                                      </span>
-                                    </div>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>07</td>
-                                  <td>25 Nov 2025, 10:25 PM</td>
-                                  <td>10.2545.244</td>
-                                  <td>Macintosh OS X</td>
-                                  <td>Chrome</td>
-                                  <td>Bangladesh</td>
-
-                                  <td>
-                                    <div class="d-inline-block">
-                                      <span class="inactive-badge badge">
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          width="7"
-                                          height="7"
-                                          viewBox="0 0 5 5"
-                                          fill="none"
-                                        >
-                                          <circle
-                                            cx="2.5"
-                                            cy="2.5"
-                                            r="2.5"
-                                            fill="#e72b1b"
-                                          />
-                                        </svg>
-                                        Inactive
-                                      </span>
-                                    </div>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>08</td>
-                                  <td>25 Nov 2025, 10:25 PM</td>
-                                  <td>10.2545.244</td>
-                                  <td>Macintosh OS X</td>
-                                  <td>Chrome</td>
-                                  <td>Bangladesh</td>
-
-                                  <td>
-                                    <div class="d-inline-block">
-                                      <span class="inactive-badge badge">
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          width="7"
-                                          height="7"
-                                          viewBox="0 0 5 5"
-                                          fill="none"
-                                        >
-                                          <circle
-                                            cx="2.5"
-                                            cy="2.5"
-                                            r="2.5"
-                                            fill="#e72b1b"
-                                          />
-                                        </svg>
-                                        Inactive
-                                      </span>
-                                    </div>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>09</td>
-                                  <td>25 Nov 2025, 10:25 PM</td>
-                                  <td>10.2545.244</td>
-                                  <td>Macintosh OS X</td>
-                                  <td>Chrome</td>
-                                  <td>Bangladesh</td>
-
-                                  <td>
-                                    <div class="d-inline-block">
-                                      <span class="inactive-badge badge">
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          width="7"
-                                          height="7"
-                                          viewBox="0 0 5 5"
-                                          fill="none"
-                                        >
-                                          <circle
-                                            cx="2.5"
-                                            cy="2.5"
-                                            r="2.5"
-                                            fill="#e72b1b"
-                                          />
-                                        </svg>
-                                        Inactive
-                                      </span>
-                                    </div>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>10</td>
-                                  <td>25 Nov 2025, 10:25 PM</td>
-                                  <td>10.2545.244</td>
-                                  <td>Macintosh OS X</td>
-                                  <td>Chrome</td>
-                                  <td>Bangladesh</td>
-
-                                  <td>
-                                    <div class="d-inline-block">
-                                      <span class="inactive-badge badge">
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          width="7"
-                                          height="7"
-                                          viewBox="0 0 5 5"
-                                          fill="none"
-                                        >
-                                          <circle
-                                            cx="2.5"
-                                            cy="2.5"
-                                            r="2.5"
-                                            fill="#e72b1b"
-                                          />
-                                        </svg>
-                                        Inactive
-                                      </span>
-                                    </div>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
+                          <h6>Withdraw Funds</h6>
+                          <div class="d-inline-block">
+                            <a href="#" class="secondary-btn"
+                              ><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                class="svg-icon-white"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  stroke-width="1.5"
+                                  stroke-linecap="round"
+                                  d="M14 2.2A10 10 0 1 0 21.8 10"
+                                />
+                                <path
+                                  stroke-width="1.5"
+                                  stroke-linecap="round"
+                                  d="M12 9c-1.1 0-2 .67-2 1.5S10.9 12 12 12s2 .67 2 1.5S13.1 15 12 15m0-6c.87 0 1.61.42 1.89 1M12 9V8m0 7c-.87 0-1.61-.42-1.89-1M12 15v1"
+                                />
+                                <path
+                                  stroke-width="1.5"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M17 7l4.18-4.18M22 6.48l-.12-3.09c0-.73-.44-1.18-1.23-1.24L17.53 2"
+                                />
+                              </svg>
+                              Withdraw History</a
+                            >
                           </div>
+                        </div>
+                        <div class="line-1 mt-3"></div>
+                      </div>
+                      <div class="col-md-7">
+                        <p class="lg-p mb-3">Choose amount and select Method</p>
+
+                        <form action="">
+                          <div class="bg-white-4 p-3 rounded-3">
+                            <div>
+                              <label for="old-password" class="form-label"
+                                >Input Amount</label
+                              >
+                              <div class="position-relative">
+                                <input
+                                  type="text"
+                                  id="amount"
+                                  class="form-control"
+                                  value="100"
+                                />
+                                <span
+                                  class="position-absolute top-50 translate-middle-y end-0 me-3"
+                                >
+                                  <svg
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    class="svg-icon-brand"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M12 2V22M17 7.5C17 5.57 14.76 4 12 4C9.24 4 7 5.57 7 7.5C7 9.43 9.24 11 12 11C14.76 11 17 12.57 17 14.5C17 16.43 14.76 18 12 18C9.24 18 7 16.43 7 14.5"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                  </svg>
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              class="d-flex flex-wrap align-items-center gap-3 mt-3"
+                            >
+                              <span class="active amount-btn"> $100 </span>
+                              <span class="amount-btn"> $200 </span>
+                              <span class="amount-btn"> $500 </span>
+                              <span class="amount-btn"> $1000 </span>
+                              <span class="amount-btn"> $2000 </span>
+                            </div>
+                          </div>
+                          <div class="bg-white-4 p-3 rounded-3 mt-3">
+                            <label for="old-password" class="form-label"
+                              >Select Payment Method</label
+                            >
+                            <div
+                              class="methods d-flex align-items-center gap-2 flex-wrap"
+                            >
+                              <label class="method">
+                                <input type="radio" name="payment" hidden />
+                                <span
+                                  ><img
+                                    src="assets/images/payment-logo/bank.png"
+                                    alt="logo"
+                                  />
+                                  Bank Transfer</span
+                                >
+                              </label>
+
+                              <label class="method active">
+                                <input
+                                  type="radio"
+                                  name="payment"
+                                  checked
+                                  hidden
+                                />
+                                <span>
+                                  <img
+                                    src="assets/images/payment-logo/bitcoin.png"
+                                    alt="logo"
+                                  />BTC Payment</span
+                                >
+                              </label>
+
+                              <label class="method">
+                                <input type="radio" name="payment" hidden />
+                                <span
+                                  ><img
+                                    src="assets/images/payment-logo/usdt.png"
+                                    alt="logo"
+                                  />
+                                  USDT</span
+                                >
+                              </label>
+
+                              <label class="method">
+                                <input type="radio" name="payment" hidden />
+                                <span
+                                  ><img
+                                    src="assets/images/payment-logo/paypal.png"
+                                    alt="logo"
+                                  />
+                                  PayPal</span
+                                >
+                              </label>
+
+                              <label class="method">
+                                <input type="radio" name="payment" hidden />
+                                <span
+                                  ><img
+                                    src="assets/images/payment-logo/bank.png"
+                                    alt="logo"
+                                  />
+                                  Stripe</span
+                                >
+                              </label>
+                              <label class="method">
+                                <input type="radio" name="payment" hidden />
+                                <span>
+                                  <img
+                                    src="assets/images/payment-logo/bitcoin.png"
+                                    alt="logo"
+                                  />BTC Payment</span
+                                >
+                              </label>
+
+                              <label class="method">
+                                <input type="radio" name="payment" hidden />
+                                <span
+                                  ><img
+                                    src="assets/images/payment-logo/usdt.png"
+                                    alt="logo"
+                                  />
+                                  USDT</span
+                                >
+                              </label>
+
+                              <label class="method">
+                                <input type="radio" name="payment" hidden />
+                                <span
+                                  ><img
+                                    src="assets/images/payment-logo/paypal.png"
+                                    alt="logo"
+                                  />
+                                  PayPal</span
+                                >
+                              </label>
+
+                              <label class="method">
+                                <input type="radio" name="payment" hidden />
+                                <span
+                                  ><img
+                                    src="assets/images/payment-logo/bank.png"
+                                    alt="logo"
+                                  />
+                                  Stripe</span
+                                >
+                              </label>
+                              <label class="method">
+                                <input type="radio" name="payment" hidden />
+                                <span>
+                                  <img
+                                    src="assets/images/payment-logo/bitcoin.png"
+                                    alt="logo"
+                                  />BTC Payment</span
+                                >
+                              </label>
+
+                              <label class="method">
+                                <input type="radio" name="payment" hidden />
+                                <span
+                                  ><img
+                                    src="assets/images/payment-logo/usdt.png"
+                                    alt="logo"
+                                  />
+                                  USDT</span
+                                >
+                              </label>
+
+                              <label class="method">
+                                <input type="radio" name="payment" hidden />
+                                <span
+                                  ><img
+                                    src="assets/images/payment-logo/paypal.png"
+                                    alt="logo"
+                                  />
+                                  PayPal</span
+                                >
+                              </label>
+
+                              <label class="method">
+                                <input type="radio" name="payment" hidden />
+                                <span
+                                  ><img
+                                    src="assets/images/payment-logo/bank.png"
+                                    alt="logo"
+                                  />
+                                  Stripe</span
+                                >
+                              </label>
+                              <label class="method">
+                                <input type="radio" name="payment" hidden />
+                                <span>
+                                  <img
+                                    src="assets/images/payment-logo/bitcoin.png"
+                                    alt="logo"
+                                  />BTC Payment</span
+                                >
+                              </label>
+
+                              <label class="method">
+                                <input type="radio" name="payment" hidden />
+                                <span
+                                  ><img
+                                    src="assets/images/payment-logo/usdt.png"
+                                    alt="logo"
+                                  />
+                                  USDT</span
+                                >
+                              </label>
+
+                              <label class="method">
+                                <input type="radio" name="payment" hidden />
+                                <span
+                                  ><img
+                                    src="assets/images/payment-logo/paypal.png"
+                                    alt="logo"
+                                  />
+                                  PayPal</span
+                                >
+                              </label>
+
+                              <label class="method">
+                                <input type="radio" name="payment" hidden />
+                                <span
+                                  ><img
+                                    src="assets/images/payment-logo/bank.png"
+                                    alt="logo"
+                                  />
+                                  Stripe</span
+                                >
+                              </label>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="col-md-5">
+                        <p class="lg-p mb-3">Withdraw Details</p>
+                        <div class="bg-white-4 p-3 rounded-3">
+                          <div class="bg-brand-10 border-brand p-3 rounded-3">
+                            <div class="d-flex align-items-center gap-3">
+                              <img
+                                src="assets/images/payment-logo/bank.png"
+                                alt="bank"
+                              />
+                              <h6 class="text-brand">Bank Transfer</h6>
+                            </div>
+                            <div
+                              class="d-flex align-items-center justify-content-between mt-4"
+                            >
+                              <p>Processing Time</p>
+                              <p>1-3 Days</p>
+                            </div>
+                          </div>
+                          <ul class="d-flex flex-column gap-3 mt-4">
+                            <li
+                              class="d-flex align-items-center justify-content-between"
+                            >
+                              <p>Withdraw Amount</p>
+                              <p>$1000</p>
+                            </li>
+                            <li
+                              class="d-flex align-items-center justify-content-between"
+                            >
+                              <p>Processing Fee</p>
+                              <p>$00</p>
+                            </li>
+                          </ul>
+                          <div class="line-1 mt-3"></div>
+                          <div
+                            class="d-flex align-items-center justify-content-between mt-2"
+                          >
+                            <p class="lg-p text-white">Total Withdraw</p>
+                            <p class="text-brand">$1000</p>
+                          </div>
+                          <div class="border-1 p-3 rounded-3 mt-3">
+                            <div class="d-flex gap-2 align-items-center">
+                              <svg
+                                width="18"
+                                height="18"
+                                viewBox="0 0 22 22"
+                                fill="none"
+                                class="svg-icon-brand"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M11 15V11M11 7H11.01M21 11C21 16.5228 16.5228 21 11 21C5.47715 21 1 16.5228 1 11C1 5.47715 5.47715 1 11 1C16.5228 1 21 5.47715 21 11Z"
+                                  stroke-width="2"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                              </svg>
+
+                              <div>
+                                <p>Minimum Withdraw $50</p>
+                                <p class="sm-p text-brand">
+                                  Refund will be based on our policy
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <button
+                            class="primary-btn w-100 py-md-3 py-2 mt-3 text-xl"
+                          >
+                            Withdraw Now
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -1177,7 +1120,51 @@
       </section>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
     <script src="assets/js/sidebar.js"></script>
     <script src="assets/js/theme.js"></script>
+    <!-- amount & method select js -->
+    <script>
+      const amountInput = document.getElementById("amount");
+      const amountBtns = document.querySelectorAll(".amount-btn");
+      const methods = document.querySelectorAll(".method");
+
+      // helper: remove active from amount buttons
+      function clearAmountButtons() {
+        amountBtns.forEach((b) => b.classList.remove("active"));
+      }
+      // Amount button click
+      amountBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          clearAmountButtons();
+          btn.classList.add("active");
+          amountInput.value = btn.innerText.replace("$", "");
+        });
+      });
+      // Direct input typing
+      amountInput.addEventListener("input", () => {
+        const inputValue = amountInput.value;
+        let matched = false;
+        amountBtns.forEach((btn) => {
+          const btnValue = btn.innerText.replace("$", "");
+          if (btnValue === inputValue) {
+            clearAmountButtons();
+            btn.classList.add("active");
+            matched = true;
+          }
+        });
+        // If no preset matched, clear all active states
+        if (!matched) {
+          clearAmountButtons();
+        }
+      });
+      // Payment method select
+      methods.forEach((method) => {
+        method.addEventListener("click", () => {
+          methods.forEach((m) => m.classList.remove("active"));
+          method.classList.add("active");
+        });
+      });
+    </script>
   </body>
 </html>

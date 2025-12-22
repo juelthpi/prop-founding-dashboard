@@ -43,10 +43,6 @@
     <link rel="stylesheet" href="assets/css/switch.css" />
     <!-- risk controls -->
     <link rel="stylesheet" href="assets/css/risk.css" />
-    <!-- setting css -->
-    <link rel="stylesheet" href="assets/css/setting.css" />
-    <!-- table css -->
-    <link rel="stylesheet" href="assets/css/table.css" />
     <!-- theme dark / light css -->
     <link rel="stylesheet" href="assets/css/theme.css" />
     <link rel="stylesheet" href="assets/css/sidebar.css" />
@@ -219,7 +215,7 @@
                 </a>
               </li>
               <!-- item without dropdown -->
-              <li>
+              <li class="active">
                 <a href="risk-manage.html" class="menu-link">
                   <div class="d-flex align-items-center gap-2">
                     <div class="nav-item-icon">
@@ -452,7 +448,7 @@
                   </a>
                 </li>
 
-                <li class="active">
+                <li>
                   <a href="setting-profile.html" class="menu-link">
                     <div class="d-flex align-items-center gap-2">
                       <div class="nav-item-icon">
@@ -761,7 +757,9 @@
                       </div>
                     </a>
                   </div>
-                  <a href="#" class="primary-btn mt-4">See All Notification</a>
+                  <a href="notification.html" class="primary-btn mt-4"
+                    >See All Notification</a
+                  >
                 </div>
               </div>
               <div class="profile">
@@ -775,399 +773,347 @@
         <div class="dashboard-effect">
           <div class="dashboard-body py-1">
             <div class="container">
-              <h6>Settings</h6>
-              <div class="bg-white-5 border-1 rounded-2 p-md-3 mt-2">
-                <div class="d-flex gap-3 flex-wrap flex-md-nowrap">
-                  <div class="bg-white-2 rounded-3 py-3 px-3 setting-group-btn">
-                    <ul
-                      class="tab-btn gap-md-3 gap-1 d-flex flex-md-column justify-content-center justify-content-md-start flex-wrap"
-                    >
-                      <li class="text-center py-md-2 py-1 px-1">
-                        <a href="setting-profile.html" class="text-white"
-                          >My Profile</a
-                        >
-                      </li>
-                      <li class="text-center py-md-2 py-1 px-1">
-                        <a href="setting-kyc.html" class="text-white">KYC</a>
-                      </li>
-                      <li class="text-center py-md-2 py-1 px-1">
-                        <a href="setting-password.html" class="text-white"
-                          >Password</a
-                        >
-                      </li>
-                      <li class="text-center py-md-2 py-1 px-1">
-                        <a href="setting-2fa.html" class="text-white">2FA</a>
-                      </li>
-                      <li class="text-center py-md-2 py-1 px-1">
-                        <a href="setting-device.html" class="text-white"
-                          >Device</a
-                        >
-                      </li>
-                      <li class="active text-center py-md-2 py-1 px-1">
-                        <a href="setting-login-history.html" class="text-white"
-                          >Login History</a
-                        >
-                      </li>
-                    </ul>
+              <div class="row gy-4">
+                <div class="col-md-6">
+                  <div
+                    class="border-1 rounded-3 px-2 px-md-4 py-3 bg-white-4 h-100"
+                  >
+                    <h6 class="d-flex align-items-center gap-2">
+                      Daily Loss Limit
+
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 19 19"
+                        fill="none"
+                        class="svg-icon-white tooltip-trigger"
+                        data-bs-html="true"
+                        data-bs-placement="right"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M9.33333 12.6667V9.33333M9.33333 6H9.34167M17.6667 9.33333C17.6667 13.9357 13.9357 17.6667 9.33333 17.6667C4.73096 17.6667 1 13.9357 1 9.33333C1 4.73096 4.73096 1 9.33333 1C13.9357 1 17.6667 4.73096 17.6667 9.33333Z"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+
+                      <div class="tooltip-content">
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Cum facilis quasi nemo autem? Reprehenderit
+                          dolores maxime ratione commodi accusamus ullam. Veniam
+                          in nesciunt dolores hic facilis voluptatum dicta eius
+                          quae!
+                        </p>
+                      </div>
+                    </h6>
+                    <p class="sm-p">Maximum loss allowed per day</p>
+                    <div class="mt-1 mb-1">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="$1,500"
+                      />
+                    </div>
+                    <p class="sm-p">Minimum is $100</p>
                   </div>
-                  <div class="width-auto">
+                </div>
+                <div class="col-md-6">
+                  <div
+                    class="border-1 rounded-3 px-2 px-md-4 py-3 bg-white-4 h-100"
+                  >
+                    <h6 class="d-flex align-items-center gap-2">
+                      Per Trade Cap
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 19 19"
+                        fill="none"
+                        class="svg-icon-white tooltip-trigger"
+                        data-bs-html="true"
+                        data-bs-placement="right"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M9.33333 12.6667V9.33333M9.33333 6H9.34167M17.6667 9.33333C17.6667 13.9357 13.9357 17.6667 9.33333 17.6667C4.73096 17.6667 1 13.9357 1 9.33333C1 4.73096 4.73096 1 9.33333 1C13.9357 1 17.6667 4.73096 17.6667 9.33333Z"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                      <div class="tooltip-content">
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Suscipit quisquam voluptatem minus officia magni
+                          perspiciatis maxime maiores. Doloribus obcaecati quam
+                          quibusdam maiores! Cupiditate id ipsa ex aliquam
+                          dolorum quos est!
+                        </p>
+                      </div>
+                    </h6>
+                    <p class="sm-p">Maximum amount per single trade</p>
+                    <div class="mt-1 mb-1">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="$5,500"
+                      />
+                    </div>
+                    <p class="sm-p">Max 50,0000</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div
+                    class="border-1 rounded-3 px-2 px-md-4 py-3 bg-white-4 h-100"
+                  >
+                    <h6 class="d-flex align-items-center gap-2">
+                      Participation Control
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 19 19"
+                        fill="none"
+                        class="svg-icon-white tooltip-trigger"
+                        data-bs-html="true"
+                        data-bs-placement="right"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M9.33333 12.6667V9.33333M9.33333 6H9.34167M17.6667 9.33333C17.6667 13.9357 13.9357 17.6667 9.33333 17.6667C4.73096 17.6667 1 13.9357 1 9.33333C1 4.73096 4.73096 1 9.33333 1C13.9357 1 17.6667 4.73096 17.6667 9.33333Z"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                      <div class="tooltip-content">
+                        <p>
+                          Lorem ipsum dolor sit, amet consectetur adipisicing
+                          elit. Doloremque ut nihil sit quae. Animi voluptatem
+                          magnam fugit voluptatum soluta quasi nulla illo
+                          voluptas. Voluptatum obcaecati commodi amet ea, quae
+                          adipisci.
+                        </p>
+                      </div>
+                    </h6>
+                    <p class="sm-p">Enable or pause copy trading activity</p>
+                    <div class="d-flex flex-column gap-3 mt-4">
+                      <div
+                        class="bg-white-4 py-2 px-3 rounded-3 d-flex align-items-center justify-content-between"
+                      >
+                        <div class="d-flex align-items-center gap-3">
+                          <div
+                            class="icon-box bg-brand-10 rounded-2 d-flex align-items-center justify-content-center border-brand-10 icon-box-md"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              class="svg-icon-brand"
+                            >
+                              <path
+                                d="M5 4.98951C5 4.01835 5 3.53277 5.20249 3.2651C5.37889 3.03191 5.64852 2.88761 5.9404 2.87018C6.27544 2.85017 6.67946 3.11953 7.48752 3.65823L18.0031 10.6686C18.6708 11.1137 19.0046 11.3363 19.1209 11.6168C19.2227 11.8621 19.2227 12.1377 19.1209 12.383C19.0046 12.6635 18.6708 12.886 18.0031 13.3312L7.48752 20.3415C6.67946 20.8802 6.27544 21.1496 5.9404 21.1296C5.64852 21.1122 5.37889 20.9679 5.20249 20.7347C5 20.467 5 19.9814 5 19.0103V4.98951Z"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                            </svg>
+                          </div>
+                          <div>
+                            <h6 class="text-brand-80">Active Trading</h6>
+                            <p class="text-brand-80 sm-p">
+                              Copy trades automatically
+                            </p>
+                          </div>
+                        </div>
+                        <div class="toggle-2fa">
+                          <label class="switch">
+                            <input type="checkbox" id="twofa" />
+                            <span class="slider"></span>
+                          </label>
+                        </div>
+                      </div>
+                      <div
+                        class="bg-white-4 py-2 px-3 rounded-3 d-flex align-items-center justify-content-between"
+                      >
+                        <div class="d-flex align-items-center gap-3">
+                          <div
+                            class="icon-box bg-brand-10 rounded-2 d-flex align-items-center justify-content-center border-brand-10 icon-box-md"
+                          >
+                            <img
+                              src="assets/images/icon/risk-2.png"
+                              alt="alert"
+                            />
+                          </div>
+                          <div>
+                            <h6 class="text-warning-80">Auto Stop Loss</h6>
+                            <p class="text-warning-80 sm-p">
+                              Automatic loss protection
+                            </p>
+                          </div>
+                        </div>
+                        <div class="toggle-2fa">
+                          <label class="switch">
+                            <input type="checkbox" id="twofa" />
+                            <span class="slider"></span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div
+                    class="border-1 rounded-3 px-2 px-md-4 py-3 bg-white-4 h-100"
+                  >
                     <div
-                      class="border-1 bg-white-4 rounded-3 p-2 p-md-3 bg-filter-100"
+                      class="d-flex align-items-center justify-content-between"
                     >
-                      <h6 class="mb-3">Login History</h6>
+                      <div>
+                        <h6 class="d-flex align-items-center gap-2">
+                          Schedule Trade
 
-                      <div class="row gy-4">
-                        <div class="col-md-12">
-                          <div class="table table-design-two table-responsive">
-                            <table class="w-100">
-                              <thead>
-                                <tr>
-                                  <th>SI</th>
-                                  <th>Date and Time</th>
-                                  <th>IP</th>
-                                  <th>Device Info</th>
-                                  <th>Browser</th>
-                                  <th>Location</th>
-                                  <th>Status</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td>01</td>
-                                  <td>25 Nov 2025, 10:25 PM</td>
-                                  <td>10.2545.244</td>
-                                  <td>Macintosh OS X</td>
-                                  <td>Chrome</td>
-                                  <td>Bangladesh</td>
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 19 19"
+                            fill="none"
+                            class="svg-icon-white tooltip-trigger"
+                            data-bs-html="true"
+                            data-bs-placement="right"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M9.33333 12.6667V9.33333M9.33333 6H9.34167M17.6667 9.33333C17.6667 13.9357 13.9357 17.6667 9.33333 17.6667C4.73096 17.6667 1 13.9357 1 9.33333C1 4.73096 4.73096 1 9.33333 1C13.9357 1 17.6667 4.73096 17.6667 9.33333Z"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                          <div class="tooltip-content">
+                            <p>
+                              Lorem ipsum dolor sit amet consectetur adipisicing
+                              elit. Provident quos unde molestiae magnam libero
+                              quisquam vero quaerat voluptatum debitis ab ipsa,
+                              cupiditate necessitatibus hic. Enim fuga nemo
+                              recusandae at praesentium.
+                            </p>
+                          </div>
+                        </h6>
+                        <p class="sm-p">Customize Trading Days</p>
+                      </div>
+                      <div class="toggle-2fa">
+                        <label class="switch">
+                          <input checked type="checkbox" id="twofa" />
+                          <span class="slider"></span>
+                        </label>
+                      </div>
+                    </div>
 
-                                  <td>
-                                    <div class="d-inline-block">
-                                      <span class="active-badge badge">
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          width="7"
-                                          height="7"
-                                          viewBox="0 0 5 5"
-                                          fill="none"
-                                        >
-                                          <circle
-                                            cx="2.5"
-                                            cy="2.5"
-                                            r="2.5"
-                                            fill="#22C55E"
-                                          />
-                                        </svg>
-                                        Active
-                                      </span>
-                                    </div>
-                                  </td>
-                                </tr>
-                                <tr class="current-device">
-                                  <td>02</td>
-                                  <td>25 Nov 2025, 10:25 PM</td>
-                                  <td>10.2545.244</td>
-                                  <td>Macintosh OS X</td>
-                                  <td>Chrome</td>
-                                  <td>Bangladesh</td>
+                    <div class="bg-white-2 rounded-3 p-lg-3 p-2 mt-3">
+                      <div
+                        class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2 mb-lg-0"
+                      >
+                        <p>Select By Date</p>
 
-                                  <td>
-                                    <div class="d-inline-block">
-                                      <span class="active-badge badge">
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          width="7"
-                                          height="7"
-                                          viewBox="0 0 5 5"
-                                          fill="none"
-                                        >
-                                          <circle
-                                            cx="2.5"
-                                            cy="2.5"
-                                            r="2.5"
-                                            fill="#22C55E"
-                                          />
-                                        </svg>
-                                        Active
-                                      </span>
-                                    </div>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>03</td>
-                                  <td>25 Nov 2025, 10:25 PM</td>
-                                  <td>10.2545.244</td>
-                                  <td>Macintosh OS X</td>
-                                  <td>Chrome</td>
-                                  <td>Bangladesh</td>
-
-                                  <td>
-                                    <div class="d-inline-block">
-                                      <span class="active-badge badge">
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          width="7"
-                                          height="7"
-                                          viewBox="0 0 5 5"
-                                          fill="none"
-                                        >
-                                          <circle
-                                            cx="2.5"
-                                            cy="2.5"
-                                            r="2.5"
-                                            fill="#22C55E"
-                                          />
-                                        </svg>
-                                        Active
-                                      </span>
-                                    </div>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>04</td>
-                                  <td>25 Nov 2025, 10:25 PM</td>
-                                  <td>10.2545.244</td>
-                                  <td>Macintosh OS X</td>
-                                  <td>Chrome</td>
-                                  <td>Bangladesh</td>
-
-                                  <td>
-                                    <div class="d-inline-block">
-                                      <span class="active-badge badge">
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          width="7"
-                                          height="7"
-                                          viewBox="0 0 5 5"
-                                          fill="none"
-                                        >
-                                          <circle
-                                            cx="2.5"
-                                            cy="2.5"
-                                            r="2.5"
-                                            fill="#22C55E"
-                                          />
-                                        </svg>
-                                        Active
-                                      </span>
-                                    </div>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>05</td>
-                                  <td>25 Nov 2025, 10:25 PM</td>
-                                  <td>10.2545.244</td>
-                                  <td>Macintosh OS X</td>
-                                  <td>Chrome</td>
-                                  <td>Bangladesh</td>
-
-                                  <td>
-                                    <div class="d-inline-block">
-                                      <span class="inactive-badge badge">
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          width="7"
-                                          height="7"
-                                          viewBox="0 0 5 5"
-                                          fill="none"
-                                        >
-                                          <circle
-                                            cx="2.5"
-                                            cy="2.5"
-                                            r="2.5"
-                                            fill="#e72b1b"
-                                          />
-                                        </svg>
-                                        Inactive
-                                      </span>
-                                    </div>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>06</td>
-                                  <td>25 Nov 2025, 10:25 PM</td>
-                                  <td>10.2545.244</td>
-                                  <td>Macintosh OS X</td>
-                                  <td>Chrome</td>
-                                  <td>Bangladesh</td>
-
-                                  <td>
-                                    <div class="d-inline-block">
-                                      <span class="inactive-badge badge">
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          width="7"
-                                          height="7"
-                                          viewBox="0 0 5 5"
-                                          fill="none"
-                                        >
-                                          <circle
-                                            cx="2.5"
-                                            cy="2.5"
-                                            r="2.5"
-                                            fill="#e72b1b"
-                                          />
-                                        </svg>
-                                        Inactive
-                                      </span>
-                                    </div>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>06</td>
-                                  <td>25 Nov 2025, 10:25 PM</td>
-                                  <td>10.2545.244</td>
-                                  <td>Macintosh OS X</td>
-                                  <td>Chrome</td>
-                                  <td>Bangladesh</td>
-
-                                  <td>
-                                    <div class="d-inline-block">
-                                      <span class="inactive-badge badge">
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          width="7"
-                                          height="7"
-                                          viewBox="0 0 5 5"
-                                          fill="none"
-                                        >
-                                          <circle
-                                            cx="2.5"
-                                            cy="2.5"
-                                            r="2.5"
-                                            fill="#e72b1b"
-                                          />
-                                        </svg>
-                                        Inactive
-                                      </span>
-                                    </div>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>07</td>
-                                  <td>25 Nov 2025, 10:25 PM</td>
-                                  <td>10.2545.244</td>
-                                  <td>Macintosh OS X</td>
-                                  <td>Chrome</td>
-                                  <td>Bangladesh</td>
-
-                                  <td>
-                                    <div class="d-inline-block">
-                                      <span class="inactive-badge badge">
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          width="7"
-                                          height="7"
-                                          viewBox="0 0 5 5"
-                                          fill="none"
-                                        >
-                                          <circle
-                                            cx="2.5"
-                                            cy="2.5"
-                                            r="2.5"
-                                            fill="#e72b1b"
-                                          />
-                                        </svg>
-                                        Inactive
-                                      </span>
-                                    </div>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>08</td>
-                                  <td>25 Nov 2025, 10:25 PM</td>
-                                  <td>10.2545.244</td>
-                                  <td>Macintosh OS X</td>
-                                  <td>Chrome</td>
-                                  <td>Bangladesh</td>
-
-                                  <td>
-                                    <div class="d-inline-block">
-                                      <span class="inactive-badge badge">
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          width="7"
-                                          height="7"
-                                          viewBox="0 0 5 5"
-                                          fill="none"
-                                        >
-                                          <circle
-                                            cx="2.5"
-                                            cy="2.5"
-                                            r="2.5"
-                                            fill="#e72b1b"
-                                          />
-                                        </svg>
-                                        Inactive
-                                      </span>
-                                    </div>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>09</td>
-                                  <td>25 Nov 2025, 10:25 PM</td>
-                                  <td>10.2545.244</td>
-                                  <td>Macintosh OS X</td>
-                                  <td>Chrome</td>
-                                  <td>Bangladesh</td>
-
-                                  <td>
-                                    <div class="d-inline-block">
-                                      <span class="inactive-badge badge">
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          width="7"
-                                          height="7"
-                                          viewBox="0 0 5 5"
-                                          fill="none"
-                                        >
-                                          <circle
-                                            cx="2.5"
-                                            cy="2.5"
-                                            r="2.5"
-                                            fill="#e72b1b"
-                                          />
-                                        </svg>
-                                        Inactive
-                                      </span>
-                                    </div>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>10</td>
-                                  <td>25 Nov 2025, 10:25 PM</td>
-                                  <td>10.2545.244</td>
-                                  <td>Macintosh OS X</td>
-                                  <td>Chrome</td>
-                                  <td>Bangladesh</td>
-
-                                  <td>
-                                    <div class="d-inline-block">
-                                      <span class="inactive-badge badge">
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          width="7"
-                                          height="7"
-                                          viewBox="0 0 5 5"
-                                          fill="none"
-                                        >
-                                          <circle
-                                            cx="2.5"
-                                            cy="2.5"
-                                            r="2.5"
-                                            fill="#e72b1b"
-                                          />
-                                        </svg>
-                                        Inactive
-                                      </span>
-                                    </div>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
+                        <input
+                          type="text"
+                          class="text-white border-brand-50 bg-white-5 rounded-2 p-2 py-lg-3 px-lg-3 schedule-select hover-bg-brand-40 cursor-pointer text-center"
+                          id="datePicker"
+                          placeholder="Manage Schedule"
+                        />
+                      </div>
+                      <div
+                        class="d-flex align-items-center justify-content-between gap-2 flex-wrap mt-3"
+                      >
+                        <p>Select the day</p>
+                        <div class="d-flex align-items-center gap-2">
+                          <div class="d-flex align-items-center gap-lg-2 gap-1">
+                            <div class="day-select-box">
+                              <label>
+                                <input type="checkbox" />
+                                <span>S</span>
+                              </label>
+                            </div>
+                            <div class="day-select-box">
+                              <label>
+                                <input type="checkbox" />
+                                <span>M</span>
+                              </label>
+                            </div>
+                            <div class="day-select-box">
+                              <label>
+                                <input type="checkbox" />
+                                <span>T</span>
+                              </label>
+                            </div>
+                            <div class="day-select-box">
+                              <label>
+                                <input type="checkbox" />
+                                <span>W</span>
+                              </label>
+                            </div>
+                            <div class="day-select-box">
+                              <label>
+                                <input type="checkbox" />
+                                <span>T</span>
+                              </label>
+                            </div>
+                            <div class="day-select-box">
+                              <label>
+                                <input type="checkbox" />
+                                <span>F</span>
+                              </label>
+                            </div>
+                            <div class="day-select-box">
+                              <label>
+                                <input type="checkbox" />
+                                <span>S</span>
+                              </label>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div
+                    class="d-flex align-items-center justify-content-between gap-3 flex-wrap bg-brand-10 rounded-3 p-3"
+                  >
+                    <div class="d-flex align-items-center gap-2">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 22 22"
+                        fill="none"
+                        class="svg-icon-brand"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11 15V11M11 7H11.01M21 11C21 16.5228 16.5228 21 11 21C5.47715 21 1 16.5228 1 11C1 5.47715 5.47715 1 11 1C16.5228 1 21 5.47715 21 11Z"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+
+                      <div>
+                        <p>Setting Update</p>
+                        <p class="md-p text-brand">
+                          Changes will be applied to all futures trades. Current
+                          open positions are not affected
+                        </p>
+                      </div>
+                    </div>
+
+                    <button class="primary-btn" type="submit">
+                      Save Changes
+                    </button>
                   </div>
                 </div>
               </div>
@@ -1177,7 +1123,63 @@
       </section>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- TomSelect JS   -->
+    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
     <script src="assets/js/sidebar.js"></script>
+    <!-- flatpickr js -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+      flatpickr("#datePicker", {
+        dateFormat: "Y-m-d",
+        // enableTime: true,
+        mode: "range",
+        minDate: "today",
+      });
+    </script>
+
     <script src="assets/js/theme.js"></script>
+    <script>
+      document.querySelectorAll(".tomselect").forEach(function (el) {
+        new TomSelect(el, {
+          plugins: ["remove_button"],
+          maxOptions: 1000,
+          dropdownParent: "body",
+          onInitialize: function () {
+            this.setValue("");
+          },
+        });
+      });
+    </script>
+    <!-- password show/hide icon -->
+    <script>
+      document.querySelectorAll(".toggle-password").forEach((button) => {
+        button.addEventListener("click", () => {
+          const input = button.previousElementSibling;
+          const eye = button.querySelector(".icon-eye");
+          const eyeSlash = button.querySelector(".icon-eye-slash");
+
+          if (input.type === "password") {
+            input.type = "text";
+            eye.style.display = "none";
+            eyeSlash.style.display = "inline";
+          } else {
+            input.type = "password";
+            eye.style.display = "inline";
+            eyeSlash.style.display = "none";
+          }
+        });
+      });
+    </script>
+    <script>
+      document.querySelectorAll(".tooltip-trigger").forEach((trigger) => {
+        const contentEl = trigger.nextElementSibling;
+        if (contentEl && contentEl.classList.contains("tooltip-content")) {
+          trigger.setAttribute("data-bs-title", contentEl.innerHTML);
+        }
+        new bootstrap.Tooltip(trigger, {
+          trigger: "hover focus",
+        });
+      });
+    </script>
   </body>
 </html>

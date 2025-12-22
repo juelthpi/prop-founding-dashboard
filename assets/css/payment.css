@@ -1,0 +1,74 @@
+.amount-btn {
+  border: 1px solid rgba(var(--white), 0.08);
+  border-radius: 8px;
+  color: rgba(var(--white), 1);
+  flex: 1 0 0;
+  padding: 10px;
+  font-size: calc(var(--font-base) + 2px);
+  text-align: center;
+  cursor: pointer;
+}
+.amount-btn.active {
+  border-color: rgba(var(--brand), 0.4);
+  color: rgba(var(--brand), 1);
+}
+/* Payment methods */
+.methods {
+  max-height: 210px;
+  overflow-y: scroll;
+}
+.methods::-webkit-scrollbar {
+  width: 4px;
+}
+.methods::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+.method input:checked {
+  display: none;
+}
+
+.method span {
+  padding: 14px 20px;
+  border: 1px solid rgba(var(--white), 0.1);
+  color: rgba(var(--white), 1);
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: calc(var(--font-base) + 2px);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.method span img {
+  max-height: 30px;
+  width: auto;
+}
+.method input:checked ~ span {
+  border-color: rgba(var(--brand), 1);
+  background-color: rgba(var(--brand), 0.1);
+
+  border-radius: 8px;
+  color: rgba(var(--brand), 1);
+  font-weight: 500;
+  font-size: calc(var(--font-base) + 2px);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@media all and (max-width: 767px) {
+  .amount-btn {
+    padding: 5px;
+    font-size: var(--font-base);
+  }
+  .method span {
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-size: var(--font-base);
+  }
+  .method span img {
+    max-height: 28px;
+  }
+}

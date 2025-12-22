@@ -2,93 +2,178 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Deposit UI</title>
     <style>
-      /* top left */
-      .d {
-        width: 300px;
-        height: 400px;
-        background-color: #3300ff;
-        border-radius: 24px;
+      body {
+        background: #0b1020;
+        font-family: Arial, sans-serif;
+        color: #fff;
+      }
+      .container {
+        max-width: 900px;
+        margin: 40px auto;
+        background: #11162a;
+        padding: 20px;
+        border-radius: 14px;
+      }
+      h3 {
+        margin-bottom: 12px;
+        font-size: 16px;
+      }
+
+      /* Input */
+      .amount-input {
+        width: 100%;
+        background: #0e1325;
+        border: none;
+        padding: 16px;
+        font-size: 20px;
+        color: #20e070;
+        border-radius: 30px;
+        outline: none;
+      }
+
+      /* Preset buttons */
+      .amount-buttons {
+        display: flex;
+        gap: 12px;
+        margin-top: 15px;
+      }
+      .amount-btn {
+        flex: 1;
+        padding: 14px;
+        border-radius: 12px;
+        background: #0e1325;
+        border: 1px solid #1f243d;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      .amount-btn.active {
+        border-color: #20e070;
+        color: #20e070;
+      }
+
+      /* Payment methods */
+      .method {
         position: relative;
       }
-      .m {
-        content: "";
-        width: 50%;
-        height: 100px;
-        background-color: #fff;
-        border-top-left-radius: 24px;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-      }
-      .m::before,
-      .m::after {
-        content: "";
-        position: absolute;
-        width: 24px;
-        aspect-ratio: 1;
-        background: radial-gradient(
-            circle 24px at top left,
-            transparent 98%,
-            white
-          )
-          top left;
+
+      .method input:checked + span {
+        color: #20e070;
       }
 
-      .m::before {
-        bottom: 0;
-        left: -24px;
+      .method input:checked {
+        display: none;
       }
 
-      .m::after {
-        right: 0;
-        top: -24px;
-      }
-      /* item 2  top right*/
-      .m-topright {
-        content: "";
-        width: 50%;
-        height: 100px;
-        background-color: #fff;
-        border-bottom-left-radius: 24px;
-        position: absolute;
-        top: 0;
-        right: 0;
+      .method input:checked ~ span {
+        font-weight: 600;
       }
 
-      .m-topright::before,
-      .m-topright::after {
-        content: "";
-        position: absolute;
-        width: 24px;
-        aspect-ratio: 1;
-        background: radial-gradient(
-            circle 24px at bottom left,
-            transparent 98%,
-            white
-          )
-          bottom left;
+      .method input:checked + span {
+        pointer-events: none;
       }
 
-      .m-topright::before {
-        top: 0;
-        left: -24px;
-      }
-
-      .m-topright::after {
-        right: 0;
-        bottom: -24px;
+      .method input:checked ~ span,
+      .method:has(input:checked) {
+        border-color: #20e070;
+        box-shadow: 0 0 0 1px #20e070;
       }
     </style>
   </head>
   <body>
-    <div class="d">
-      <!-- item bottom side -->
-      <div class="m"></div>
-      <!-- item top side -->
-      <div class="m-topright"></div>
+    <div class="container">
+      <h3>Input Amount</h3>
+      <input type="number" id="amount" class="amount-input" value="1000" />
+
+      <div class="amount-buttons">
+        <button class="amount-btn">$100</button>
+        <button class="amount-btn">$200</button>
+        <button class="amount-btn">$500</button>
+        <button class="amount-btn active">$1000</button>
+        <button class="amount-btn">$2000</button>
+      </div>
     </div>
+
+    <div class="container">
+      <h3>Select Payment Method</h3>
+
+      <div class="methods">
+        <label class="method active">
+          <input type="radio" name="payment" checked hidden />
+          <span>🏦 Bank Transfer</span>
+        </label>
+
+        <label class="method">
+          <input type="radio" name="payment" hidden />
+          <span>₿ BTC Payment</span>
+        </label>
+
+        <label class="method">
+          <input type="radio" name="payment" hidden />
+          <span>💲 USDT</span>
+        </label>
+
+        <label class="method">
+          <input type="radio" name="payment" hidden />
+          <span>PayPal</span>
+        </label>
+
+        <label class="method">
+          <input type="radio" name="payment" hidden />
+          <span>Stripe</span>
+        </label>
+      </div>
+    </div>
+
+    <script>
+      const amountInput = document.getElementById("amount");
+      const amountBtns = document.querySelectorAll(".amount-btn");
+      const methods = document.querySelectorAll(".method");
+
+      // helper: remove active from amount buttons
+      function clearAmountButtons() {
+        amountBtns.forEach((b) => b.classList.remove("active"));
+      }
+
+      // Amount button click
+      amountBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          clearAmountButtons();
+          btn.classList.add("active");
+          amountInput.value = btn.innerText.replace("$", "");
+        });
+      });
+
+      // Direct input typing
+      amountInput.addEventListener("input", () => {
+        const inputValue = amountInput.value;
+
+        let matched = false;
+
+        amountBtns.forEach((btn) => {
+          const btnValue = btn.innerText.replace("$", "");
+          if (btnValue === inputValue) {
+            clearAmountButtons();
+            btn.classList.add("active");
+            matched = true;
+          }
+        });
+
+        // If no preset matched, clear all active states
+        if (!matched) {
+          clearAmountButtons();
+        }
+      });
+
+      // Payment method select
+      methods.forEach((method) => {
+        method.addEventListener("click", () => {
+          methods.forEach((m) => m.classList.remove("active"));
+          method.classList.add("active");
+        });
+      });
+    </script>
   </body>
 </html>

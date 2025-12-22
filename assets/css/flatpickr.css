@@ -57,3 +57,7 @@
 .flatpickr-prev-month svg path {
   fill: rgba(var(--brand), 1) !important;
 }
+.flatpickr-calendar {
+  background: rgba(var(--white), 0.95);
+  backdrop-filter: blur(100px);
+}

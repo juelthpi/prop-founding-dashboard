@@ -55,7 +55,18 @@
 .sidebar {
   width: var(--sidebar-full);
   height: 100vh;
-  background: rgba(var(--white), 0.1);
+
+  background: linear-gradient(
+      0deg,
+      rgba(var(--white), 0.02),
+      rgba(var(--white), 0.02)
+    ),
+    linear-gradient(
+      306.11deg,
+      rgba(var(--white), 0) 42.55%,
+      rgba(var(--white), 0.2) 107.3%
+    );
+
   overflow-y: auto;
   overflow-x: hidden;
   transition: width 0.35s ease;
@@ -173,6 +184,12 @@
 
 /* Active parent item */
 .sidebar-nav ul li.active > a.menu-link {
+  background: rgba(var(--brand), 0.1);
+}
+.sidebar-nav ul li.active .menu-link span {
+  color: rgba(var(--brand), 0.9);
+}
+.sidebar-nav ul li.active .sidebar-submenu li.submenu-active {
   background: rgba(var(--brand), 0.1);
 }
 .sidebar-nav ul li.active .menu-link span {

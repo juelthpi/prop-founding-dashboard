@@ -24,6 +24,12 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <!-- Flatpickr css -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/flatpickr.css" />
     <!-- TomSelect CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.default.min.css"
@@ -49,6 +55,8 @@
     <link rel="stylesheet" href="assets/css/tom-select.css" />
     <link rel="stylesheet" href="assets/css/common.css" />
     <link rel="stylesheet" href="assets/css/switch.css" />
+    <!-- preloader css -->
+    <link rel="stylesheet" href="assets/css/preloader.css" />
     <!-- risk controls -->
     <link rel="stylesheet" href="assets/css/risk.css" />
     <!-- setting css -->
@@ -70,19 +78,19 @@
           >
             <!-- light Logo -->
             <div class="logo-light">
-              <a href="#" class="logo-long">
+              <a href="index.html" class="logo-long">
                 <img src="assets/images/logo.png" alt="logo" />
               </a>
-              <a href="#" class="logo-short">
+              <a href="index.html" class="logo-short">
                 <img src="assets/images/short-logo.png" alt="logo" />
               </a>
             </div>
             <!-- dark Logo -->
             <div class="logo-dark">
-              <a href="#" class="logo-long">
+              <a href="index.html" class="logo-long">
                 <img src="assets/images/logo-black.png" alt="logo" />
               </a>
-              <a href="#" class="logo-short">
+              <a href="index.html" class="logo-short">
                 <img src="assets/images/short-logo-black.png" alt="logo" />
               </a>
             </div>
@@ -160,8 +168,8 @@
           <div class="sidebar-nav sidebar-scroll">
             <ul>
               <!-- item without dropdown -->
-              <li class="active">
-                <a href="#" class="menu-link">
+              <li>
+                <a href="index.html" class="menu-link">
                   <div class="d-flex align-items-center gap-2">
                     <div class="nav-item-icon">
                       <svg
@@ -187,7 +195,7 @@
 
               <!-- item without dropdown -->
               <li>
-                <a href="#" class="menu-link">
+                <a href="live-trade.html" class="menu-link">
                   <div class="d-flex align-items-center gap-2">
                     <div class="nav-item-icon">
                       <svg
@@ -225,6 +233,101 @@
                       </svg>
                     </div>
                     <span>Live Trade</span>
+                  </div>
+                </a>
+              </li>
+              <!-- item without dropdown -->
+              <li>
+                <a href="risk-manage.html" class="menu-link">
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="nav-item-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="nav-item-svg"
+                        width="18"
+                        height="22"
+                        viewBox="0 0 18 22"
+                        fill="none"
+                      >
+                        <path
+                          d="m10 6.432-3 3 4 2-3 3M17 10.932c0 4.908-5.354 8.478-7.302 9.615-.222.129-.332.194-.488.227a1 1 0 0 1-.42 0c-.156-.033-.266-.098-.488-.227C6.354 19.41 1 15.84 1 10.932V6.15c0-.8 0-1.2.131-1.543a2 2 0 0 1 .547-.789c.276-.243.65-.383 1.399-.664l5.362-2.01a2 2 0 0 1 .706-.132 2 2 0 0 1 .706.132l5.362 2.01c.749.281 1.123.421 1.399.664.244.215.432.486.548.789C17 4.95 17 5.35 17 6.15v4.782Z"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <span>Risk Manage</span>
+                  </div>
+                </a>
+              </li>
+              <!-- item without dropdown -->
+              <li>
+                <a href="deposit.html" class="menu-link">
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="nav-item-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        class="nav-item-svg"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M14 2.20004C13.3538 2.06886 12.6849 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.3151 21.9311 10.6462 21.8 10"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                        />
+                        <path
+                          d="M12 9C10.8954 9 10 9.67157 10 10.5C10 11.3284 10.8954 12 12 12C13.1046 12 14 12.6716 14 13.5C14 14.3284 13.1046 15 12 15M12 9C12.8708 9 13.6116 9.4174 13.8862 10M12 9V8M12 15C11.1292 15 10.3884 14.5826 10.1138 14M12 15V16"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                        />
+                        <path
+                          d="M17 7.00195L21.1759 2.82375M22 6.48019L21.8818 3.3887C21.8818 2.66006 21.4468 2.20607 20.6543 2.14881L17.5302 2.00195"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <span>Deposit</span>
+                  </div>
+                </a>
+              </li>
+              <!-- item without dropdown -->
+              <li>
+                <a href="withdraw.html" class="menu-link">
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="nav-item-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        class="nav-item-svg"
+                      >
+                        <path
+                          d="M18.9349 13.9453L18.2646 10.2968C17.9751 8.72096 17.8303 7.93303 17.257 7.46651C16.6837 7 15.8602 7 14.2132 7H9.78685C8.1398 7 7.31628 7 6.74298 7.46651C6.16968 7.93303 6.02492 8.72096 5.73538 10.2968L5.06506 13.9453C4.46408 17.2162 4.16359 18.8517 5.08889 19.9259C6.01419 21 7.72355 21 11.1423 21H12.8577C16.2765 21 17.9858 21 18.9111 19.9259C19.8364 18.8517 19.5359 17.2162 18.9349 13.9453Z"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                        />
+                        <path
+                          d="M10.4375 16.6667V11.3333M12 11.3333V10M12 18V16.6667M10.4375 14H13.5625M13.5625 14C14.0803 14 14.5 14.4477 14.5 15V15.6667C14.5 16.219 14.0803 16.6667 13.5625 16.6667H9.5M13.5625 14C14.0803 14 14.5 13.5523 14.5 13V12.3333C14.5 11.781 14.0803 11.3333 13.5625 11.3333H9.5"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M21 11C21.1568 10.9209 21.2931 10.8212 21.4142 10.6955C22 10.0875 22 9.10893 22 7.15176C22 5.1946 22 4.21602 21.4142 3.60801C20.8284 3 19.8856 3 18 3H6C4.11438 3 3.17157 3 2.58579 3.60801C2 4.21602 2 5.1946 2 7.15176C2 9.10893 2 10.0875 2.58579 10.6955C2.70688 10.8212 2.84322 10.9209 3 11"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    </div>
+                    <span>Withdraw</span>
                   </div>
                 </a>
               </li>
@@ -277,100 +380,60 @@
                 </a>
                 <div class="sidebar-submenu">
                   <ul>
-                    <li><a href="#">Withdraw</a></li>
-                    <li><a href="#">Deposit</a></li>
-                    <li><a href="#">Trade</a></li>
+                    <li><a href="statements-withdraw.html">Withdraw</a></li>
+                    <li><a href="statements-deposit.html">Deposit</a></li>
+                    <li><a href="statements-trade.html">Trade</a></li>
                   </ul>
                 </div>
               </li>
 
               <li>
-                <a href="#" class="menu-link">
+                <a href="notification.html" class="menu-link">
                   <div class="d-flex align-items-center gap-2">
                     <div class="nav-item-icon">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="nav-item-svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
                         fill="none"
+                        class="nav-item-svg"
                       >
                         <path
-                          d="M14 3H5a2 2 0 0 0 0 4h13c0-.93 0-1.395-.102-1.776A3 3 0 0 0 14 3Z"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M3 5v10c0 2.829 0 4.243.879 5.121C4.757 21 6.172 21 9 21h6c2.829 0 4.243 0 5.121-.879C21 19.243 21 17.829 21 15v-2c0-2.828 0-4.243-.879-5.121C19.243 7 17.829 7 15 7H7"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M21 12h-2c-.465 0-.698 0-.888.051a1.5 1.5 0 0 0-1.06 1.06C17 13.302 17 13.535 17 14s0 .698.052.888a1.5 1.5 0 0 0 1.06 1.06C18.302 16 18.535 16 19 16h2"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </div>
-                    <span>Wallet</span>
-                  </div>
-                </a>
-              </li>
-              <!-- item without dropdown -->
-              <li>
-                <a href="#" class="menu-link">
-                  <div class="d-flex align-items-center gap-2">
-                    <div class="nav-item-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="nav-item-svg"
-                        width="18"
-                        height="22"
-                        viewBox="0 0 18 22"
-                        fill="none"
-                      >
-                        <path
-                          d="m10 6.432-3 3 4 2-3 3M17 10.932c0 4.908-5.354 8.478-7.302 9.615-.222.129-.332.194-.488.227a1 1 0 0 1-.42 0c-.156-.033-.266-.098-.488-.227C6.354 19.41 1 15.84 1 10.932V6.15c0-.8 0-1.2.131-1.543a2 2 0 0 1 .547-.789c.276-.243.65-.383 1.399-.664l5.362-2.01a2 2 0 0 1 .706-.132 2 2 0 0 1 .706.132l5.362 2.01c.749.281 1.123.421 1.399.664.244.215.432.486.548.789C17 4.95 17 5.35 17 6.15v4.782Z"
+                          d="M9 2H5.8C4.11984 2 3.27976 2 2.63803 2.32698C2.07354 2.6146 1.6146 3.07354 1.32698 3.63803C1 4.27976 1 5.11984 1 6.8V14.2C1 15.8802 1 16.7202 1.32698 17.362C1.6146 17.9265 2.07354 18.3854 2.63803 18.673C3.27976 19 4.11984 19 5.8 19H13.2C14.8802 19 15.7202 19 16.362 18.673C16.9265 18.3854 17.3854 17.9265 17.673 17.362C18 16.7202 18 15.8802 18 14.2V11M11 15H5M13 11H5M18.1213 1.87868C19.2929 3.05025 19.2929 4.94975 18.1213 6.12132C16.9497 7.29289 15.0503 7.29289 13.8787 6.12132C12.7071 4.94975 12.7071 3.05025 13.8787 1.87868C15.0503 0.707107 16.9497 0.707107 18.1213 1.87868Z"
                           stroke-width="2"
                           stroke-linecap="round"
                           stroke-linejoin="round"
                         />
                       </svg>
                     </div>
-                    <span>Risk</span>
+                    <span>Notification</span>
                   </div>
                 </a>
               </li>
 
               <!-- item without dropdown -->
-              <li>
-                <a href="#" class="menu-link">
+              <li class="active">
+                <a href="referral.html" class="menu-link">
                   <div class="d-flex align-items-center gap-2">
                     <div class="nav-item-icon">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        class="nav-item-svg"
-                        viewBox="0 0 24 24"
+                        width="22"
+                        height="21"
+                        viewBox="0 0 22 21"
                         fill="none"
+                        class="nav-item-svg"
                       >
                         <path
-                          d="M7.5 14.474h9M7.5 9.484H13"
-                          stroke-width="1.5"
+                          d="M21 6.11564V10.1156M9.25 3.61563H5.8C4.11984 3.61563 3.27976 3.61563 2.63803 3.94261C2.07354 4.23024 1.6146 4.68918 1.32698 5.25366C0.999998 5.8954 0.999999 6.73548 1 8.41564L1 9.61563C1 10.5475 1 11.0135 1.15224 11.381C1.35523 11.8711 1.74458 12.2604 2.23463 12.4634C2.60218 12.6156 3.06812 12.6156 4 12.6156V16.8656C4 17.0978 4 17.2139 4.00963 17.3117C4.10316 18.2612 4.85441 19.0125 5.80397 19.106C5.90175 19.1156 6.01783 19.1156 6.25 19.1156C6.48217 19.1156 6.59826 19.1156 6.69604 19.106C7.64559 19.0125 8.39685 18.2612 8.49037 17.3117C8.5 17.2139 8.5 17.0978 8.5 16.8656V12.6156H9.25C11.0164 12.6156 13.1772 13.5625 14.8443 14.4713C15.8168 15.0014 16.3031 15.2665 16.6216 15.2275C16.9169 15.1913 17.1402 15.0587 17.3133 14.8167C17.5 14.5558 17.5 14.0336 17.5 12.9893V3.24192C17.5 2.19763 17.5 1.67548 17.3133 1.41452C17.1402 1.17254 16.9169 1.03993 16.6216 1.00376C16.3031 0.964756 15.8168 1.22983 14.8443 1.75999C13.1772 2.66875 11.0164 3.61563 9.25 3.61563Z"
+                          stroke-width="2"
+                          stroke-linecap="round"
                           stroke-linejoin="round"
-                        />
-                        <path
-                          d="m2.014 21.449 4.576-1.468c1.502.83 3.204 1.013 5.089 1.013C18.179 21.449 22.002 17.244 22.002 12.26c.107-4.956-2.083-10.18-10.42-9.79C4.309 2.6 2.008 7.038 2.008 12.022c0 1.704.347 3.79 1.601 5.43l-1.595 3.997Z"
-                          stroke-width="1.5"
                         />
                       </svg>
                     </div>
-                    <span>Messages</span>
+                    <span>Referral</span>
                   </div>
                 </a>
               </li>
@@ -383,7 +446,7 @@
             <div class="sidebar-nav">
               <ul>
                 <li>
-                  <a href="#" class="menu-link">
+                  <a href="support.html" class="menu-link">
                     <div class="d-flex align-items-center gap-2">
                       <div class="nav-item-icon">
                         <svg
@@ -408,7 +471,7 @@
                 </li>
 
                 <li>
-                  <a href="#" class="menu-link">
+                  <a href="setting-profile.html" class="menu-link">
                     <div class="d-flex align-items-center gap-2">
                       <div class="nav-item-icon">
                         <svg
@@ -436,7 +499,7 @@
                 </li>
 
                 <li>
-                  <a href="#" class="menu-link">
+                  <a href="logout.html" class="menu-link">
                     <div class="d-flex align-items-center gap-2">
                       <div class="nav-item-icon">
                         <svg
@@ -466,6 +529,24 @@
         </aside>
       </div>
       <section class="main-section">
+        <!--  Preloader Start -->
+        <div id="page-load-preloader">
+          <div class="page-load-signal-area">
+            <div class="page-load-orbit">
+              <span class="page-load-particle"></span>
+              <span class="page-load-particle"></span>
+              <span class="page-load-particle"></span>
+            </div>
+            <div class="page-load-logo">
+              <div class="page-load-circle"></div>
+              <h2>Prop<span>Funding</span></h2>
+            </div>
+          </div>
+          <div class="page-load-progress-bar">
+            <div class="page-load-progress"></div>
+          </div>
+        </div>
+        <!-- Preloader End  -->
         <div
           class="dashboard-header bg-white-10 py-2 bg-filter-20 px-3 sticky-top mb-2 d-flex align-items-center justify-content-between"
         >
@@ -698,17 +779,15 @@
                       </div>
                     </a>
                   </div>
-                  <a href="#" class="primary-btn mt-4">See All Notification</a>
+                  <a href="notification.html" class="primary-btn mt-4"
+                    >See All Notification</a
+                  >
                 </div>
               </div>
-              <div class="profile position-relative">
-                <img
-                  src="assets/images/user/user-1.png"
-                  alt="user"
-                  class="dropdown-toggle cursor-pointer"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                />
+              <div class="profile">
+                <a href="setting-profile.html">
+                  <img src="assets/images/user/user-1.png" alt="user" />
+                </a>
               </div>
             </div>
           </div>
@@ -818,6 +897,8 @@
                             <path d="M5 15V5a2 2 0 0 1 2-2h10"></path>
                           </g>
                         </svg>
+                        <!-- Tooltip -->
+                        <span class="copy-tooltip">Copied!</span>
                       </span>
                     </div>
                   </div>
@@ -825,10 +906,10 @@
                 <div class="col-md-6">
                   <div class="bg-white-5 rounded-3 p-3 h-100">
                     <h6>Share on Social Media</h6>
-                    <div class="line-1 mt-3 mb-3"></div>
 
+                    <div class="line-1 mt-3 mb-3"></div>
                     <ul
-                      class="social-share d-flex gap-2 align-items-center flex-wrap"
+                      class="social-share d-flex gap-2 align-items-center flex-wrap pt-3"
                     >
                       <li>
                         <a href="#"
@@ -868,7 +949,8 @@
                 </div>
                 <div class="col-md-12">
                   <div class="border-2 bg-white-4 rounded-3 p-3">
-                    <div class="" id="example_wrapper">
+                    <h6 class="mb-2">Referral List</h6>
+                    <div id="example_wrapper">
                       <table
                         id="example"
                         class="data-table table table-striped table-bordered w-100"
@@ -876,135 +958,325 @@
                         <thead>
                           <tr>
                             <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
+                            <th>Level</th>
+                            <th>Joined</th>
+                            <th>Invested</th>
+                            <th>Status</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
                             <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                            <td>$320,800</td>
+                            <td>L1</td>
+                            <td>11/16/2025</td>
+                            <td>$2000</td>
+                            <td>
+                              <div class="d-inline-block">
+                                <span class="badge active-badge">Active</span>
+                              </div>
+                            </td>
                           </tr>
                           <tr>
-                            <td>Garrett Winters</td>
-                            <td>Accountant</td>
-                            <td>Tokyo</td>
-                            <td>63</td>
-                            <td>2011/07/25</td>
-                            <td>$170,750</td>
+                            <td>Tiger Nixon</td>
+                            <td>L2</td>
+                            <td>11/18/2025</td>
+                            <td>$5000</td>
+                            <td>
+                              <div class="d-inline-block">
+                                <span class="badge inactive-badge"
+                                  >Inactive</span
+                                >
+                              </div>
+                            </td>
                           </tr>
                           <tr>
-                            <td>Ashton Cox</td>
-                            <td>Junior Technical Author</td>
-                            <td>San Francisco</td>
-                            <td>66</td>
-                            <td>2009/01/12</td>
-                            <td>$86,000</td>
+                            <td>Tiger Nixon</td>
+                            <td>L1</td>
+                            <td>11/16/2025</td>
+                            <td>$2000</td>
+                            <td>
+                              <div class="d-inline-block">
+                                <span class="badge active-badge">Active</span>
+                              </div>
+                            </td>
                           </tr>
                           <tr>
-                            <td>Garrett Winters</td>
-                            <td>Accountant</td>
-                            <td>Tokyo</td>
-                            <td>63</td>
-                            <td>2011/07/25</td>
-                            <td>$170,750</td>
+                            <td>Tiger Nixon</td>
+                            <td>L2</td>
+                            <td>11/18/2025</td>
+                            <td>$5000</td>
+                            <td>
+                              <div class="d-inline-block">
+                                <span class="badge inactive-badge"
+                                  >Inactive</span
+                                >
+                              </div>
+                            </td>
                           </tr>
                           <tr>
-                            <td>Ashton Cox</td>
-                            <td>Junior Technical Author</td>
-                            <td>San Francisco</td>
-                            <td>66</td>
-                            <td>2009/01/12</td>
-                            <td>$86,000</td>
+                            <td>Tiger Nixon</td>
+                            <td>L1</td>
+                            <td>11/16/2025</td>
+                            <td>$2000</td>
+                            <td>
+                              <div class="d-inline-block">
+                                <span class="badge active-badge">Active</span>
+                              </div>
+                            </td>
                           </tr>
                           <tr>
-                            <td>Garrett Winters</td>
-                            <td>Accountant</td>
-                            <td>Tokyo</td>
-                            <td>63</td>
-                            <td>2011/07/25</td>
-                            <td>$170,750</td>
+                            <td>Tiger Nixon</td>
+                            <td>L2</td>
+                            <td>11/18/2025</td>
+                            <td>$5000</td>
+                            <td>
+                              <div class="d-inline-block">
+                                <span class="badge inactive-badge"
+                                  >Inactive</span
+                                >
+                              </div>
+                            </td>
                           </tr>
                           <tr>
-                            <td>Ashton Cox</td>
-                            <td>Junior Technical Author</td>
-                            <td>San Francisco</td>
-                            <td>66</td>
-                            <td>2009/01/12</td>
-                            <td>$86,000</td>
+                            <td>Tiger Nixon</td>
+                            <td>L1</td>
+                            <td>11/16/2025</td>
+                            <td>$2000</td>
+                            <td>
+                              <div class="d-inline-block">
+                                <span class="badge active-badge">Active</span>
+                              </div>
+                            </td>
                           </tr>
                           <tr>
-                            <td>Garrett Winters</td>
-                            <td>Accountant</td>
-                            <td>Tokyo</td>
-                            <td>63</td>
-                            <td>2011/07/25</td>
-                            <td>$170,750</td>
+                            <td>Tiger Nixon</td>
+                            <td>L2</td>
+                            <td>11/18/2025</td>
+                            <td>$5000</td>
+                            <td>
+                              <div class="d-inline-block">
+                                <span class="badge inactive-badge"
+                                  >Inactive</span
+                                >
+                              </div>
+                            </td>
                           </tr>
                           <tr>
-                            <td>Ashton Cox</td>
-                            <td>Junior Technical Author</td>
-                            <td>San Francisco</td>
-                            <td>66</td>
-                            <td>2009/01/12</td>
-                            <td>$86,000</td>
+                            <td>Tiger Nixon</td>
+                            <td>L1</td>
+                            <td>11/16/2025</td>
+                            <td>$2000</td>
+                            <td>
+                              <div class="d-inline-block">
+                                <span class="badge active-badge">Active</span>
+                              </div>
+                            </td>
                           </tr>
                           <tr>
-                            <td>Garrett Winters</td>
-                            <td>Accountant</td>
-                            <td>Tokyo</td>
-                            <td>63</td>
-                            <td>2011/07/25</td>
-                            <td>$170,750</td>
+                            <td>Tiger Nixon</td>
+                            <td>L2</td>
+                            <td>11/18/2025</td>
+                            <td>$5000</td>
+                            <td>
+                              <div class="d-inline-block">
+                                <span class="badge inactive-badge"
+                                  >Inactive</span
+                                >
+                              </div>
+                            </td>
                           </tr>
                           <tr>
-                            <td>Ashton Cox</td>
-                            <td>Junior Technical Author</td>
-                            <td>San Francisco</td>
-                            <td>66</td>
-                            <td>2009/01/12</td>
-                            <td>$86,000</td>
+                            <td>Tiger Nixon</td>
+                            <td>L1</td>
+                            <td>11/16/2025</td>
+                            <td>$2000</td>
+                            <td>
+                              <div class="d-inline-block">
+                                <span class="badge active-badge">Active</span>
+                              </div>
+                            </td>
                           </tr>
                           <tr>
-                            <td>Garrett Winters</td>
-                            <td>Accountant</td>
-                            <td>Tokyo</td>
-                            <td>63</td>
-                            <td>2011/07/25</td>
-                            <td>$170,750</td>
+                            <td>Tiger Nixon</td>
+                            <td>L2</td>
+                            <td>11/18/2025</td>
+                            <td>$5000</td>
+                            <td>
+                              <div class="d-inline-block">
+                                <span class="badge inactive-badge"
+                                  >Inactive</span
+                                >
+                              </div>
+                            </td>
                           </tr>
                           <tr>
-                            <td>Ashton Cox</td>
-                            <td>Junior Technical Author</td>
-                            <td>San Francisco</td>
-                            <td>66</td>
-                            <td>2009/01/12</td>
-                            <td>$86,000</td>
+                            <td>Tiger Nixon</td>
+                            <td>L1</td>
+                            <td>11/16/2025</td>
+                            <td>$2000</td>
+                            <td>
+                              <div class="d-inline-block">
+                                <span class="badge active-badge">Active</span>
+                              </div>
+                            </td>
                           </tr>
                           <tr>
-                            <td>Garrett Winters</td>
-                            <td>Accountant</td>
-                            <td>Tokyo</td>
-                            <td>63</td>
-                            <td>2011/07/25</td>
-                            <td>$170,750</td>
+                            <td>Tiger Nixon</td>
+                            <td>L2</td>
+                            <td>11/18/2025</td>
+                            <td>$5000</td>
+                            <td>
+                              <div class="d-inline-block">
+                                <span class="badge inactive-badge"
+                                  >Inactive</span
+                                >
+                              </div>
+                            </td>
                           </tr>
                           <tr>
-                            <td>Ashton Cox</td>
-                            <td>Junior Technical Author</td>
-                            <td>San Francisco</td>
-                            <td>66</td>
-                            <td>2009/01/12</td>
-                            <td>$86,000</td>
+                            <td>Tiger Nixon</td>
+                            <td>L1</td>
+                            <td>11/16/2025</td>
+                            <td>$2000</td>
+                            <td>
+                              <div class="d-inline-block">
+                                <span class="badge active-badge">Active</span>
+                              </div>
+                            </td>
                           </tr>
-                          <!-- Add more rows here -->
+                          <tr>
+                            <td>Tiger Nixon</td>
+                            <td>L2</td>
+                            <td>11/18/2025</td>
+                            <td>$5000</td>
+                            <td>
+                              <div class="d-inline-block">
+                                <span class="badge inactive-badge"
+                                  >Inactive</span
+                                >
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Tiger Nixon</td>
+                            <td>L1</td>
+                            <td>11/16/2025</td>
+                            <td>$2000</td>
+                            <td>
+                              <div class="d-inline-block">
+                                <span class="badge active-badge">Active</span>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Tiger Nixon</td>
+                            <td>L2</td>
+                            <td>11/18/2025</td>
+                            <td>$5000</td>
+                            <td>
+                              <div class="d-inline-block">
+                                <span class="badge inactive-badge"
+                                  >Inactive</span
+                                >
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Tiger Nixon</td>
+                            <td>L1</td>
+                            <td>11/16/2025</td>
+                            <td>$2000</td>
+                            <td>
+                              <div class="d-inline-block">
+                                <span class="badge active-badge">Active</span>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Tiger Nixon</td>
+                            <td>L2</td>
+                            <td>11/18/2025</td>
+                            <td>$5000</td>
+                            <td>
+                              <div class="d-inline-block">
+                                <span class="badge inactive-badge"
+                                  >Inactive</span
+                                >
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Tiger Nixon</td>
+                            <td>L1</td>
+                            <td>11/16/2025</td>
+                            <td>$2000</td>
+                            <td>
+                              <div class="d-inline-block">
+                                <span class="badge active-badge">Active</span>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Tiger Nixon</td>
+                            <td>L2</td>
+                            <td>11/18/2025</td>
+                            <td>$5000</td>
+                            <td>
+                              <div class="d-inline-block">
+                                <span class="badge inactive-badge"
+                                  >Inactive</span
+                                >
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Tiger Nixon</td>
+                            <td>L1</td>
+                            <td>11/16/2025</td>
+                            <td>$2000</td>
+                            <td>
+                              <div class="d-inline-block">
+                                <span class="badge active-badge">Active</span>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Tiger Nixon</td>
+                            <td>L2</td>
+                            <td>11/18/2025</td>
+                            <td>$5000</td>
+                            <td>
+                              <div class="d-inline-block">
+                                <span class="badge inactive-badge"
+                                  >Inactive</span
+                                >
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Tiger Nixon</td>
+                            <td>L1</td>
+                            <td>11/16/2025</td>
+                            <td>$2000</td>
+                            <td>
+                              <div class="d-inline-block">
+                                <span class="badge active-badge">Active</span>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Tiger Nixon</td>
+                            <td>L2</td>
+                            <td>11/18/2025</td>
+                            <td>$5000</td>
+                            <td>
+                              <div class="d-inline-block">
+                                <span class="badge inactive-badge"
+                                  >Inactive</span
+                                >
+                              </div>
+                            </td>
+                          </tr>
                         </tbody>
                       </table>
                     </div>
@@ -1025,30 +1297,51 @@
       document.querySelectorAll(".copy-wrapper").forEach((wrapper) => {
         const input = wrapper.querySelector(".copy-input");
         const iconBox = wrapper.querySelector(".copy-icon-box");
+        const tooltip = iconBox.querySelector(".copy-tooltip");
 
         iconBox.addEventListener("click", async () => {
           try {
             await navigator.clipboard.writeText(input.value);
 
-            wrapper.classList.add("copied");
+            // Tooltip show
+            iconBox.classList.add("show-tooltip");
 
+            // Optional: input background flash
+            wrapper.classList.add("copied");
+            setTimeout(() => wrapper.classList.remove("copied"), 1000);
+
+            // Hide tooltip after 1.2s
             setTimeout(() => {
-              wrapper.classList.remove("copied");
-            }, 1000);
+              iconBox.classList.remove("show-tooltip");
+            }, 1200);
           } catch {
             alert("Copy failed");
           }
         });
       });
     </script>
+
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <!-- DataTables JS -->
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+    <!-- flatpickr js -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
     <script>
       $(document).ready(function () {
-        $("#example").DataTable({ responsive: true });
+        // DataTable initialize
+        var table = $("#example").DataTable({ responsive: true });
+
+        $("#example_wrapper .dataTables_length").append(
+          '<input class="primary-btn py-1 px-2 text-center  text-white d-inline-block ms-2" type="text" id="datePicker" placeholder="Select Date" />'
+        );
+        flatpickr("#datePicker", {
+          dateFormat: "Y-m-d",
+          mode: "range",
+          minDate: "today",
+        });
       });
     </script>
   </body>

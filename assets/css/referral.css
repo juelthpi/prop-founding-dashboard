@@ -8,6 +8,7 @@
   align-items: center;
   cursor: pointer;
   min-width: 32px;
+  position: relative;
   transition: 0.5s;
 }
 .copy-icon-box:hover {
@@ -16,34 +17,34 @@
 .copy-input {
   transition: all 0.25s ease;
 }
+#datePicker::placeholder {
+  color: #fff;
+}
+.copy-tooltip {
+  position: absolute;
+  top: -30px;
+  right: 50%;
+  transform: translateX(50%);
+  background-color: rgba(var(--brand), 0.6);
+  color: #fff;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
 
+.copy-icon-box.show-tooltip .copy-tooltip {
+  opacity: 1;
+  transform: translateX(50%) translateY(-5px);
+}
 /* copy success state */
 .copy-wrapper.copied .copy-input {
   color: rgba(var(--brand), 0.9) !important;
 }
 
-/* subtle shake */
-@keyframes shake {
-  0% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(-2px);
-  }
-  50% {
-    transform: translateX(2px);
-  }
-  75% {
-    transform: translateX(-2px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-.copy-wrapper.copied {
-  animation: shake 0.35s ease;
-}
 .social-share li a {
   display: flex;
   border-radius: 8px;
