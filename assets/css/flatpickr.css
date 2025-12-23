@@ -19,8 +19,34 @@
   background: rgba(var(--brand), 0.8);
   -webkit-box-shadow: none;
   box-shadow: none;
-  color: #fff;
   border-color: rgba(var(--brand), 1);
+}
+.flatpickr-day.flatpickr-disabled,
+.flatpickr-day.flatpickr-disabled:hover {
+  background: rgba(var(--white), 0.03);
+}
+.flatpickr-current-month .flatpickr-monthDropdown-months,
+.flatpickr-current-month input.cur-year {
+  color: rgba(var(--white), 0.8) !important;
+}
+.flatpickr-day {
+  color: rgba(var(--white), 0.8) !important;
+  background: rgba(var(--brand), 0.1);
+}
+.flatpickr-calendar.arrowTop:before {
+  border-bottom-color: rgba(var(--brand), 0.8) !important;
+}
+.flatpickr-weekday {
+  color: rgba(var(--white), 0.8) !important;
+}
+.flatpickr-calendar {
+  box-shadow: 0 0 0 transparent;
+  border: 1px solid rgba(var(--brand), 0.4);
+}
+.flatpickr-day.inRange {
+  -webkit-box-shadow: -5px 0 0 rgba(var(--brand), 0.1),
+    5px 0 0 rgba(var(--brand), 0.1);
+  box-shadow: -5px 0 0 rgba(var(--brand), 0.1), 5px 0 0 rgba(var(--brand), 0.1);
 }
 .flatpickr-day.inRange,
 .flatpickr-day.prevMonthDay.inRange,
@@ -58,6 +84,22 @@
   fill: rgba(var(--brand), 1) !important;
 }
 .flatpickr-calendar {
-  background: rgba(var(--white), 0.95);
+  background: rgba(var(--brand), 0.1);
   backdrop-filter: blur(100px);
+}
+
+.input-wrapper input {
+  width: 90px;
+}
+.input-wrapper.secondary-btn {
+  padding-left: 12px;
+  padding-right: 12px;
+  min-width: 150px;
+}
+.secondary-btn.flatpickr-input {
+  width: 145px;
+}
+.flatpickr-current-month .numInputWrapper span.arrowUp:after,
+.flatpickr-current-month .numInputWrapper span.arrowDown:after {
+  border-bottom-color: rgba(var(--brand), 1) !important;
 }

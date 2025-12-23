@@ -118,6 +118,7 @@ table.dataTable thead > tr > td.sorting_asc_disabled::after,
 table.dataTable thead > tr > td.sorting_desc_disabled::after {
   color: rgba(var(--brand), 0.4) !important;
   opacity: 1;
+  font-size: 8px;
 }
 table.dataTable thead > tr > th.sorting:before,
 table.dataTable thead > tr > th.sorting_asc:before,
@@ -131,6 +132,7 @@ table.dataTable thead > tr > td.sorting_asc_disabled:before,
 table.dataTable thead > tr > td.sorting_desc_disabled:before {
   color: rgba(var(--brand), 1) !important;
   opacity: 1;
+  font-size: 8px;
 }
 table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before,
 table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
@@ -138,3 +140,31 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
   opacity: 1;
   font-size: 10px !important;
 }
+
+.child {
+  background: rgba(var(--brand), 0.04) !important;
+  border: 0;
+}
+
+.child ul li span {
+  color: rgba(var(--white), 0.8) !important;
+}
+.child ul li {
+  border-color: rgba(var(--brand), 0.12) !important;
+}
+table.data-table tr th {
+  white-space: nowrap !important;
+}
+@media all and (max-width: 991px) {
+  table.dataTable thead th,
+  table.dataTable tbody td {
+    padding: 8px 28px !important;
+  }
+}
+@media all and (max-width: 480px) {
+  table.dataTable thead th,
+  table.dataTable tbody td {
+    padding: 8px 12px !important;
+  }
+}
+ 

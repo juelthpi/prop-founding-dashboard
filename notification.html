@@ -1,0 +1,1765 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Layout</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.rtl.min.css"
+      integrity="sha384-CfCrinSRH2IR6a4e6fy2q6ioOX7O6Mtm1L9vRvFZ1trBncWmMePhzvafv7oIcWiW"
+      crossorigin="anonymous"
+    /> -->
+
+    <!-- google fonts css -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- TomSelect CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.default.min.css"
+      rel="stylesheet"
+    />
+    <!-- Flatpickr css -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/flatpickr.css" />
+
+    <link rel="stylesheet" href="assets/css/tom-select.css" />
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <!-- preloader css -->
+    <link rel="stylesheet" href="assets/css/preloader.css" />
+    <!-- notification css -->
+    <link rel="stylesheet" href="assets/css/notification.css" />
+    <link rel="stylesheet" href="assets/css/switch.css" />
+    <!-- risk controls -->
+    <link rel="stylesheet" href="assets/css/risk.css" />
+    <!-- setting css -->
+    <link rel="stylesheet" href="assets/css/setting.css" />
+    <!-- table css -->
+    <link rel="stylesheet" href="assets/css/table.css" />
+    <!-- theme dark / light css -->
+    <link rel="stylesheet" href="assets/css/theme.css" />
+    <link rel="stylesheet" href="assets/css/sidebar.css" />
+  </head>
+  <body>
+    <div class="d-flex" id="dashboard">
+      <div class="sticky-top h-100">
+        <aside class="sidebar">
+          <div
+            class="sticky-top bg-filter-20 logo d-flex justify-content-between align-items-center pt-3 py-2 rounded-2 px-2"
+          >
+            <!-- light Logo -->
+            <div class="logo-light">
+              <a href="index.html" class="logo-long">
+                <img src="assets/images/logo.png" alt="logo" />
+              </a>
+              <a href="index.html" class="logo-short">
+                <img src="assets/images/short-logo.png" alt="logo" />
+              </a>
+            </div>
+            <!-- dark Logo -->
+            <div class="logo-dark">
+              <a href="index.html" class="logo-long">
+                <img src="assets/images/logo-black.png" alt="logo" />
+              </a>
+              <a href="index.html" class="logo-short">
+                <img src="assets/images/short-logo-black.png" alt="logo" />
+              </a>
+            </div>
+
+            <!-- Toggle Button -->
+            <button class="sidebar-toggle">
+              <!-- Hamburger (bar) icon -->
+              <svg
+                class="text-white icon icon-bar"
+                viewBox="0 0 24 24"
+                width="22"
+                height="22"
+                aria-hidden="true"
+                focusable="false"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2.2"
+                >
+                  <path d="M3 6h18" />
+                  <path d="M3 12h18" />
+                  <path d="M3 18h18" />
+                </g>
+              </svg>
+
+              <!-- Close (X) icon -->
+              <svg
+                class="text-white icon icon-close"
+                viewBox="0 0 24 24"
+                width="22"
+                height="22"
+                aria-hidden="true"
+                focusable="false"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2.4"
+                >
+                  <path d="M6 6l12 12" />
+                  <path d="M18 6L6 18" />
+                </g>
+              </svg>
+            </button>
+            <!-- Close (X) icon -->
+            <svg
+              class="text-white mobile-close-bar"
+              viewBox="0 0 24 24"
+              width="22"
+              height="22"
+              aria-hidden="true"
+              focusable="false"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2.4"
+              >
+                <path d="M6 6l12 12" />
+                <path d="M18 6L6 18" />
+              </g>
+            </svg>
+          </div>
+
+          <div class="sidebar-nav sidebar-scroll">
+            <ul>
+              <!-- item without dropdown -->
+              <li>
+                <a href="index.html" class="menu-link">
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="nav-item-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="nav-item-svg"
+                        width="20"
+                        height="21"
+                        viewBox="0 0 20 21"
+                        fill="none"
+                      >
+                        <path
+                          d="M7 19.733V12.333c0-.56 0-.84.109-1.054a1.1 1.1 0 0 1 .437-.437c.214-.109.494-.109 1.054-.109h2.8c.56 0 .84 0 1.054.109.188.096.341.249.437.437.109.214.109.494.109 1.054v7.4M9.018 1.497 2.235 6.772c-.453.353-.68.529-.843.75a2 2 0 0 0-.318.65C1 8.437 1 8.724 1 9.298v7.235c0 1.12 0 1.68.218 2.108.192.376.498.682.874.874.428.218.988.218 2.108.218h11.6c1.12 0 1.68 0 2.108-.218.376-.192.682-.498.874-.874.218-.428.218-.988.218-2.108V9.298c0-.574 0-.861-.074-1.126a2 2 0 0 0-.318-.65c-.163-.22-.39-.397-.843-.75L10.982 1.497a1.7 1.7 0 0 0-.721-.462 1.1 1.1 0 0 0-.523 0 1.7 1.7 0 0 0-.72.462Z"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <span>Dashboard</span>
+                  </div>
+                </a>
+              </li>
+
+              <!-- item without dropdown -->
+              <li>
+                <a href="live-trade.html" class="menu-link">
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="nav-item-icon">
+                      <svg
+                        width="24"
+                        height="24"
+                        class="nav-item-svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16 14h1v3.5H17m0-3.5h1.5m.75 3.5H17m3.25 0A1.75 1.75 0 0 0 21 15.75 1.75 1.75 0 0 0 19.25 14H18.5m.75 3.5A1.75 1.75 0 0 1 21 19.25 1.75 1.75 0 0 1 19.25 21H18.5M17 17.5V21m1.5-7v-1m0 9H17m1.5 0v1M17 21h-1"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M11.5 5H16a2 2 0 0 1 2 2v2.623a.377.377 0 0 1-.6.305L15.99 8.91"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M11.496 20H7a2 2 0 0 1-2-2v-2.637a.363.363 0 0 1 .603-.271l1.394 1.233"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M7.583 4S6.833 3 5.5 3C3.833 3 3 4 3 5s.417 2 2.5 2S8 8 8 9s-.833 2-2.5 2m0-8V2m0 10c-1.333 0-2.083-1-2.083-1M5.5 11v1"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <span>Live Trade</span>
+                  </div>
+                </a>
+              </li>
+              <!-- item without dropdown -->
+              <li>
+                <a href="risk-manage.html" class="menu-link">
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="nav-item-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="nav-item-svg"
+                        width="18"
+                        height="22"
+                        viewBox="0 0 18 22"
+                        fill="none"
+                      >
+                        <path
+                          d="m10 6.432-3 3 4 2-3 3M17 10.932c0 4.908-5.354 8.478-7.302 9.615-.222.129-.332.194-.488.227a1 1 0 0 1-.42 0c-.156-.033-.266-.098-.488-.227C6.354 19.41 1 15.84 1 10.932V6.15c0-.8 0-1.2.131-1.543a2 2 0 0 1 .547-.789c.276-.243.65-.383 1.399-.664l5.362-2.01a2 2 0 0 1 .706-.132 2 2 0 0 1 .706.132l5.362 2.01c.749.281 1.123.421 1.399.664.244.215.432.486.548.789C17 4.95 17 5.35 17 6.15v4.782Z"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <span>Risk Manage</span>
+                  </div>
+                </a>
+              </li>
+              <!-- item without dropdown -->
+              <li>
+                <a href="deposit.html" class="menu-link">
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="nav-item-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        class="nav-item-svg"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M14 2.20004C13.3538 2.06886 12.6849 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.3151 21.9311 10.6462 21.8 10"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                        />
+                        <path
+                          d="M12 9C10.8954 9 10 9.67157 10 10.5C10 11.3284 10.8954 12 12 12C13.1046 12 14 12.6716 14 13.5C14 14.3284 13.1046 15 12 15M12 9C12.8708 9 13.6116 9.4174 13.8862 10M12 9V8M12 15C11.1292 15 10.3884 14.5826 10.1138 14M12 15V16"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                        />
+                        <path
+                          d="M17 7.00195L21.1759 2.82375M22 6.48019L21.8818 3.3887C21.8818 2.66006 21.4468 2.20607 20.6543 2.14881L17.5302 2.00195"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <span>Deposit</span>
+                  </div>
+                </a>
+              </li>
+              <!-- item without dropdown -->
+              <li>
+                <a href="withdraw.html" class="menu-link">
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="nav-item-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        class="nav-item-svg"
+                      >
+                        <path
+                          d="M18.9349 13.9453L18.2646 10.2968C17.9751 8.72096 17.8303 7.93303 17.257 7.46651C16.6837 7 15.8602 7 14.2132 7H9.78685C8.1398 7 7.31628 7 6.74298 7.46651C6.16968 7.93303 6.02492 8.72096 5.73538 10.2968L5.06506 13.9453C4.46408 17.2162 4.16359 18.8517 5.08889 19.9259C6.01419 21 7.72355 21 11.1423 21H12.8577C16.2765 21 17.9858 21 18.9111 19.9259C19.8364 18.8517 19.5359 17.2162 18.9349 13.9453Z"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                        />
+                        <path
+                          d="M10.4375 16.6667V11.3333M12 11.3333V10M12 18V16.6667M10.4375 14H13.5625M13.5625 14C14.0803 14 14.5 14.4477 14.5 15V15.6667C14.5 16.219 14.0803 16.6667 13.5625 16.6667H9.5M13.5625 14C14.0803 14 14.5 13.5523 14.5 13V12.3333C14.5 11.781 14.0803 11.3333 13.5625 11.3333H9.5"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M21 11C21.1568 10.9209 21.2931 10.8212 21.4142 10.6955C22 10.0875 22 9.10893 22 7.15176C22 5.1946 22 4.21602 21.4142 3.60801C20.8284 3 19.8856 3 18 3H6C4.11438 3 3.17157 3 2.58579 3.60801C2 4.21602 2 5.1946 2 7.15176C2 9.10893 2 10.0875 2.58579 10.6955C2.70688 10.8212 2.84322 10.9209 3 11"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    </div>
+                    <span>Withdraw</span>
+                  </div>
+                </a>
+              </li>
+              <!-- Example active dropdown -->
+              <li class="has-dropdown">
+                <a href="#" class="menu-link">
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="nav-item-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="nav-item-svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M8 7h8M8 11h4"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M13 21.5V21c0-2.828 0-4.243.879-5.121C14.757 15 16.172 15 19 15h.5m.5-1.657V10c0-3.771 0-5.657-1.172-6.828C17.657 2 15.771 2 12 2S6.343 2 5.172 3.172C4 4.343 4 6.229 4 10v4.544c0 3.245 0 4.868.886 5.967.179.222.381.424.603.603C6.588 22 8.211 22 11.456 22c.705 0 1.058 0 1.381-.114a2 2 0 0 0 .197-.082c.31-.148.56-.398 1.059-.897l4.736-4.736c.578-.578.867-.867 1.019-1.234.153-.367.153-.776.153-1.594Z"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <span>Statements</span>
+                  </div>
+                  <div class="dropdown-item-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      class="svg-icon-white"
+                    >
+                      <path
+                        d="M6 9l6 6 6-6"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li><a href="statements-withdraw.html">Withdraw</a></li>
+                    <li><a href="statements-deposit.html">Deposit</a></li>
+                    <li><a href="statements-trade.html">Trade</a></li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="active">
+                <a href="notification.html" class="menu-link">
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="nav-item-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        class="nav-item-svg"
+                      >
+                        <path
+                          d="M9 2H5.8C4.11984 2 3.27976 2 2.63803 2.32698C2.07354 2.6146 1.6146 3.07354 1.32698 3.63803C1 4.27976 1 5.11984 1 6.8V14.2C1 15.8802 1 16.7202 1.32698 17.362C1.6146 17.9265 2.07354 18.3854 2.63803 18.673C3.27976 19 4.11984 19 5.8 19H13.2C14.8802 19 15.7202 19 16.362 18.673C16.9265 18.3854 17.3854 17.9265 17.673 17.362C18 16.7202 18 15.8802 18 14.2V11M11 15H5M13 11H5M18.1213 1.87868C19.2929 3.05025 19.2929 4.94975 18.1213 6.12132C16.9497 7.29289 15.0503 7.29289 13.8787 6.12132C12.7071 4.94975 12.7071 3.05025 13.8787 1.87868C15.0503 0.707107 16.9497 0.707107 18.1213 1.87868Z"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <span>Notification</span>
+                  </div>
+                </a>
+              </li>
+
+              <!-- item without dropdown -->
+              <li>
+                <a href="referral.html" class="menu-link">
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="nav-item-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="22"
+                        height="21"
+                        viewBox="0 0 22 21"
+                        fill="none"
+                        class="nav-item-svg"
+                      >
+                        <path
+                          d="M21 6.11564V10.1156M9.25 3.61563H5.8C4.11984 3.61563 3.27976 3.61563 2.63803 3.94261C2.07354 4.23024 1.6146 4.68918 1.32698 5.25366C0.999998 5.8954 0.999999 6.73548 1 8.41564L1 9.61563C1 10.5475 1 11.0135 1.15224 11.381C1.35523 11.8711 1.74458 12.2604 2.23463 12.4634C2.60218 12.6156 3.06812 12.6156 4 12.6156V16.8656C4 17.0978 4 17.2139 4.00963 17.3117C4.10316 18.2612 4.85441 19.0125 5.80397 19.106C5.90175 19.1156 6.01783 19.1156 6.25 19.1156C6.48217 19.1156 6.59826 19.1156 6.69604 19.106C7.64559 19.0125 8.39685 18.2612 8.49037 17.3117C8.5 17.2139 8.5 17.0978 8.5 16.8656V12.6156H9.25C11.0164 12.6156 13.1772 13.5625 14.8443 14.4713C15.8168 15.0014 16.3031 15.2665 16.6216 15.2275C16.9169 15.1913 17.1402 15.0587 17.3133 14.8167C17.5 14.5558 17.5 14.0336 17.5 12.9893V3.24192C17.5 2.19763 17.5 1.67548 17.3133 1.41452C17.1402 1.17254 16.9169 1.03993 16.6216 1.00376C16.3031 0.964756 15.8168 1.22983 14.8443 1.75999C13.1772 2.66875 11.0164 3.61563 9.25 3.61563Z"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <span>Referral</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="position-absolute bottom-0 w-100 bg-white-5 bg-filter-20 rounded-3 pt-2"
+          >
+            <div class="sidebar-nav">
+              <ul>
+                <li>
+                  <a href="support.html" class="menu-link">
+                    <div class="d-flex align-items-center gap-2">
+                      <div class="nav-item-icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="nav-item-svg"
+                          width="22"
+                          height="22"
+                          viewBox="0 0 22 22"
+                          fill="none"
+                        >
+                          <path
+                            d="M8.09 8c.235-.668.699-1.232 1.31-1.591C10.011 6.05 10.729 5.919 11.427 6.039c.699.12 1.333.484 1.789 1.027.456.542.706 1.228.706 1.936 0 2-3 3-3 3M11 16h.01M21 11c0 5.523-4.478 10-10 10S1 16.523 1 11 5.477 1 11 1s10 4.477 10 10Z"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+                      <span>Support</span>
+                    </div>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="setting-profile.html" class="menu-link">
+                    <div class="d-flex align-items-center gap-2">
+                      <div class="nav-item-icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="nav-item-svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M15.5 12c0 1.933-1.567 3.5-3.5 3.5S8.5 13.933 8.5 12 10.067 8.5 12 8.5 15.5 10.067 15.5 12Z"
+                            stroke-width="1.5"
+                          />
+                          <path
+                            d="M21.011 14.097c.523-.14.784-.21.897-.345C22 13.617 22 13.4 22 12.967V11.034c0-.433 0-.65-.092-.784-.103-.134-.364-.204-.886-.345-1.951-.526-3.172-2.565-2.668-4.503.138-.533.207-.8.141-.956-.066-.156-.256-.263-.635-.478l-1.725-.979c-.373-.212-.559-.318-.726-.296s-.188.188-.565.565C13.208 4.735 10.794 4.735 9.334 3.279c-.377-.376-.565-.564-.732-.587s-.386.106-.758.318L6.152 3.966c-.379.216-.569.323-.635.479-.066.155.003.422.141.955.504 1.937-.717 3.976-2.668 4.503-.522.14-.783.21-.886.345 0 .433 0 .65.001.967v1.934c0 .433 0 .65.092.784.103.135.364.205.886.345 1.95.526 3.172 2.565 2.668 4.503-.138.533-.207.8-.141.955.066.156.256.263.635.478l1.725.979c.373.212.559.318.726.296s.188-.188.565-.565C10.793 19.265 13.208 19.265 14.669 20.722c.377.376.566.564.733.586s.386-.106.758-.318l1.725-.979c.379-.216.569-.323.635-.478.066-.156-.003-.423-.141-.956-.504-1.937.717-3.976 2.668-4.503Z"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                          />
+                        </svg>
+                      </div>
+                      <span>Settings</span>
+                    </div>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="logout.html" class="menu-link">
+                    <div class="d-flex align-items-center gap-2">
+                      <div class="nav-item-icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="nav-item-svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M18 8 22 12 18 16M22 12H9M15 4.204C13.725 3.438 12.245 3 10.667 3 5.88 3 2 7.029 2 12 2 16.971 5.88 21 10.667 21 12.245 21 13.725 20.562 15 19.796"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+                      <span>Logout</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <p class="text-center bg-brand-20 py-2">V-3.0</p>
+          </div>
+        </aside>
+      </div>
+      <section class="main-section">
+        <!--  Preloader Start -->
+        <div id="page-load-preloader">
+          <div class="page-load-signal-area">
+            <div class="page-load-orbit">
+              <span class="page-load-particle"></span>
+              <span class="page-load-particle"></span>
+              <span class="page-load-particle"></span>
+            </div>
+            <div class="page-load-logo">
+              <div class="page-load-circle"></div>
+              <h2>Prop<span>Funding</span></h2>
+            </div>
+          </div>
+          <div class="page-load-progress-bar">
+            <div class="page-load-progress"></div>
+          </div>
+        </div>
+        <!-- Preloader End  -->
+        <div
+          class="dashboard-header bg-white-10 py-2 bg-filter-20 px-3 sticky-top mb-2 d-flex align-items-center justify-content-between"
+        >
+          <div class="d-flex align-items-center gap-2">
+            <svg
+              class="text-white mobile-bar"
+              viewBox="0 0 24 24"
+              width="22"
+              height="22"
+              aria-hidden="true"
+              focusable="false"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2.2"
+              >
+                <path d="M3 6h18" />
+                <path d="M3 12h18" />
+                <path d="M3 18h18" />
+              </g>
+            </svg>
+            <h4 class="d-none d-md-block">Hello, Juel Rana. 👋</h4>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center">
+            <div
+              class="bg-white-10 py-1 px-2 rounded-5 border-1 d-none d-md-block header-search-box"
+            >
+              <form action="" class="d-flex align-items-center gap-1">
+                <input
+                  type="search"
+                  class="py-1 bg-transparent w-100 text-white"
+                  placeholder="Search"
+                />
+                <button type="submit" class="bg-transparent">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <circle
+                      cx="11"
+                      cy="11"
+                      r="7"
+                      stroke="gray"
+                      stroke-width="2"
+                    />
+                    <line
+                      x1="16.65"
+                      y1="16.65"
+                      x2="21"
+                      y2="21"
+                      stroke="gray"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </button>
+              </form>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <!-- <span id="fullscreenBtn" class="full-screen-icon cursor-pointer"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  class="svg-icon-white"
+                >
+                  <path
+                    d="M4 4h5M4 4v5M20 20h-5M20 20v-5M4 20l5-5M20 4l-5 5"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span> -->
+
+              <div
+                class="theme-toggle cursor-pointer"
+                id="themeToggle"
+                aria-label="Toggle Theme"
+              >
+                <svg
+                  class="sun-icon svg-icon-white"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 3V5M12 19V21M5 12H3M21 12H19M18.364 5.636L16.95 7.05M18.364 18.364L16.95 16.95M7.05 16.95L5.636 18.364M7.05 7.05L5.636 5.636M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <svg
+                  class="moon-icon svg-icon-white"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+
+              <div class="position-relative">
+                <button
+                  class="bell-icon position-relative dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    class="svg-icon-white"
+                  >
+                    <path
+                      d="M12.721 5.003 11.255 5C7.911 4.992 5.008 7.709 4.985 11v3.79c0 .79-.1 1.561-.531 2.218l-.287.438c-.437.664.033 1.554.818 1.554h14.03c.785 0 1.254-.89.818-1.554l-.287-.438c-.43-.657-.531-1.429-.531-2.219V11c-.04-3.292-2.95-5.99-6.294-5.997Z"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M15 19a3 3 0 1 1-6 0"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M12 2c.53 0 1.039.211 1.414.586C13.789 2.961 14 3.47 14 4v1h-4V4c0-.53.211-1.039.586-1.414C11.039 2.211 11.53 2 12 2Z"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <span class="bg-brand circle-focus"></span>
+                </button>
+
+                <div
+                  class="notification-dropdown bd-dark dropdown-menu mt-4 p-3 dropdown-menu-end"
+                >
+                  <h6>Recent Notification</h6>
+                  <div class="d-flex flex-column mt-2">
+                    <!-- item -->
+                    <a href="#">
+                      <div
+                        class="d-flex gap-2 unread-notification p-2 rounded-2 mt-2 hover-shadow"
+                      >
+                        <div class="notification-item-icon">
+                          <img src="assets/images/icon/risk.png" alt="icon" />
+                        </div>
+                        <div class="d-flex justify-content-between w-100">
+                          <div>
+                            <p class="text-white">Risk Alert</p>
+                            <p class="sm-p">Daily loss limit at 80%</p>
+                          </div>
+                          <p class="sm-p">25 min</p>
+                        </div>
+                      </div>
+                    </a>
+                    <!-- item -->
+                    <a href="#">
+                      <div
+                        class="d-flex gap-2 read-notification p-2 rounded-2 mt-2 hover-shadow"
+                      >
+                        <div class="notification-item-icon">
+                          <img src="assets/images/icon/market.png" alt="icon" />
+                        </div>
+                        <div class="d-flex justify-content-between w-100">
+                          <div>
+                            <p class="text-white">Market Update</p>
+                            <p class="sm-p">Daily loss limit at 80%</p>
+                          </div>
+                          <p class="sm-p">25 min</p>
+                        </div>
+                      </div>
+                    </a>
+                    <!-- item -->
+                    <a href="#">
+                      <div
+                        class="d-flex gap-2 read-notification p-2 rounded-2 mt-2 hover-shadow"
+                      >
+                        <div class="notification-item-icon">
+                          <img src="assets/images/icon/system.png" alt="icon" />
+                        </div>
+                        <div class="d-flex justify-content-between w-100">
+                          <div>
+                            <p class="text-white">System Notice</p>
+                            <p class="sm-p">Daily loss limit at 80%</p>
+                          </div>
+                          <p class="sm-p">25 min</p>
+                        </div>
+                      </div>
+                    </a>
+                    <!-- item -->
+                    <a href="#">
+                      <div
+                        class="d-flex gap-2 read-notification p-2 rounded-2 mt-2 hover-shadow"
+                      >
+                        <div class="notification-item-icon">
+                          <img src="assets/images/icon/system.png" alt="icon" />
+                        </div>
+                        <div class="d-flex justify-content-between w-100">
+                          <div>
+                            <p class="text-white">System Notice</p>
+                            <p class="sm-p">Daily loss limit at 80%</p>
+                          </div>
+                          <p class="sm-p">25 min</p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <a href="#" class="primary-btn mt-4">See All Notification</a>
+                </div>
+              </div>
+              <div class="profile">
+                <a href="setting-profile.html">
+                  <img src="assets/images/user/user-1.png" alt="user" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dashboard-effect">
+          <div class="dashboard-body py-1">
+            <div class="container">
+              <div class="bg-white-5 border-1 rounded-3 p-3">
+                <div class="row gy-3">
+                  <div class="col-xxl-3 col-xl-4 col-md-6">
+                    <div class="bg-white-4 rounded-3 p-3">
+                      <h5>In App Notification</h5>
+                      <div class="line-1 mt-2"></div>
+                      <div
+                        class="d-flex align-items-center justify-content-between mt-3"
+                      >
+                        <p class="text-white">Enable</p>
+                        <div class="toggle-2fa">
+                          <label class="switch">
+                            <input type="checkbox" id="twofa" />
+                            <span class="slider"></span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xxl-3 col-xl-4 col-md-6">
+                    <div class="bg-white-4 rounded-3 p-3">
+                      <h5>Email Notification</h5>
+                      <div class="line-1 mt-2"></div>
+                      <div
+                        class="d-flex align-items-center justify-content-between mt-3"
+                      >
+                        <p class="text-white">Enable</p>
+                        <div class="toggle-2fa">
+                          <label class="switch">
+                            <input type="checkbox" checked id="twofa" />
+                            <span class="slider"></span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xxl-3 col-xl-4 col-md-6">
+                    <div class="bg-white-4 rounded-3 p-3">
+                      <h5>Telegram Notification</h5>
+                      <div class="line-1 mt-2"></div>
+                      <div
+                        class="d-flex align-items-center justify-content-between mt-3"
+                      >
+                        <p class="text-white">Enable</p>
+                        <div class="toggle-2fa">
+                          <label class="switch">
+                            <input type="checkbox" id="twofa" />
+                            <span class="slider"></span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xxl-3 col-xl-4 col-md-6">
+                    <div class="bg-white-4 rounded-3 p-3">
+                      <h5>SMS Notification</h5>
+                      <div class="line-1 mt-2"></div>
+                      <div
+                        class="d-flex align-items-center justify-content-between mt-3"
+                      >
+                        <p class="text-white">Enable</p>
+                        <div class="toggle-2fa">
+                          <label class="switch">
+                            <input type="checkbox" id="twofa" />
+                            <span class="slider"></span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-white-5 border-1 rounded-3 p-3 mt-3">
+                <div
+                  class="d-flex align-items-center justify-content-between flex-wrap gap-2"
+                >
+                  <h6>Notification</h6>
+                  <div class="d-flex flex-wrap align-items-center gap-2">
+                    <input
+                      class="text-center secondary-btn text-white d-inline-block"
+                      type="text"
+                      id="datePicker"
+                      placeholder="Select Date"
+                    />
+                    <button class="primary-btn">Make all as read</button>
+                  </div>
+                </div>
+                <div class="line-1 mt-3"></div>
+                <div
+                  class="d-flex align-items-center flex-wrap gap-2 justify-content-between mt-3"
+                >
+                  <ul
+                    class="notification-tab d-flex align-items-center gap-2"
+                    role="tablist"
+                  >
+                    <li role="presentation">
+                      <button
+                        class="active"
+                        id="all-tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#all-notification"
+                        type="button"
+                        role="tab"
+                        aria-controls="all-notification"
+                        aria-selected="true"
+                      >
+                        All
+                      </button>
+                    </li>
+
+                    <li role="presentation">
+                      <button
+                        id="unread-tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#unread-notification"
+                        type="button"
+                        role="tab"
+                        aria-controls="unread-notification"
+                        aria-selected="false"
+                      >
+                        Unread
+                      </button>
+                    </li>
+                  </ul>
+
+                  <div
+                    class="bg-white-4 py-1 px-2 rounded-5 border-1 header-search-box me-0"
+                  >
+                    <form action="" class="d-flex align-items-center gap-1">
+                      <input
+                        type="search"
+                        class="py-1 bg-transparent w-100 text-white"
+                        placeholder="Search"
+                      />
+                      <button type="submit" class="bg-transparent">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <circle
+                            cx="11"
+                            cy="11"
+                            r="7"
+                            stroke="gray"
+                            stroke-width="2"
+                          ></circle>
+                          <line
+                            x1="16.65"
+                            y1="16.65"
+                            x2="21"
+                            y2="21"
+                            stroke="gray"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                          ></line>
+                        </svg>
+                      </button>
+                    </form>
+                  </div>
+                </div>
+                <div class="tab-content">
+                  <div
+                    class="tab-pane fade show active"
+                    id="all-notification"
+                    role="tabpanel"
+                    aria-labelledby="all-tab"
+                  >
+                    <!-- start notification -->
+                    <div class="notification-accordion mt-3">
+                      <div class="accordion">
+                        <!-- item -->
+                        <div class="accordion-item">
+                          <div class="d-flex w-100">
+                            <div class="accordion-header">
+                              <div
+                                class="accordion-button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne"
+                                aria-expanded="false"
+                                aria-controls="collapseOne"
+                              >
+                                <div
+                                  class="d-flex align-items-center justify-content-between w-100"
+                                >
+                                  <div class="d-flex gap-2 flex-wrap">
+                                    <div class="notification-icon-box mt-1">
+                                      <img
+                                        src="assets/images/icon/trade.png"
+                                        alt="icon"
+                                      />
+                                    </div>
+                                    <div class="d-flex flex-column gap-1">
+                                      <h6>Trade Settled</h6>
+                                      <p>Trade of $2500 has been setteled</p>
+                                      <span class="text-white-40 md-p"
+                                        >25 min / 2 days ago / 12 Dec 2025</span
+                                      >
+                                    </div>
+                                  </div>
+                                </div>
+                                <span class="accordion-icon svg-icon-white">
+                                  <!-- DOWN arrow -->
+                                  <svg
+                                    width="22"
+                                    height="22"
+                                    class="icon-down"
+                                    viewBox="0 0 22 22"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M6 8l5 5 5-5"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-opacity="0.6"
+                                    />
+                                  </svg>
+
+                                  <!-- UP arrow -->
+                                  <svg
+                                    width="22"
+                                    height="22"
+                                    viewBox="0 0 22 22"
+                                    class="icon-up"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M6 14l5-5 5 5"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-opacity="0.6"
+                                    />
+                                  </svg>
+                                </span>
+                              </div>
+                            </div>
+
+                            <div
+                              class="d-flex align-items-center gap-2 notification-action"
+                            >
+                              <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                class="svg-icon-white svg-icon-hover-warning cursor-pointer"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M9 3H15M3 6H21M19 6L18.2987 16.5193C18.1935 18.0975 18.1409 18.8867 17.8 19.485C17.4999 20.0118 17.0472 20.4353 16.5017 20.6997C15.882 21 15.0911 21 13.5093 21H10.4907C8.90891 21 8.11803 21 7.49834 20.6997C6.95276 20.4353 6.50009 20.0118 6.19998 19.485C5.85911 18.8867 5.8065 18.0975 5.70129 16.5193L5 6"
+                                  stroke-width="2"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-opacity="0.6"
+                                />
+                              </svg>
+
+                              <svg
+                                width="20"
+                                height="20"
+                                class="svg-icon-white svg-icon-hover-brand cursor-pointer"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M13.744 2.63395L21.272 7.52716C21.538 7.70006 21.671 7.78651 21.7674 7.90183C21.8527 8.00391 21.9167 8.12198 21.9558 8.24914C22 8.39278 22 8.55141 22 8.86867V16.2004C22 17.8805 22 18.7206 21.673 19.3623C21.3854 19.9268 20.9265 20.3858 20.362 20.6734C19.7202 21.0004 18.8802 21.0004 17.2 21.0004H6.8C5.11984 21.0004 4.27976 21.0004 3.63803 20.6734C3.07354 20.3858 2.6146 19.9268 2.32698 19.3623C2 18.7206 2 17.8805 2 16.2004V8.86867C2 8.55141 2 8.39278 2.04417 8.24914C2.08327 8.12198 2.14735 8.00391 2.23265 7.90183C2.32901 7.78651 2.46201 7.70006 2.72802 7.52716L10.256 2.63395M13.744 2.63395C13.1127 2.22364 12.7971 2.01848 12.457 1.93866C12.1564 1.8681 11.8436 1.8681 11.543 1.93866C11.2029 2.01848 10.8873 2.22364 10.256 2.63395M13.744 2.63395L20.9681 7.32961C21.312 7.55317 21.484 7.66494 21.5435 7.80669C21.5956 7.93056 21.5956 8.07018 21.5435 8.19405C21.484 8.3358 21.312 8.44757 20.9681 8.67113L13.744 13.3668C13.1127 13.7771 12.7971 13.9823 12.457 14.0621C12.1564 14.1326 11.8436 14.1326 11.543 14.0621C11.2029 13.9823 10.8873 13.7771 10.256 13.3668L3.03193 8.67112C2.68801 8.44757 2.51604 8.3358 2.45649 8.19405C2.40444 8.07018 2.40444 7.93056 2.45649 7.80669C2.51604 7.66494 2.68801 7.55317 3.03193 7.32962L10.256 2.63395"
+                                  stroke-opacity="0.6"
+                                  stroke-width="2"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                          <div
+                            id="collapseOne"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#accordionExample"
+                          >
+                            <div
+                              class="accordion-body d-flex flex-column gap-1"
+                            >
+                              <ul class="d-flex gap-1 flex-column">
+                                <li class="text-white lg-p">
+                                  Trade Id:
+                                  <span class="text-brand lg-p">TRD0001</span>
+                                </li>
+                                <li class="text-white lg-p">
+                                  Amount:
+                                  <span class="text-brand lg-p">$2000</span>
+                                </li>
+                              </ul>
+                              <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Excepturi possimus ab deserunt
+                                tempore, velit officia eos. Explicabo neque
+                                cupiditate consectetur illum corporis sequi
+                                error placeat. Qui veniam ab corrupti labore.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- item -->
+                        <div class="accordion-item">
+                          <div class="d-flex w-100">
+                            <div class="accordion-header">
+                              <div
+                                class="accordion-button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo"
+                                aria-expanded="false"
+                                aria-controls="collapseTwo"
+                              >
+                                <div
+                                  class="d-flex align-items-center justify-content-between w-100"
+                                >
+                                  <div class="d-flex gap-2 flex-wrap">
+                                    <div class="notification-icon-box mt-1">
+                                      <img
+                                        src="assets/images/icon/withdraw.png"
+                                        alt="icon"
+                                      />
+                                    </div>
+                                    <div class="d-flex flex-column gap-1">
+                                      <h6>Withdrawal Complete</h6>
+                                      <p>$2000 withdrawal completed</p>
+                                      <span class="text-white-40 md-p"
+                                        >25 min / 2 days ago / 12 Dec 2025</span
+                                      >
+                                    </div>
+                                  </div>
+                                </div>
+                                <span class="accordion-icon svg-icon-white">
+                                  <!-- DOWN arrow -->
+                                  <svg
+                                    width="22"
+                                    height="22"
+                                    class="icon-down"
+                                    viewBox="0 0 22 22"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M6 8l5 5 5-5"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-opacity="0.6"
+                                    />
+                                  </svg>
+
+                                  <!-- UP arrow -->
+                                  <svg
+                                    width="22"
+                                    height="22"
+                                    viewBox="0 0 22 22"
+                                    class="icon-up"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M6 14l5-5 5 5"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-opacity="0.6"
+                                    />
+                                  </svg>
+                                </span>
+                              </div>
+                            </div>
+
+                            <div
+                              class="d-flex align-items-center gap-2 notification-action"
+                            >
+                              <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                class="svg-icon-white svg-icon-hover-warning cursor-pointer"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M9 3H15M3 6H21M19 6L18.2987 16.5193C18.1935 18.0975 18.1409 18.8867 17.8 19.485C17.4999 20.0118 17.0472 20.4353 16.5017 20.6997C15.882 21 15.0911 21 13.5093 21H10.4907C8.90891 21 8.11803 21 7.49834 20.6997C6.95276 20.4353 6.50009 20.0118 6.19998 19.485C5.85911 18.8867 5.8065 18.0975 5.70129 16.5193L5 6"
+                                  stroke-width="2"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-opacity="0.6"
+                                />
+                              </svg>
+
+                              <svg
+                                width="20"
+                                height="20"
+                                class="svg-icon-white svg-icon-hover-brand cursor-pointer"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M13.744 2.63395L21.272 7.52716C21.538 7.70006 21.671 7.78651 21.7674 7.90183C21.8527 8.00391 21.9167 8.12198 21.9558 8.24914C22 8.39278 22 8.55141 22 8.86867V16.2004C22 17.8805 22 18.7206 21.673 19.3623C21.3854 19.9268 20.9265 20.3858 20.362 20.6734C19.7202 21.0004 18.8802 21.0004 17.2 21.0004H6.8C5.11984 21.0004 4.27976 21.0004 3.63803 20.6734C3.07354 20.3858 2.6146 19.9268 2.32698 19.3623C2 18.7206 2 17.8805 2 16.2004V8.86867C2 8.55141 2 8.39278 2.04417 8.24914C2.08327 8.12198 2.14735 8.00391 2.23265 7.90183C2.32901 7.78651 2.46201 7.70006 2.72802 7.52716L10.256 2.63395M13.744 2.63395C13.1127 2.22364 12.7971 2.01848 12.457 1.93866C12.1564 1.8681 11.8436 1.8681 11.543 1.93866C11.2029 2.01848 10.8873 2.22364 10.256 2.63395M13.744 2.63395L20.9681 7.32961C21.312 7.55317 21.484 7.66494 21.5435 7.80669C21.5956 7.93056 21.5956 8.07018 21.5435 8.19405C21.484 8.3358 21.312 8.44757 20.9681 8.67113L13.744 13.3668C13.1127 13.7771 12.7971 13.9823 12.457 14.0621C12.1564 14.1326 11.8436 14.1326 11.543 14.0621C11.2029 13.9823 10.8873 13.7771 10.256 13.3668L3.03193 8.67112C2.68801 8.44757 2.51604 8.3358 2.45649 8.19405C2.40444 8.07018 2.40444 7.93056 2.45649 7.80669C2.51604 7.66494 2.68801 7.55317 3.03193 7.32962L10.256 2.63395"
+                                  stroke-opacity="0.6"
+                                  stroke-width="2"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                          <div
+                            id="collapseTwo"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#accordionExample"
+                          >
+                            <div
+                              class="accordion-body d-flex flex-column gap-1"
+                            >
+                              <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Excepturi possimus ab deserunt
+                                tempore, velit officia eos. Explicabo neque
+                                cupiditate consectetur illum corporis sequi
+                                error placeat. Qui veniam ab corrupti labore.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- item -->
+                        <div class="accordion-item">
+                          <div class="d-flex w-100">
+                            <div class="accordion-header">
+                              <div
+                                class="accordion-button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree"
+                                aria-expanded="false"
+                                aria-controls="collapseThree"
+                              >
+                                <div
+                                  class="d-flex align-items-center justify-content-between w-100"
+                                >
+                                  <div class="d-flex gap-2 flex-wrap">
+                                    <div class="notification-icon-box mt-1">
+                                      <img
+                                        src="assets/images/icon/system.png"
+                                        alt="icon"
+                                      />
+                                    </div>
+                                    <div class="d-flex flex-column gap-1">
+                                      <h6>System Notice</h6>
+                                      <p>Maintenance scheduled for tonight</p>
+                                      <span class="text-white-40 md-p"
+                                        >25 min
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <span class="accordion-icon svg-icon-white">
+                                  <!-- DOWN arrow -->
+                                  <svg
+                                    width="22"
+                                    height="22"
+                                    class="icon-down"
+                                    viewBox="0 0 22 22"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M6 8l5 5 5-5"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-opacity="0.6"
+                                    />
+                                  </svg>
+
+                                  <!-- UP arrow -->
+                                  <svg
+                                    width="22"
+                                    height="22"
+                                    viewBox="0 0 22 22"
+                                    class="icon-up"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M6 14l5-5 5 5"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-opacity="0.6"
+                                    />
+                                  </svg>
+                                </span>
+                              </div>
+                            </div>
+
+                            <div
+                              class="d-flex align-items-center gap-2 notification-action"
+                            >
+                              <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                class="svg-icon-white svg-icon-hover-warning cursor-pointer"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M9 3H15M3 6H21M19 6L18.2987 16.5193C18.1935 18.0975 18.1409 18.8867 17.8 19.485C17.4999 20.0118 17.0472 20.4353 16.5017 20.6997C15.882 21 15.0911 21 13.5093 21H10.4907C8.90891 21 8.11803 21 7.49834 20.6997C6.95276 20.4353 6.50009 20.0118 6.19998 19.485C5.85911 18.8867 5.8065 18.0975 5.70129 16.5193L5 6"
+                                  stroke-width="2"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-opacity="0.6"
+                                />
+                              </svg>
+
+                              <svg
+                                width="20"
+                                height="20"
+                                class="svg-icon-white svg-icon-hover-brand cursor-pointer"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M13.744 2.63395L21.272 7.52716C21.538 7.70006 21.671 7.78651 21.7674 7.90183C21.8527 8.00391 21.9167 8.12198 21.9558 8.24914C22 8.39278 22 8.55141 22 8.86867V16.2004C22 17.8805 22 18.7206 21.673 19.3623C21.3854 19.9268 20.9265 20.3858 20.362 20.6734C19.7202 21.0004 18.8802 21.0004 17.2 21.0004H6.8C5.11984 21.0004 4.27976 21.0004 3.63803 20.6734C3.07354 20.3858 2.6146 19.9268 2.32698 19.3623C2 18.7206 2 17.8805 2 16.2004V8.86867C2 8.55141 2 8.39278 2.04417 8.24914C2.08327 8.12198 2.14735 8.00391 2.23265 7.90183C2.32901 7.78651 2.46201 7.70006 2.72802 7.52716L10.256 2.63395M13.744 2.63395C13.1127 2.22364 12.7971 2.01848 12.457 1.93866C12.1564 1.8681 11.8436 1.8681 11.543 1.93866C11.2029 2.01848 10.8873 2.22364 10.256 2.63395M13.744 2.63395L20.9681 7.32961C21.312 7.55317 21.484 7.66494 21.5435 7.80669C21.5956 7.93056 21.5956 8.07018 21.5435 8.19405C21.484 8.3358 21.312 8.44757 20.9681 8.67113L13.744 13.3668C13.1127 13.7771 12.7971 13.9823 12.457 14.0621C12.1564 14.1326 11.8436 14.1326 11.543 14.0621C11.2029 13.9823 10.8873 13.7771 10.256 13.3668L3.03193 8.67112C2.68801 8.44757 2.51604 8.3358 2.45649 8.19405C2.40444 8.07018 2.40444 7.93056 2.45649 7.80669C2.51604 7.66494 2.68801 7.55317 3.03193 7.32962L10.256 2.63395"
+                                  stroke-opacity="0.6"
+                                  stroke-width="2"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                          <div
+                            id="collapseThree"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#accordionExample"
+                          >
+                            <div
+                              class="accordion-body d-flex flex-column gap-1"
+                            >
+                              <p>Maintenance scheduled for tonight</p>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- item -->
+                        <div class="accordion-item">
+                          <div class="d-flex w-100">
+                            <div class="accordion-header">
+                              <div
+                                class="accordion-button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseFour"
+                                aria-expanded="false"
+                                aria-controls="collapseFour"
+                              >
+                                <div
+                                  class="d-flex align-items-center justify-content-between w-100"
+                                >
+                                  <div class="d-flex gap-2 flex-wrap">
+                                    <div class="notification-icon-box mt-1">
+                                      <img
+                                        src="assets/images/icon/trade.png"
+                                        alt="icon"
+                                      />
+                                    </div>
+                                    <div class="d-flex flex-column gap-1">
+                                      <h6>System Notice</h6>
+                                      <p>Maintenance scheduled for tonight</p>
+                                      <span class="text-white-40 md-p"
+                                        >25 min
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <span class="accordion-icon svg-icon-white">
+                                  <!-- DOWN arrow -->
+                                  <svg
+                                    width="22"
+                                    height="22"
+                                    class="icon-down"
+                                    viewBox="0 0 22 22"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M6 8l5 5 5-5"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-opacity="0.6"
+                                    />
+                                  </svg>
+
+                                  <!-- UP arrow -->
+                                  <svg
+                                    width="22"
+                                    height="22"
+                                    viewBox="0 0 22 22"
+                                    class="icon-up"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M6 14l5-5 5 5"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-opacity="0.6"
+                                    />
+                                  </svg>
+                                </span>
+                              </div>
+                            </div>
+
+                            <div
+                              class="d-flex align-items-center gap-2 notification-action"
+                            >
+                              <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                class="svg-icon-white svg-icon-hover-warning cursor-pointer"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M9 3H15M3 6H21M19 6L18.2987 16.5193C18.1935 18.0975 18.1409 18.8867 17.8 19.485C17.4999 20.0118 17.0472 20.4353 16.5017 20.6997C15.882 21 15.0911 21 13.5093 21H10.4907C8.90891 21 8.11803 21 7.49834 20.6997C6.95276 20.4353 6.50009 20.0118 6.19998 19.485C5.85911 18.8867 5.8065 18.0975 5.70129 16.5193L5 6"
+                                  stroke-width="2"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-opacity="0.6"
+                                />
+                              </svg>
+
+                              <svg
+                                width="20"
+                                height="20"
+                                class="svg-icon-white svg-icon-hover-brand cursor-pointer"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M13.744 2.63395L21.272 7.52716C21.538 7.70006 21.671 7.78651 21.7674 7.90183C21.8527 8.00391 21.9167 8.12198 21.9558 8.24914C22 8.39278 22 8.55141 22 8.86867V16.2004C22 17.8805 22 18.7206 21.673 19.3623C21.3854 19.9268 20.9265 20.3858 20.362 20.6734C19.7202 21.0004 18.8802 21.0004 17.2 21.0004H6.8C5.11984 21.0004 4.27976 21.0004 3.63803 20.6734C3.07354 20.3858 2.6146 19.9268 2.32698 19.3623C2 18.7206 2 17.8805 2 16.2004V8.86867C2 8.55141 2 8.39278 2.04417 8.24914C2.08327 8.12198 2.14735 8.00391 2.23265 7.90183C2.32901 7.78651 2.46201 7.70006 2.72802 7.52716L10.256 2.63395M13.744 2.63395C13.1127 2.22364 12.7971 2.01848 12.457 1.93866C12.1564 1.8681 11.8436 1.8681 11.543 1.93866C11.2029 2.01848 10.8873 2.22364 10.256 2.63395M13.744 2.63395L20.9681 7.32961C21.312 7.55317 21.484 7.66494 21.5435 7.80669C21.5956 7.93056 21.5956 8.07018 21.5435 8.19405C21.484 8.3358 21.312 8.44757 20.9681 8.67113L13.744 13.3668C13.1127 13.7771 12.7971 13.9823 12.457 14.0621C12.1564 14.1326 11.8436 14.1326 11.543 14.0621C11.2029 13.9823 10.8873 13.7771 10.256 13.3668L3.03193 8.67112C2.68801 8.44757 2.51604 8.3358 2.45649 8.19405C2.40444 8.07018 2.40444 7.93056 2.45649 7.80669C2.51604 7.66494 2.68801 7.55317 3.03193 7.32962L10.256 2.63395"
+                                  stroke-opacity="0.6"
+                                  stroke-width="2"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                          <div
+                            id="collapseFour"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#accordionExample"
+                          >
+                            <div
+                              class="accordion-body d-flex flex-column gap-1"
+                            >
+                              <p>Maintenance scheduled for tonight</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="tab-pane fade"
+                    id="unread-notification"
+                    role="tabpanel"
+                    aria-labelledby="unread-tab"
+                  >
+                    <!-- start notification -->
+                    <div class="notification-accordion mt-3">
+                      <div class="accordion">
+                        <!-- item -->
+                        <div class="accordion-item">
+                          <div class="d-flex w-100">
+                            <div class="accordion-header">
+                              <div
+                                class="accordion-button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne"
+                                aria-expanded="false"
+                                aria-controls="collapseOne"
+                              >
+                                <div
+                                  class="d-flex align-items-center justify-content-between w-100"
+                                >
+                                  <div class="d-flex gap-2 flex-wrap">
+                                    <div class="notification-icon-box mt-1">
+                                      <img
+                                        src="assets/images/icon/trade.png"
+                                        alt="icon"
+                                      />
+                                    </div>
+                                    <div class="d-flex flex-column gap-1">
+                                      <h6>Trade Settled</h6>
+                                      <p>Trade of $2500 has been setteled</p>
+                                      <span class="text-white-40 md-p"
+                                        >25 min / 2 days ago / 12 Dec 2025</span
+                                      >
+                                    </div>
+                                  </div>
+                                </div>
+                                <span class="accordion-icon svg-icon-white">
+                                  <!-- DOWN arrow -->
+                                  <svg
+                                    width="22"
+                                    height="22"
+                                    class="icon-down"
+                                    viewBox="0 0 22 22"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M6 8l5 5 5-5"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-opacity="0.6"
+                                    />
+                                  </svg>
+
+                                  <!-- UP arrow -->
+                                  <svg
+                                    width="22"
+                                    height="22"
+                                    viewBox="0 0 22 22"
+                                    class="icon-up"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M6 14l5-5 5 5"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-opacity="0.6"
+                                    />
+                                  </svg>
+                                </span>
+                              </div>
+                            </div>
+
+                            <div
+                              class="d-flex align-items-center gap-2 notification-action"
+                            >
+                              <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                class="svg-icon-white svg-icon-hover-warning cursor-pointer"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M9 3H15M3 6H21M19 6L18.2987 16.5193C18.1935 18.0975 18.1409 18.8867 17.8 19.485C17.4999 20.0118 17.0472 20.4353 16.5017 20.6997C15.882 21 15.0911 21 13.5093 21H10.4907C8.90891 21 8.11803 21 7.49834 20.6997C6.95276 20.4353 6.50009 20.0118 6.19998 19.485C5.85911 18.8867 5.8065 18.0975 5.70129 16.5193L5 6"
+                                  stroke-width="2"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-opacity="0.6"
+                                />
+                              </svg>
+
+                              <svg
+                                width="20"
+                                height="20"
+                                class="svg-icon-white svg-icon-hover-brand cursor-pointer"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M13.744 2.63395L21.272 7.52716C21.538 7.70006 21.671 7.78651 21.7674 7.90183C21.8527 8.00391 21.9167 8.12198 21.9558 8.24914C22 8.39278 22 8.55141 22 8.86867V16.2004C22 17.8805 22 18.7206 21.673 19.3623C21.3854 19.9268 20.9265 20.3858 20.362 20.6734C19.7202 21.0004 18.8802 21.0004 17.2 21.0004H6.8C5.11984 21.0004 4.27976 21.0004 3.63803 20.6734C3.07354 20.3858 2.6146 19.9268 2.32698 19.3623C2 18.7206 2 17.8805 2 16.2004V8.86867C2 8.55141 2 8.39278 2.04417 8.24914C2.08327 8.12198 2.14735 8.00391 2.23265 7.90183C2.32901 7.78651 2.46201 7.70006 2.72802 7.52716L10.256 2.63395M13.744 2.63395C13.1127 2.22364 12.7971 2.01848 12.457 1.93866C12.1564 1.8681 11.8436 1.8681 11.543 1.93866C11.2029 2.01848 10.8873 2.22364 10.256 2.63395M13.744 2.63395L20.9681 7.32961C21.312 7.55317 21.484 7.66494 21.5435 7.80669C21.5956 7.93056 21.5956 8.07018 21.5435 8.19405C21.484 8.3358 21.312 8.44757 20.9681 8.67113L13.744 13.3668C13.1127 13.7771 12.7971 13.9823 12.457 14.0621C12.1564 14.1326 11.8436 14.1326 11.543 14.0621C11.2029 13.9823 10.8873 13.7771 10.256 13.3668L3.03193 8.67112C2.68801 8.44757 2.51604 8.3358 2.45649 8.19405C2.40444 8.07018 2.40444 7.93056 2.45649 7.80669C2.51604 7.66494 2.68801 7.55317 3.03193 7.32962L10.256 2.63395"
+                                  stroke-opacity="0.6"
+                                  stroke-width="2"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                          <div
+                            id="collapseOne"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#accordionExample"
+                          >
+                            <div
+                              class="accordion-body d-flex flex-column gap-1"
+                            >
+                              <ul class="d-flex gap-1 flex-column">
+                                <li class="text-white lg-p">
+                                  Trade Id:
+                                  <span class="text-brand lg-p">TRD0001</span>
+                                </li>
+                                <li class="text-white lg-p">
+                                  Amount:
+                                  <span class="text-brand lg-p">$2000</span>
+                                </li>
+                              </ul>
+                              <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Excepturi possimus ab deserunt
+                                tempore, velit officia eos. Explicabo neque
+                                cupiditate consectetur illum corporis sequi
+                                error placeat. Qui veniam ab corrupti labore.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- item -->
+                        <div class="accordion-item">
+                          <div class="d-flex w-100">
+                            <div class="accordion-header">
+                              <div
+                                class="accordion-button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo"
+                                aria-expanded="false"
+                                aria-controls="collapseTwo"
+                              >
+                                <div
+                                  class="d-flex align-items-center justify-content-between w-100"
+                                >
+                                  <div class="d-flex gap-2 flex-wrap">
+                                    <div class="notification-icon-box mt-1">
+                                      <img
+                                        src="assets/images/icon/withdraw.png"
+                                        alt="icon"
+                                      />
+                                    </div>
+                                    <div class="d-flex flex-column gap-1">
+                                      <h6>Withdrawal Complete</h6>
+                                      <p>$2000 withdrawal completed</p>
+                                      <span class="text-white-40 md-p"
+                                        >25 min / 2 days ago / 12 Dec 2025</span
+                                      >
+                                    </div>
+                                  </div>
+                                </div>
+                                <span class="accordion-icon svg-icon-white">
+                                  <!-- DOWN arrow -->
+                                  <svg
+                                    width="22"
+                                    height="22"
+                                    class="icon-down"
+                                    viewBox="0 0 22 22"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M6 8l5 5 5-5"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-opacity="0.6"
+                                    />
+                                  </svg>
+
+                                  <!-- UP arrow -->
+                                  <svg
+                                    width="22"
+                                    height="22"
+                                    viewBox="0 0 22 22"
+                                    class="icon-up"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M6 14l5-5 5 5"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-opacity="0.6"
+                                    />
+                                  </svg>
+                                </span>
+                              </div>
+                            </div>
+
+                            <div
+                              class="d-flex align-items-center gap-2 notification-action"
+                            >
+                              <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                class="svg-icon-white svg-icon-hover-warning cursor-pointer"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M9 3H15M3 6H21M19 6L18.2987 16.5193C18.1935 18.0975 18.1409 18.8867 17.8 19.485C17.4999 20.0118 17.0472 20.4353 16.5017 20.6997C15.882 21 15.0911 21 13.5093 21H10.4907C8.90891 21 8.11803 21 7.49834 20.6997C6.95276 20.4353 6.50009 20.0118 6.19998 19.485C5.85911 18.8867 5.8065 18.0975 5.70129 16.5193L5 6"
+                                  stroke-width="2"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-opacity="0.6"
+                                />
+                              </svg>
+
+                              <svg
+                                width="20"
+                                height="20"
+                                class="svg-icon-white svg-icon-hover-brand cursor-pointer"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M13.744 2.63395L21.272 7.52716C21.538 7.70006 21.671 7.78651 21.7674 7.90183C21.8527 8.00391 21.9167 8.12198 21.9558 8.24914C22 8.39278 22 8.55141 22 8.86867V16.2004C22 17.8805 22 18.7206 21.673 19.3623C21.3854 19.9268 20.9265 20.3858 20.362 20.6734C19.7202 21.0004 18.8802 21.0004 17.2 21.0004H6.8C5.11984 21.0004 4.27976 21.0004 3.63803 20.6734C3.07354 20.3858 2.6146 19.9268 2.32698 19.3623C2 18.7206 2 17.8805 2 16.2004V8.86867C2 8.55141 2 8.39278 2.04417 8.24914C2.08327 8.12198 2.14735 8.00391 2.23265 7.90183C2.32901 7.78651 2.46201 7.70006 2.72802 7.52716L10.256 2.63395M13.744 2.63395C13.1127 2.22364 12.7971 2.01848 12.457 1.93866C12.1564 1.8681 11.8436 1.8681 11.543 1.93866C11.2029 2.01848 10.8873 2.22364 10.256 2.63395M13.744 2.63395L20.9681 7.32961C21.312 7.55317 21.484 7.66494 21.5435 7.80669C21.5956 7.93056 21.5956 8.07018 21.5435 8.19405C21.484 8.3358 21.312 8.44757 20.9681 8.67113L13.744 13.3668C13.1127 13.7771 12.7971 13.9823 12.457 14.0621C12.1564 14.1326 11.8436 14.1326 11.543 14.0621C11.2029 13.9823 10.8873 13.7771 10.256 13.3668L3.03193 8.67112C2.68801 8.44757 2.51604 8.3358 2.45649 8.19405C2.40444 8.07018 2.40444 7.93056 2.45649 7.80669C2.51604 7.66494 2.68801 7.55317 3.03193 7.32962L10.256 2.63395"
+                                  stroke-opacity="0.6"
+                                  stroke-width="2"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                          <div
+                            id="collapseTwo"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#accordionExample"
+                          >
+                            <div
+                              class="accordion-body d-flex flex-column gap-1"
+                            >
+                              <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Excepturi possimus ab deserunt
+                                tempore, velit officia eos. Explicabo neque
+                                cupiditate consectetur illum corporis sequi
+                                error placeat. Qui veniam ab corrupti labore.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/sidebar.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <!-- flatpickr js -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+      flatpickr("#datePicker", {
+        dateFormat: "Y-m-d",
+        mode: "range",
+        minDate: "today",
+      });
+    </script>
+  </body>
+</html>

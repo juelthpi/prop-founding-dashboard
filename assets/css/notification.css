@@ -1,0 +1,91 @@
+.notification-tab li button {
+  background-color: transparent;
+  padding: 8px 12px;
+  min-width: 100px;
+  background-color: rgba(var(--white), 0.06);
+  color: rgba(var(--white), 0.5);
+  border-radius: 50px;
+}
+.notification-tab li button.active {
+  color: rgba(var(--white), 1);
+}
+.notification-accordion .accordion-item {
+  background: transparent;
+  border: none;
+  outline: none;
+}
+.notification-accordion .accordion-button {
+  background-color: rgba(var(--black), 0.02);
+  cursor: pointer;
+}
+.notification-accordion .accordion-item {
+  background-color: rgba(var(--white), 0.06);
+}
+.notification-accordion .accordion-button:not(.collapsed) {
+  box-shadow: none;
+}
+.notification-accordion .accordion-button {
+  user-select: none;
+  padding: 12px !important;
+  padding-right: 2px !important;
+}
+.notification-accordion .accordion-item {
+  margin-bottom: 10px;
+}
+.notification-accordion .accordion-body {
+  border-radius: 0 0 10px 10px;
+  background-color: rgba(var(--black), 0.2);
+}
+.notification-icon-box {
+  height: 44px;
+  width: 44px;
+  background-color: rgba(var(--white), 0.06);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.notification-icon-box img {
+  max-width: 24px;
+}
+.accordion-button::after {
+  display: none;
+}
+.accordion-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.icon-up {
+  display: none;
+}
+.accordion-button:not(.collapsed) .icon-down {
+  display: none;
+}
+.accordion-button:not(.collapsed) .icon-up {
+  display: block;
+}
+.notification-accordion .accordion-button:not(.collapsed) {
+  background-color: rgba(var(--black), 0.06);
+}
+.notification-accordion .accordion-header {
+  width: calc(100% - 60px);
+}
+@media all and (max-width: 767px) {
+  .header-search-box {
+    margin-right: 0px;
+    min-width: 100% !important;
+  }
+  .notification-accordion .accordion-header {
+    width: 100%;
+  }
+  .notification-accordion .notification-action {
+    align-items: flex-start !important;
+
+    margin-right: 10px;
+    margin-top: 15px !important;
+  }
+  .accordion-icon {
+    display: none;
+  }
+}

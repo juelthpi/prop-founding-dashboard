@@ -33,7 +33,7 @@ body {
 .dashboard-effect {
   position: relative;
 }
-.dashboard-effect:after {
+/* .dashboard-effect:after {
   content: "";
   position: fixed;
   left: 0;
@@ -46,7 +46,7 @@ body {
   height: 60%;
   width: 60%;
   border-radius: 100%;
-}
+} */
 .dashboard-body {
   position: relative;
   z-index: 2;
@@ -74,6 +74,12 @@ span {
 }
 .text-white-80 {
   color: rgba(var(--white), 0.8);
+}
+.text-white-50 {
+  color: rgba(var(--white), 0.5);
+}
+.text-white-40 {
+  color: rgba(var(--white), 0.4);
 }
 .text-brand {
   color: rgba(var(--brand), 1) !important;
@@ -104,16 +110,16 @@ span {
   background-color: rgba(var(--brand), 0.4);
 }
 .bg-white-2 {
-  background-color: rgba(var(--white), 0.02);
+  background-color: rgba(var(--white), 0.02) !important;
 }
 .bg-white-4 {
-  background-color: rgba(var(--white), 0.04);
+  background-color: rgba(var(--white), 0.04) !important;
 }
 .bg-white-5 {
   background-color: rgba(var(--white), 0.05);
 }
 .bg-white-10 {
-  background-color: rgba(var(--white), 0.1);
+  background-color: rgba(var(--white), 0.1) !important;
 }
 .bg-warning {
   background-color: rgba(var(--warning), 1);
@@ -233,6 +239,9 @@ h6 {
 .svg-icon-hover-brand:hover path {
   stroke: rgba(var(--brand), 0.8) !important;
 }
+.svg-icon-hover-warning:hover path {
+  stroke: rgba(var(--warning), 0.8) !important;
+}
 .svg-icon-white-30 path {
   stroke: rgba(var(--white), 0.3) !important;
 }
@@ -269,16 +278,20 @@ h6 {
   padding: 4px 10px;
   font-size: calc(var(--font-base) - 3px);
 }
-
+.offcanvas {
+  background-color: var(--dark) !important;
+}
+.trade-overview-list li span {
+  font-size: calc(var(--font-base) + 2px);
+}
 .primary-btn:hover {
   color: rgba(var(--white), 1);
   box-shadow: 0 0 20px rgba(var(--white), 0.3);
 }
-
 .secondary-btn {
   position: relative;
   background: rgba(var(--white), 0.1);
-  padding: 9px 22px;
+  padding: 8px 22px;
   gap: 4px;
   display: flex;
   align-items: center;
@@ -292,12 +305,18 @@ h6 {
   color: rgba(var(--white), 1);
   backdrop-filter: blur(8px);
 }
+.secondary-btn::placeholder {
+  color: rgba(var(--white), 1);
+}
 .secondary-btn:hover {
   background: rgba(var(--brand), 1);
 }
 .secondary-btn-sm {
   padding: 4px 10px;
   font-size: calc(var(--font-base) - 3px);
+}
+.placeholder-white::placeholder {
+  color: rgba(var(--white), 1);
 }
 .border-1 {
   border: 1px solid rgba(var(--white), 0.05) !important;
