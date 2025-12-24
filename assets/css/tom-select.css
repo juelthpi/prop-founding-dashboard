@@ -47,3 +47,6 @@
 .light-mode .ts-dropdown .option {
   background-color: #ebeeed !important;
 }
+.ts-dropdown [data-selectable].option {
+  border-radius: 4px;
+}

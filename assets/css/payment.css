@@ -63,8 +63,9 @@
     padding: 5px;
     font-size: var(--font-base);
   }
-  .method span {
-    padding: 8px 20px;
+  .method span,
+  .method input:checked ~ span {
+    padding: 6px 14px;
     border-radius: 5px;
     font-size: var(--font-base);
   }

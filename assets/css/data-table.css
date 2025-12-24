@@ -39,14 +39,16 @@
 .data-table {
   background: rgba(var(--white), 0.05) !important;
   border-radius: 5px;
-  margin-top: 60px !important;
+
   margin-bottom: 10px !important;
 }
+
 .dataTables_wrapper {
-  background: rgba(var(--black), 1) !important;
-  padding: 10px;
-  padding-top: 20px;
   border-radius: 10px;
+}
+table.dataTable.display > tbody > tr.even > .sorting_1,
+table.dataTable.order-column.stripe > tbody > tr.even > .sorting_1 {
+  box-shadow: 0 0 0 transparent !important;
 }
 .dataTables_length label {
   font-weight: 400;
@@ -66,9 +68,15 @@ span .paginate_button.current {
 }
 .dataTables_paginate {
   border: 1px solid rgba(var(--brand), 0.4) !important;
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 0 !important;
 }
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  min-width: 35px;
+  padding: 5px 2px;
+  margin-left: 0px;
+}
+
 .dataTables_wrapper .dataTables_paginate .paginate_button.disabled,
 .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover,
 .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
@@ -155,6 +163,18 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
 table.data-table tr th {
   white-space: nowrap !important;
 }
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  border: 1px solid transparent;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  border-radius: 5px;
+}
+.paginate_button:active {
+  background-color: transparent !important;
+  box-shadow: 0 0 0 transparent !important;
+}
+
 @media all and (max-width: 991px) {
   table.dataTable thead th,
   table.dataTable tbody td {
@@ -166,5 +186,7 @@ table.data-table tr th {
   table.dataTable tbody td {
     padding: 8px 12px !important;
   }
+  .header-search-box {
+    min-width: 100% !important;
+  }
 }
- 

@@ -44,7 +44,6 @@
     <!-- theme dark / light css -->
     <link rel="stylesheet" href="assets/css/theme.css" />
     <link rel="stylesheet" href="assets/css/sidebar.css" />
-    <style></style>
   </head>
   <body>
     <!-- trade receipt view code start -->
@@ -316,7 +315,7 @@
               </li>
 
               <!-- item without dropdown -->
-              <li>
+              <li class="active">
                 <a href="live-trade.html" class="menu-link">
                   <div class="d-flex align-items-center gap-2">
                     <div class="nav-item-icon">
@@ -454,7 +453,7 @@
                 </a>
               </li>
               <!-- Example active dropdown -->
-              <li class="has-dropdown active">
+              <li class="has-dropdown">
                 <a href="#" class="menu-link">
                   <div class="d-flex align-items-center gap-2">
                     <div class="nav-item-icon">
@@ -503,12 +502,10 @@
                 <div class="sidebar-submenu">
                   <ul>
                     <li><a href="statements-withdraw.html">Withdraw</a></li>
-                    <li>
+                    <li class="submenu-active">
                       <a href="statements-deposit.html">Deposit</a>
                     </li>
-                    <li class="submenu-active">
-                      <a href="statements-trade.html">Trade</a>
-                    </li>
+                    <li><a href="statements-trade.html">Trade</a></li>
                   </ul>
                 </div>
               </li>
@@ -740,6 +737,24 @@
               </form>
             </div>
             <div class="d-flex align-items-center gap-2">
+              <!-- <span id="fullscreenBtn" class="full-screen-icon cursor-pointer"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  class="svg-icon-white"
+                >
+                  <path
+                    d="M4 4h5M4 4v5M20 20h-5M20 20v-5M4 20l5-5M20 4l-5 5"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span> -->
+
               <div
                 class="theme-toggle cursor-pointer"
                 id="themeToggle"
@@ -887,7 +902,9 @@
                       </div>
                     </a>
                   </div>
-                  <a href="#" class="primary-btn mt-4">See All Notification</a>
+                  <a href="notification.html" class="primary-btn mt-4"
+                    >See All Notification</a
+                  >
                 </div>
               </div>
               <div class="profile">
@@ -904,7 +921,7 @@
               <div class="row gy-4">
                 <div class="col-md-12">
                   <div class="border-2 bg-white-4 rounded-3 p-3">
-                    <h6 class="mb-2">Statements Trade</h6>
+                    <h6 class="mb-2">Deposit Statements</h6>
                     <!--  start table search header -->
                     <div
                       class="datatable-header d-flex flex-wrap gap-2 align-items-center justify-content-between bg-white-10 py-3 px-3 rounded-3 mt-3"
@@ -948,8 +965,39 @@
                         >
                           <select id="statusFilter">
                             <option value="">All Status</option>
-                            <option value="active">Active</option>
-                            <option value="inactive">Inactive</option>
+                            <option value="open">Open</option>
+                            <option value="close">Close</option>
+                          </select>
+                          <span
+                            class="position-absolute top-50 translate-middle end-0 cursor-none"
+                          >
+                            <svg
+                              width="22"
+                              height="22"
+                              class="svg-icon-white"
+                              viewBox="0 0 22 22"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M6 8l5 5 5-5"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-opacity="0.6"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                        <!-- symbol filter -->
+                        <div
+                          class="select-filter position-relative d-inline-block"
+                        >
+                          <select id="symbolFilter">
+                            <option value="">Symbol (BTC/USDT)</option>
+                            <option value="BTC">BTC</option>
+                            <option value="USDT">USDT</option>
                           </select>
                           <span
                             class="position-absolute top-50 translate-middle end-0 cursor-none"
@@ -1073,31 +1121,113 @@
                         </form>
                       </div>
                     </div>
+                    <!--  start table -->
                     <table
                       id="example"
-                      class="data-table table table-striped table-bordered w-100 mt-2"
+                      class="data-table table display nowrap w-100 mt-2"
                     >
                       <thead>
                         <tr>
-                          <th>Date</th>
-                          <th>Transaction ID</th>
-                          <th>Method</th>
-                          <th>Amount</th>
-                          <th>Fee</th>
+                          <th>Trade ID</th>
+                          <th>Symbol & Side</th>
+                          <th>Entry/Exit</th>
+                          <th>SL/TP</th>
+                          <th>Current/Final P/L</th>
+                          <th>Your Allocation</th>
                           <th>Status</th>
-                          <th>Receipt</th>
+                          <th>View</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <td>12/03/2025</td>
-                          <td>54622KLG</td>
-                          <td>Bank Transfer</td>
-                          <td>$2000</td>
-                          <td>$5</td>
+                          <td><p class="text-white-70">TRD-001</p></td>
+                          <td><p class="text-white-70">USDT</p></td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$42,500</p>
+                              <p class="text-white-50">-</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-warning-50">$41,000</p>
+                              <p class="text-brand">$45,000</p>
+                            </div>
+                          </td>
+                          <td>
+                            <p class="text-brand">+$1250.50</p>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$5,000</p>
+                              <p class="text-white-40 sm-p">20%</p>
+                            </div>
+                          </td>
                           <td>
                             <div class="d-inline-block">
-                              <span class="badge active-badge">Active</span>
+                              <span class="badge active-badge">Open</span>
+                            </div>
+                          </td>
+                          <td>
+                            <span
+                              class="svg-icon-white svg-icon-hover-brand"
+                              type="button"
+                              data-bs-toggle="offcanvas"
+                              data-bs-target="#offcanvasRight"
+                              aria-controls="offcanvasRight"
+                            >
+                              <svg
+                                width="20"
+                                height="15"
+                                viewBox="0 0 20 15"
+                                fill="none"
+                                class="icon-eye"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M0.5 7.5C0.5 7.5 3.95455 0.5 10 0.5C16.0455 0.5 19.5 7.5 19.5 7.5C19.5 7.5 16.0455 14.5 10 14.5C3.95455 14.5 0.5 7.5 0.5 7.5Z"
+                                  stroke="#949CA9"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                                <path
+                                  d="M10 10.5C11.574 10.5 12.85 9.15685 12.85 7.5C12.85 5.84315 11.574 4.5 10 4.5C8.42599 4.5 7.15 5.84315 7.15 7.5C7.15 9.15685 8.42599 10.5 10 10.5Z"
+                                  stroke="#949CA9"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                              </svg>
+                            </span>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td><p class="text-white-70">TRD-001</p></td>
+                          <td><p class="text-white-70">TRD</p></td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$42,500</p>
+                              <p class="text-white-50">-</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-warning-50">$41,000</p>
+                              <p class="text-brand">$45,000</p>
+                            </div>
+                          </td>
+                          <td>
+                            <p class="text-brand">+$1250.50</p>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$5,000</p>
+                              <p class="text-white-40 sm-p">20%</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="d-inline-block">
+                              <span class="badge active-badge">Open</span>
                             </div>
                           </td>
                           <td>
@@ -1133,14 +1263,32 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>12/03/2025</td>
-                          <td>54622KLG</td>
-                          <td>Bank Transfer</td>
-                          <td>$2000</td>
-                          <td>$5</td>
+                          <td><p class="text-white-70">TRD-001</p></td>
+                          <td><p class="text-white-70">BTC/USDT</p></td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$42,500</p>
+                              <p class="text-white-50">-</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-warning-50">$41,000</p>
+                              <p class="text-brand">$45,000</p>
+                            </div>
+                          </td>
+                          <td>
+                            <p class="text-brand">+$1250.50</p>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$5,000</p>
+                              <p class="text-white-40 sm-p">20%</p>
+                            </div>
+                          </td>
                           <td>
                             <div class="d-inline-block">
-                              <span class="badge inactive-badge">Inactive</span>
+                              <span class="badge inactive-badge">Close</span>
                             </div>
                           </td>
                           <td>
@@ -1176,14 +1324,32 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>12/03/2025</td>
-                          <td>54622KLG</td>
-                          <td>Bank Transfer</td>
-                          <td>$2000</td>
-                          <td>$5</td>
+                          <td><p class="text-white-70">TRD-001</p></td>
+                          <td><p class="text-white-70">BTC/USDT</p></td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$42,500</p>
+                              <p class="text-white-50">-</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-warning-50">$41,000</p>
+                              <p class="text-brand">$45,000</p>
+                            </div>
+                          </td>
+                          <td>
+                            <p class="text-brand">+$1250.50</p>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$5,000</p>
+                              <p class="text-white-40 sm-p">20%</p>
+                            </div>
+                          </td>
                           <td>
                             <div class="d-inline-block">
-                              <span class="badge active-badge">Active</span>
+                              <span class="badge active-badge">Open</span>
                             </div>
                           </td>
                           <td>
@@ -1219,14 +1385,32 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>12/03/2025</td>
-                          <td>54622KLG</td>
-                          <td>Bank Transfer</td>
-                          <td>$2000</td>
-                          <td>$5</td>
+                          <td><p class="text-white-70">TRD-001</p></td>
+                          <td><p class="text-white-70">BTC/USDT</p></td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$42,500</p>
+                              <p class="text-white-50">-</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-warning-50">$41,000</p>
+                              <p class="text-brand">$45,000</p>
+                            </div>
+                          </td>
+                          <td>
+                            <p class="text-brand">+$1250.50</p>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$5,000</p>
+                              <p class="text-white-40 sm-p">20%</p>
+                            </div>
+                          </td>
                           <td>
                             <div class="d-inline-block">
-                              <span class="badge active-badge">Active</span>
+                              <span class="badge inactive-badge">Close</span>
                             </div>
                           </td>
                           <td>
@@ -1262,14 +1446,32 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>12/03/2025</td>
-                          <td>54622KLG</td>
-                          <td>Bank Transfer</td>
-                          <td>$2000</td>
-                          <td>$5</td>
+                          <td><p class="text-white-70">TRD-001</p></td>
+                          <td><p class="text-white-70">BTC/USDT</p></td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$42,500</p>
+                              <p class="text-white-50">-</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-warning-50">$41,000</p>
+                              <p class="text-brand">$45,000</p>
+                            </div>
+                          </td>
+                          <td>
+                            <p class="text-brand">+$1250.50</p>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$5,000</p>
+                              <p class="text-white-40 sm-p">20%</p>
+                            </div>
+                          </td>
                           <td>
                             <div class="d-inline-block">
-                              <span class="badge inactive-badge">Inactive</span>
+                              <span class="badge active-badge">Open</span>
                             </div>
                           </td>
                           <td>
@@ -1305,14 +1507,32 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>12/03/2025</td>
-                          <td>54622KLG</td>
-                          <td>Bank Transfer</td>
-                          <td>$2000</td>
-                          <td>$5</td>
+                          <td><p class="text-white-70">TRD-001</p></td>
+                          <td><p class="text-white-70">BTC/USDT</p></td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$42,500</p>
+                              <p class="text-white-50">-</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-warning-50">$41,000</p>
+                              <p class="text-brand">$45,000</p>
+                            </div>
+                          </td>
+                          <td>
+                            <p class="text-brand">+$1250.50</p>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$5,000</p>
+                              <p class="text-white-40 sm-p">20%</p>
+                            </div>
+                          </td>
                           <td>
                             <div class="d-inline-block">
-                              <span class="badge active-badge">Active</span>
+                              <span class="badge inactive-badge">Close</span>
                             </div>
                           </td>
                           <td>
@@ -1348,14 +1568,32 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>12/03/2025</td>
-                          <td>54622KLG</td>
-                          <td>Bank Transfer</td>
-                          <td>$2000</td>
-                          <td>$5</td>
+                          <td><p class="text-white-70">TRD-001</p></td>
+                          <td><p class="text-white-70">BTC/USDT</p></td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$42,500</p>
+                              <p class="text-white-50">-</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-warning-50">$41,000</p>
+                              <p class="text-brand">$45,000</p>
+                            </div>
+                          </td>
+                          <td>
+                            <p class="text-brand">+$1250.50</p>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$5,000</p>
+                              <p class="text-white-40 sm-p">20%</p>
+                            </div>
+                          </td>
                           <td>
                             <div class="d-inline-block">
-                              <span class="badge active-badge">Active</span>
+                              <span class="badge active-badge">Open</span>
                             </div>
                           </td>
                           <td>
@@ -1391,14 +1629,32 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>12/03/2025</td>
-                          <td>54622KLG</td>
-                          <td>Bank Transfer</td>
-                          <td>$2000</td>
-                          <td>$5</td>
+                          <td><p class="text-white-70">TRD-001</p></td>
+                          <td><p class="text-white-70">BTC/USDT</p></td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$42,500</p>
+                              <p class="text-white-50">-</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-warning-50">$41,000</p>
+                              <p class="text-brand">$45,000</p>
+                            </div>
+                          </td>
+                          <td>
+                            <p class="text-brand">+$1250.50</p>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$5,000</p>
+                              <p class="text-white-40 sm-p">20%</p>
+                            </div>
+                          </td>
                           <td>
                             <div class="d-inline-block">
-                              <span class="badge inactive-badge">Inactive</span>
+                              <span class="badge inactive-badge">Close</span>
                             </div>
                           </td>
                           <td>
@@ -1434,14 +1690,32 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>12/03/2025</td>
-                          <td>54622KLG</td>
-                          <td>Bank Transfer</td>
-                          <td>$2000</td>
-                          <td>$5</td>
+                          <td><p class="text-white-70">TRD-001</p></td>
+                          <td><p class="text-white-70">BTC/USDT</p></td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$42,500</p>
+                              <p class="text-white-50">-</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-warning-50">$41,000</p>
+                              <p class="text-brand">$45,000</p>
+                            </div>
+                          </td>
+                          <td>
+                            <p class="text-brand">+$1250.50</p>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$5,000</p>
+                              <p class="text-white-40 sm-p">20%</p>
+                            </div>
+                          </td>
                           <td>
                             <div class="d-inline-block">
-                              <span class="badge active-badge">Active</span>
+                              <span class="badge active-badge">Open</span>
                             </div>
                           </td>
                           <td>
@@ -1477,14 +1751,32 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>12/03/2025</td>
-                          <td>54622KLG</td>
-                          <td>Bank Transfer</td>
-                          <td>$2000</td>
-                          <td>$5</td>
+                          <td><p class="text-white-70">TRD-001</p></td>
+                          <td><p class="text-white-70">BTC/USDT</p></td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$42,500</p>
+                              <p class="text-white-50">-</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-warning-50">$41,000</p>
+                              <p class="text-brand">$45,000</p>
+                            </div>
+                          </td>
+                          <td>
+                            <p class="text-brand">+$1250.50</p>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$5,000</p>
+                              <p class="text-white-40 sm-p">20%</p>
+                            </div>
+                          </td>
                           <td>
                             <div class="d-inline-block">
-                              <span class="badge active-badge">Active</span>
+                              <span class="badge inactive-badge">Close</span>
                             </div>
                           </td>
                           <td>
@@ -1520,14 +1812,32 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>12/03/2025</td>
-                          <td>54622KLG</td>
-                          <td>Bank Transfer</td>
-                          <td>$2000</td>
-                          <td>$5</td>
+                          <td><p class="text-white-70">TRD-001</p></td>
+                          <td><p class="text-white-70">BTC/USDT</p></td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$42,500</p>
+                              <p class="text-white-50">-</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-warning-50">$41,000</p>
+                              <p class="text-brand">$45,000</p>
+                            </div>
+                          </td>
+                          <td>
+                            <p class="text-brand">+$1250.50</p>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$5,000</p>
+                              <p class="text-white-40 sm-p">20%</p>
+                            </div>
+                          </td>
                           <td>
                             <div class="d-inline-block">
-                              <span class="badge inactive-badge">Inactive</span>
+                              <span class="badge active-badge">Open</span>
                             </div>
                           </td>
                           <td>
@@ -1563,14 +1873,32 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>12/03/2025</td>
-                          <td>54622KLG</td>
-                          <td>Bank Transfer</td>
-                          <td>$2000</td>
-                          <td>$5</td>
+                          <td><p class="text-white-70">TRD-001</p></td>
+                          <td><p class="text-white-70">BTC/USDT</p></td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$42,500</p>
+                              <p class="text-white-50">-</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-warning-50">$41,000</p>
+                              <p class="text-brand">$45,000</p>
+                            </div>
+                          </td>
+                          <td>
+                            <p class="text-brand">+$1250.50</p>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$5,000</p>
+                              <p class="text-white-40 sm-p">20%</p>
+                            </div>
+                          </td>
                           <td>
                             <div class="d-inline-block">
-                              <span class="badge active-badge">Active</span>
+                              <span class="badge inactive-badge">Close</span>
                             </div>
                           </td>
                           <td>
@@ -1606,14 +1934,32 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>12/03/2025</td>
-                          <td>54622KLG</td>
-                          <td>Bank Transfer</td>
-                          <td>$2000</td>
-                          <td>$5</td>
+                          <td><p class="text-white-70">TRD-001</p></td>
+                          <td><p class="text-white-70">BTC/USDT</p></td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$42,500</p>
+                              <p class="text-white-50">-</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-warning-50">$41,000</p>
+                              <p class="text-brand">$45,000</p>
+                            </div>
+                          </td>
+                          <td>
+                            <p class="text-brand">+$1250.50</p>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$5,000</p>
+                              <p class="text-white-40 sm-p">20%</p>
+                            </div>
+                          </td>
                           <td>
                             <div class="d-inline-block">
-                              <span class="badge active-badge">Active</span>
+                              <span class="badge active-badge">Open</span>
                             </div>
                           </td>
                           <td>
@@ -1649,14 +1995,32 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>12/03/2025</td>
-                          <td>54622KLG</td>
-                          <td>Bank Transfer</td>
-                          <td>$2000</td>
-                          <td>$5</td>
+                          <td><p class="text-white-70">TRD-001</p></td>
+                          <td><p class="text-white-70">BTC/USDT</p></td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$42,500</p>
+                              <p class="text-white-50">-</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-warning-50">$41,000</p>
+                              <p class="text-brand">$45,000</p>
+                            </div>
+                          </td>
+                          <td>
+                            <p class="text-brand">+$1250.50</p>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$5,000</p>
+                              <p class="text-white-40 sm-p">20%</p>
+                            </div>
+                          </td>
                           <td>
                             <div class="d-inline-block">
-                              <span class="badge inactive-badge">Inactive</span>
+                              <span class="badge inactive-badge">Close</span>
                             </div>
                           </td>
                           <td>
@@ -1692,14 +2056,32 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>12/03/2025</td>
-                          <td>54622KLG</td>
-                          <td>Bank Transfer</td>
-                          <td>$2000</td>
-                          <td>$5</td>
+                          <td><p class="text-white-70">TRD-001</p></td>
+                          <td><p class="text-white-70">BTC/USDT</p></td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$42,500</p>
+                              <p class="text-white-50">-</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-warning-50">$41,000</p>
+                              <p class="text-brand">$45,000</p>
+                            </div>
+                          </td>
+                          <td>
+                            <p class="text-brand">+$1250.50</p>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$5,000</p>
+                              <p class="text-white-40 sm-p">20%</p>
+                            </div>
+                          </td>
                           <td>
                             <div class="d-inline-block">
-                              <span class="badge active-badge">Active</span>
+                              <span class="badge active-badge">Open</span>
                             </div>
                           </td>
                           <td>
@@ -1735,14 +2117,32 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>12/03/2025</td>
-                          <td>54622KLG</td>
-                          <td>Bank Transfer</td>
-                          <td>$2000</td>
-                          <td>$5</td>
+                          <td><p class="text-white-70">TRD-001</p></td>
+                          <td><p class="text-white-70">BTC/USDT</p></td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$42,500</p>
+                              <p class="text-white-50">-</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-warning-50">$41,000</p>
+                              <p class="text-brand">$45,000</p>
+                            </div>
+                          </td>
+                          <td>
+                            <p class="text-brand">+$1250.50</p>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$5,000</p>
+                              <p class="text-white-40 sm-p">20%</p>
+                            </div>
+                          </td>
                           <td>
                             <div class="d-inline-block">
-                              <span class="badge active-badge">Active</span>
+                              <span class="badge inactive-badge">Close</span>
                             </div>
                           </td>
                           <td>
@@ -1778,14 +2178,32 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>12/03/2025</td>
-                          <td>54622KLG</td>
-                          <td>Bank Transfer</td>
-                          <td>$2000</td>
-                          <td>$5</td>
+                          <td><p class="text-white-70">TRD-001</p></td>
+                          <td><p class="text-white-70">USDT</p></td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$42,500</p>
+                              <p class="text-white-50">-</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-warning-50">$41,000</p>
+                              <p class="text-brand">$45,000</p>
+                            </div>
+                          </td>
+                          <td>
+                            <p class="text-brand">+$1250.50</p>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$5,000</p>
+                              <p class="text-white-40 sm-p">20%</p>
+                            </div>
+                          </td>
                           <td>
                             <div class="d-inline-block">
-                              <span class="badge inactive-badge">Inactive</span>
+                              <span class="badge active-badge">Open</span>
                             </div>
                           </td>
                           <td>
@@ -1821,14 +2239,32 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>12/03/2025</td>
-                          <td>54622KLG</td>
-                          <td>Bank Transfer</td>
-                          <td>$2000</td>
-                          <td>$5</td>
+                          <td><p class="text-white-70">TRD-001</p></td>
+                          <td><p class="text-white-70">BTC</p></td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$42,500</p>
+                              <p class="text-white-50">-</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-warning-50">$41,000</p>
+                              <p class="text-brand">$45,000</p>
+                            </div>
+                          </td>
+                          <td>
+                            <p class="text-brand">+$1250.50</p>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$5,000</p>
+                              <p class="text-white-40 sm-p">20%</p>
+                            </div>
+                          </td>
                           <td>
                             <div class="d-inline-block">
-                              <span class="badge active-badge">Active</span>
+                              <span class="badge inactive-badge">Close</span>
                             </div>
                           </td>
                           <td>
@@ -1864,14 +2300,32 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>12/03/2025</td>
-                          <td>54622KLG</td>
-                          <td>Bank Transfer</td>
-                          <td>$2000</td>
-                          <td>$5</td>
+                          <td><p class="text-white-70">TRD-001</p></td>
+                          <td><p class="text-white-70">BTC/USDT</p></td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$42,500</p>
+                              <p class="text-white-50">-</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-warning-50">$41,000</p>
+                              <p class="text-brand">$45,000</p>
+                            </div>
+                          </td>
+                          <td>
+                            <p class="text-brand">+$1250.50</p>
+                          </td>
+                          <td>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$5,000</p>
+                              <p class="text-white-40 sm-p">20%</p>
+                            </div>
+                          </td>
                           <td>
                             <div class="d-inline-block">
-                              <span class="badge active-badge">Active</span>
+                              <span class="badge active-badge">Open</span>
                             </div>
                           </td>
                           <td>
@@ -1907,315 +2361,32 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>12/03/2025</td>
-                          <td>54622KLG</td>
-                          <td>Bank Transfer</td>
-                          <td>$2000</td>
-                          <td>$5</td>
+                          <td><p class="text-white-70">TRD-001</p></td>
+                          <td><p class="text-white-70">BTC/USDT</p></td>
                           <td>
-                            <div class="d-inline-block">
-                              <span class="badge inactive-badge">Inactive</span>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$42,500</p>
+                              <p class="text-white-50">-</p>
                             </div>
                           </td>
                           <td>
-                            <span
-                              class="svg-icon-white svg-icon-hover-brand"
-                              type="button"
-                              data-bs-toggle="offcanvas"
-                              data-bs-target="#offcanvasRight"
-                              aria-controls="offcanvasRight"
-                            >
-                              <svg
-                                width="20"
-                                height="15"
-                                viewBox="0 0 20 15"
-                                fill="none"
-                                class="icon-eye"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M0.5 7.5C0.5 7.5 3.95455 0.5 10 0.5C16.0455 0.5 19.5 7.5 19.5 7.5C19.5 7.5 16.0455 14.5 10 14.5C3.95455 14.5 0.5 7.5 0.5 7.5Z"
-                                  stroke="#949CA9"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                />
-                                <path
-                                  d="M10 10.5C11.574 10.5 12.85 9.15685 12.85 7.5C12.85 5.84315 11.574 4.5 10 4.5C8.42599 4.5 7.15 5.84315 7.15 7.5C7.15 9.15685 8.42599 10.5 10 10.5Z"
-                                  stroke="#949CA9"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                />
-                              </svg>
-                            </span>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>12/03/2025</td>
-                          <td>54622KLG</td>
-                          <td>Bank Transfer</td>
-                          <td>$2000</td>
-                          <td>$5</td>
-                          <td>
-                            <div class="d-inline-block">
-                              <span class="badge active-badge">Active</span>
+                            <div class="d-flex flex-column">
+                              <p class="text-warning-50">$41,000</p>
+                              <p class="text-brand">$45,000</p>
                             </div>
                           </td>
                           <td>
-                            <span
-                              class="svg-icon-white svg-icon-hover-brand"
-                              type="button"
-                              data-bs-toggle="offcanvas"
-                              data-bs-target="#offcanvasRight"
-                              aria-controls="offcanvasRight"
-                            >
-                              <svg
-                                width="20"
-                                height="15"
-                                viewBox="0 0 20 15"
-                                fill="none"
-                                class="icon-eye"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M0.5 7.5C0.5 7.5 3.95455 0.5 10 0.5C16.0455 0.5 19.5 7.5 19.5 7.5C19.5 7.5 16.0455 14.5 10 14.5C3.95455 14.5 0.5 7.5 0.5 7.5Z"
-                                  stroke="#949CA9"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                />
-                                <path
-                                  d="M10 10.5C11.574 10.5 12.85 9.15685 12.85 7.5C12.85 5.84315 11.574 4.5 10 4.5C8.42599 4.5 7.15 5.84315 7.15 7.5C7.15 9.15685 8.42599 10.5 10 10.5Z"
-                                  stroke="#949CA9"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                />
-                              </svg>
-                            </span>
+                            <p class="text-brand">+$1250.50</p>
                           </td>
-                        </tr>
-                        <tr>
-                          <td>12/03/2025</td>
-                          <td>54622KLG</td>
-                          <td>Bank Transfer</td>
-                          <td>$2000</td>
-                          <td>$5</td>
                           <td>
-                            <div class="d-inline-block">
-                              <span class="badge active-badge">Active</span>
+                            <div class="d-flex flex-column">
+                              <p class="text-white-70">$5,000</p>
+                              <p class="text-white-40 sm-p">20%</p>
                             </div>
                           </td>
                           <td>
-                            <span
-                              class="svg-icon-white svg-icon-hover-brand"
-                              type="button"
-                              data-bs-toggle="offcanvas"
-                              data-bs-target="#offcanvasRight"
-                              aria-controls="offcanvasRight"
-                            >
-                              <svg
-                                width="20"
-                                height="15"
-                                viewBox="0 0 20 15"
-                                fill="none"
-                                class="icon-eye"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M0.5 7.5C0.5 7.5 3.95455 0.5 10 0.5C16.0455 0.5 19.5 7.5 19.5 7.5C19.5 7.5 16.0455 14.5 10 14.5C3.95455 14.5 0.5 7.5 0.5 7.5Z"
-                                  stroke="#949CA9"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                />
-                                <path
-                                  d="M10 10.5C11.574 10.5 12.85 9.15685 12.85 7.5C12.85 5.84315 11.574 4.5 10 4.5C8.42599 4.5 7.15 5.84315 7.15 7.5C7.15 9.15685 8.42599 10.5 10 10.5Z"
-                                  stroke="#949CA9"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                />
-                              </svg>
-                            </span>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>12/03/2025</td>
-                          <td>54622KLG</td>
-                          <td>Bank Transfer</td>
-                          <td>$2000</td>
-                          <td>$5</td>
-                          <td>
                             <div class="d-inline-block">
-                              <span class="badge inactive-badge">Inactive</span>
-                            </div>
-                          </td>
-                          <td>
-                            <span
-                              class="svg-icon-white svg-icon-hover-brand"
-                              type="button"
-                              data-bs-toggle="offcanvas"
-                              data-bs-target="#offcanvasRight"
-                              aria-controls="offcanvasRight"
-                            >
-                              <svg
-                                width="20"
-                                height="15"
-                                viewBox="0 0 20 15"
-                                fill="none"
-                                class="icon-eye"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M0.5 7.5C0.5 7.5 3.95455 0.5 10 0.5C16.0455 0.5 19.5 7.5 19.5 7.5C19.5 7.5 16.0455 14.5 10 14.5C3.95455 14.5 0.5 7.5 0.5 7.5Z"
-                                  stroke="#949CA9"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                />
-                                <path
-                                  d="M10 10.5C11.574 10.5 12.85 9.15685 12.85 7.5C12.85 5.84315 11.574 4.5 10 4.5C8.42599 4.5 7.15 5.84315 7.15 7.5C7.15 9.15685 8.42599 10.5 10 10.5Z"
-                                  stroke="#949CA9"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                />
-                              </svg>
-                            </span>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>12/03/2025</td>
-                          <td>54622KLG</td>
-                          <td>Bank Transfer</td>
-                          <td>$2000</td>
-                          <td>$5</td>
-                          <td>
-                            <div class="d-inline-block">
-                              <span class="badge active-badge">Active</span>
-                            </div>
-                          </td>
-                          <td>
-                            <span
-                              class="svg-icon-white svg-icon-hover-brand"
-                              type="button"
-                              data-bs-toggle="offcanvas"
-                              data-bs-target="#offcanvasRight"
-                              aria-controls="offcanvasRight"
-                            >
-                              <svg
-                                width="20"
-                                height="15"
-                                viewBox="0 0 20 15"
-                                fill="none"
-                                class="icon-eye"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M0.5 7.5C0.5 7.5 3.95455 0.5 10 0.5C16.0455 0.5 19.5 7.5 19.5 7.5C19.5 7.5 16.0455 14.5 10 14.5C3.95455 14.5 0.5 7.5 0.5 7.5Z"
-                                  stroke="#949CA9"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                />
-                                <path
-                                  d="M10 10.5C11.574 10.5 12.85 9.15685 12.85 7.5C12.85 5.84315 11.574 4.5 10 4.5C8.42599 4.5 7.15 5.84315 7.15 7.5C7.15 9.15685 8.42599 10.5 10 10.5Z"
-                                  stroke="#949CA9"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                />
-                              </svg>
-                            </span>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>12/03/2025</td>
-                          <td>54622KLG</td>
-                          <td>Bank Transfer</td>
-                          <td>$2000</td>
-                          <td>$5</td>
-                          <td>
-                            <div class="d-inline-block">
-                              <span class="badge active-badge">Active</span>
-                            </div>
-                          </td>
-                          <td>
-                            <span
-                              class="svg-icon-white svg-icon-hover-brand"
-                              type="button"
-                              data-bs-toggle="offcanvas"
-                              data-bs-target="#offcanvasRight"
-                              aria-controls="offcanvasRight"
-                            >
-                              <svg
-                                width="20"
-                                height="15"
-                                viewBox="0 0 20 15"
-                                fill="none"
-                                class="icon-eye"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M0.5 7.5C0.5 7.5 3.95455 0.5 10 0.5C16.0455 0.5 19.5 7.5 19.5 7.5C19.5 7.5 16.0455 14.5 10 14.5C3.95455 14.5 0.5 7.5 0.5 7.5Z"
-                                  stroke="#949CA9"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                />
-                                <path
-                                  d="M10 10.5C11.574 10.5 12.85 9.15685 12.85 7.5C12.85 5.84315 11.574 4.5 10 4.5C8.42599 4.5 7.15 5.84315 7.15 7.5C7.15 9.15685 8.42599 10.5 10 10.5Z"
-                                  stroke="#949CA9"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                />
-                              </svg>
-                            </span>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>12/03/2025</td>
-                          <td>54622KLG</td>
-                          <td>Bank Transfer</td>
-                          <td>$2000</td>
-                          <td>$5</td>
-                          <td>
-                            <div class="d-inline-block">
-                              <span class="badge inactive-badge">Inactive</span>
-                            </div>
-                          </td>
-                          <td>
-                            <span
-                              class="svg-icon-white svg-icon-hover-brand"
-                              type="button"
-                              data-bs-toggle="offcanvas"
-                              data-bs-target="#offcanvasRight"
-                              aria-controls="offcanvasRight"
-                            >
-                              <svg
-                                width="20"
-                                height="15"
-                                viewBox="0 0 20 15"
-                                fill="none"
-                                class="icon-eye"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M0.5 7.5C0.5 7.5 3.95455 0.5 10 0.5C16.0455 0.5 19.5 7.5 19.5 7.5C19.5 7.5 16.0455 14.5 10 14.5C3.95455 14.5 0.5 7.5 0.5 7.5Z"
-                                  stroke="#949CA9"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                />
-                                <path
-                                  d="M10 10.5C11.574 10.5 12.85 9.15685 12.85 7.5C12.85 5.84315 11.574 4.5 10 4.5C8.42599 4.5 7.15 5.84315 7.15 7.5C7.15 9.15685 8.42599 10.5 10 10.5Z"
-                                  stroke="#949CA9"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                />
-                              </svg>
-                            </span>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>12/03/2025</td>
-                          <td>54622KLG</td>
-                          <td>Bank Transfer</td>
-                          <td>$2000</td>
-                          <td>$5</td>
-                          <td>
-                            <div class="d-inline-block">
-                              <span class="badge active-badge">Active</span>
+                              <span class="badge inactive-badge">Close</span>
                             </div>
                           </td>
                           <td>
@@ -2314,18 +2485,13 @@
           table.search($("#dtSearch").val()).draw();
         });
 
-        // Status filter (column index = 5)
-        $.fn.dataTable.ext.search.push(function (settings, data) {
-          let selected = $("#statusFilter").val().toLowerCase();
-          let statusText = data[5].toLowerCase().trim(); // column index = 5
-
-          if (!selected) return true;
-
-          return statusText === selected;
-        });
-
+        // Status filter (column index = 6)
         $("#statusFilter").on("change", function () {
-          table.draw();
+          table.column(6).search(this.value).draw();
+        });
+        // Symbol filter (column index = 1)
+        $("#symbolFilter").on("change", function () {
+          table.column(1).search(this.value).draw();
         });
 
         // Reset
