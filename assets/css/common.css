@@ -788,14 +788,20 @@ select {
 }
 
 /* app menu */
-.apps-view-menu {
-  padding: 10px 12px;
-  border-radius: 5px 5px 0 0;
-  background-color: #1a1d2d;
+.apps-view-menu-cover {
+  background-color: rgba(var(--black), 1);
   z-index: 999;
   position: fixed;
   bottom: 0;
   display: none;
+  width: 100%;
+  padding-top: 30px;
+}
+.apps-view-menu {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 5px 5px 0 0;
+  background-color: #1a1d2d;
 }
 .apps-curve {
   content: "";
@@ -840,6 +846,7 @@ select {
   right: -19px;
   top: 20px;
 }
+
 .app-menu-item {
   display: flex;
   align-items: center;
@@ -874,7 +881,7 @@ select {
     height: calc(100vh - 100px);
     overflow-y: scroll;
   }
-  .apps-view-menu {
+  .apps-view-menu-cover {
     display: block;
   }
 }
