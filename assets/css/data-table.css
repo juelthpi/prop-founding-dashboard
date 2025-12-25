@@ -179,6 +179,10 @@ table.data-table tr th {
   table.dataTable thead th,
   table.dataTable tbody td {
     padding: 8px 28px !important;
+    font-size: 12px;
+  }
+  table.dataTable tbody td p {
+    font-size: 12px !important;
   }
 }
 @media all and (max-width: 480px) {
