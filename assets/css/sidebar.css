@@ -241,9 +241,29 @@ li.active .dropdown-item-icon svg {
 
 .sidebar-submenu ul li {
   transition: 0.5s;
-  padding: 2px 12px;
+  padding: 4px 12px;
   margin-bottom: 0;
   border-radius: 4px;
+  position: relative;
+  padding-left: 42px;
+}
+.sidebar-submenu ul li:after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background: rgba(var(--white), 0.5);
+  outline: 0.5px solid rgba(var(--white), 0.5);
+  outline-offset: 2px;
+}
+.sidebar-submenu ul li.submenu-active:after {
+  background: rgba(var(--brand), 0.5);
+  outline: 0.5px solid rgba(var(--brand), 0.5);
+  outline-offset: 2px;
 }
 .sidebar-submenu ul li:hover {
   background: rgba(var(--brand), 0.2);

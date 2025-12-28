@@ -719,7 +719,7 @@ select {
 @media all and (max-width: 767px) {
   .primary-btn,
   .secondary-btn {
-    padding: 6px 15px;
+    padding: 6px 12px;
   }
   h1 {
     font-size: calc(var(--font-base) + 9px);
@@ -795,13 +795,17 @@ select {
   bottom: 0;
   display: none;
   width: 100%;
-  padding-top: 30px;
+  padding-top: 20px;
 }
 .apps-view-menu {
   width: 100%;
-  padding: 10px 12px;
+  padding: 4px 12px;
   border-radius: 5px 5px 0 0;
   background-color: #1a1d2d;
+}
+.app-view-nav svg,
+.app-menu-item svg {
+  transform: scale(0.8);
 }
 .apps-curve {
   content: "";
@@ -811,7 +815,7 @@ select {
   border-bottom-left-radius: 35px;
   border-bottom-right-radius: 35px;
   position: absolute;
-  top: -30px;
+  top: -24px;
   left: -30px;
 }
 .apps-curve::before {
@@ -846,19 +850,18 @@ select {
   right: -19px;
   top: 20px;
 }
-
 .app-menu-item {
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
-  height: 50px;
-  width: 50px;
+  height: 42px;
+  width: 42px;
   background-color: rgba(var(--brand), 0.8);
   z-index: 9;
   border-radius: 50%;
-  top: -37px;
-  left: -20px;
+  top: -22px;
+  left: -16px;
   box-shadow: 0px 4.04px 8.09px 0px rgba(var(--brand), 0.4);
 }
 .app-view-nav {
@@ -868,17 +871,24 @@ select {
   position: relative;
   z-index: 2;
 }
+.app-view-nav a path {
+  fill: #fffc !important;
+}
+.app-view-nav.active a path,
+.app-view-nav.active span {
+  fill: rgba(var(--brand), 1) !important;
+  color: rgba(var(--brand), 1) !important;
+}
 .app-view-nav span {
   color: #fffc;
   font-size: 10px;
   font-weight: 500;
   display: inline-block;
-  margin-top: 4px;
 }
 
 @media all and (max-width: 767px) {
   .main-section {
-    height: calc(100vh - 100px);
+    height: calc(100vh - 72px);
     overflow-y: scroll;
   }
   .apps-view-menu-cover {
